@@ -63,9 +63,12 @@ function App() {
   }
 
   return (
-   <main>
-    <Tours tours={tours} removeTour={removeTour} />
-   </main>
+    <>
+      <Marquee>This a trial</Marquee>
+      <main>
+        <Tours tours={tours} removeTour={removeTour} />
+      </main>
+    </>
   );
 }
 

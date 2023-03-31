@@ -1,0 +1,145 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  background-color: #C6CCE0;
+}
+
+.active {
+  color: #0D2167;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  width: 373px;
+  margin-left: 32px;
+  margin-top: 32px;
+}
+
+.the__active:first-child {
+  padding-left: none;
+}
+
+.underline {
+  background-color: #0D2167;
+  width: 148px;
+  height: 4px;
+  border-radius: 12px;
+  margin-left: 32px;
+  /* position: absolute;
+  bottom: 200px; */
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: Inter;
+}
+
+.lower__container {
+  background-color: #0D2167;
+  width: 990px;
+  height: 244px;
+  border-radius: 41px;
+  z-index: -1;
+  position: absolute;
+  bottom: -80px;
+  left: -100px;
+}
+
+.main__container {
+  background-color: #FFFFFF;
+  width: 1134px;
+  height: 373px;
+  border-radius: 32px;
+  position: relative;
+}
+
+.content {
+ width: 1070px;
+ height: 255px;
+ /* position: relative; */
+}
+
+p {
+margin-left: 32px;
+font-size: 24px;
+font-weight: bold;
+color: #0D2167;
+}
+
+.mid__content {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 16px 16px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  border-width: 1px;
+  font-size: medium;
+}
+
+.btn .its__active {
+  color: #FFFFFF;
+}
+
+.btns {
+  display: flex;
+  gap: 8px;
+}
+
+/* STYLING SEARCH */
+
+.search__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+input {
+  width: 844px;
+  padding: 16px;
+  margin-left: 32px;
+  border-radius: 8px;
+  border-width: 1px;
+}
+
+.arrow {
+  background-color: #FFFFFF;
+  border: none;
+  width: 32px;
+  height: 32px;
+}
+
+span {
+  font-size: 16px;
+}
+
+/* STYLING SEARCHED INFO */
+
+.search__items {
+  margin-top: 16px;
+  display: flex;
+  padding-left: 32px;
+  gap: 8px;
+}
+
+.search__clear, .searched {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  border-width: 1px;
+}
