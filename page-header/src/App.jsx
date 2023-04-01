@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { buttons, tabsLink } from './data';
 import { RiDeleteBinLine } from "react-icons/ri";
 import { FiEdit2 } from 'react-icons/fi'
 // import {AiOutlineSearch} from  'react-icons/ai'
@@ -14,29 +15,28 @@ function App() {
         <div className="main__container">
           <article className="content">
             <div className="links">
-              <div>
-                <a href="" className="link active">
-                  My Parameters
-                </a>
-                <div className='underline'></div>
-              </div>
-              <a href="" className="link">
-                Public
-              </a>
-              <a href="" className="link">
-                Configurations
-              </a>
+              {tabsLink.map(({id, name})=> {
+                return (
+                  <a key={id} href="/" className="link">
+                    {name}
+                  </a>
+                );
+              })}
             </div>
+            <div className="underline"></div>
             <div className="mid__content">
+              
               <p>My Parameters</p>
               <div className="btns">
-                <button className="btn">
-                  <FiEdit2 /> edit
-                </button>
-                <button className="btn">
-                  <RiDeleteBinLine /> Delete
-                </button>
-                <button className="btn its__active">Create Parameter</button>
+                {buttons.map(({ id, buttonName, icon }) => {
+                  return (
+                    // <div key={id}>
+                      <button key={id} className="btn">
+                        {icon} {buttonName}
+                      </button>
+                    // </div>
+                  );
+                })}
               </div>
             </div>
             <section className="search__info">

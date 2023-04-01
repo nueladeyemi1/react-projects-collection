@@ -9,6 +9,12 @@ body {
   background-color: #C6CCE0;
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .active {
   color: #0D2167;
 }
@@ -31,8 +37,10 @@ body {
   height: 4px;
   border-radius: 12px;
   margin-left: 32px;
-  /* position: absolute;
-  bottom: 200px; */
+}
+
+a {
+   cursor: pointer;
 }
 
 a:link {
@@ -91,13 +99,14 @@ color: #0D2167;
   font-size: medium;
 }
 
-.btn .its__active {
-  color: #FFFFFF;
-}
-
 .btns {
   display: flex;
   gap: 8px;
+}
+
+.btn:last-child {
+  background-color: #0D2167;
+  color: #FFFFFF;
 }
 
 /* STYLING SEARCH */
@@ -111,6 +120,7 @@ color: #0D2167;
 
 input {
   width: 844px;
+  height: 64px;
   padding: 16px;
   margin-left: 32px;
   border-radius: 8px;
