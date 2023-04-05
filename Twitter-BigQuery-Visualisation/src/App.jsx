@@ -20,8 +20,8 @@ function App() {
           <div className="link">
             {navContent.map(({ id, name, url }) => {
               return (
-                <div key={id}>
-                  <button onClick={()=>onRedirect(url)}>{name}</button>
+                <div className='btn__links' key={id}>
+                  <button className='btn__link' onClick={()=>onRedirect(url)}>{name}</button>
                 </div>
               );
             })}

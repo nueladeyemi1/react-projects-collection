@@ -40,3 +40,12 @@
   display: flex;
   gap: 25px;
 }
+
+
+.btn__link {
+  padding: 7.5px;
+}
+
+.btn__links:last-child {
+  background-color: black;
+}
