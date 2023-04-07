@@ -12,7 +12,7 @@ const Hero = () => {
           perfecting the chair. The result is a perfect blend of beauty and
           comfort, that will have a lasting impact on your health.
         </p>
-        <a href="/">Shop chairs</a>
+        <a className='btn btn__big' href="/">Shop chairs</a>
       </div>
       <img className='image__hero' src={hero} alt='hero' />
     </section>

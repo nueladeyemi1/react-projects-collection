@@ -18,7 +18,7 @@ const Products = () => {
                   </ul>
                   <div className='chair__details__box'>
                     <p className='chair__price'>{price}</p>
-                    <a href="/">{btnName}</a>
+                    <a className='btn btn__small' href="/">{btnName}</a>
                   </div>
                 </div>
               </div>

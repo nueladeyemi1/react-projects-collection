@@ -25,12 +25,39 @@ img {
     width: 100%;
 }
 
+.btn:link,
+.btn:visited {
+    color: white;
+    background-color: #087f5b;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.btn__big {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+.btn__small {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #099268;
+}
+
 .hero__textbox {
     align-self: center;
 }
 
 .hero__text {
     margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .grid-3-cols {
@@ -39,13 +66,21 @@ img {
     column-gap: 80px;
 }
 
-h2 {
-    margin-bottom: 48px;
-}
-
 .features__title {
     margin-bottom: 16px;
     font-weight: bolder;
+    font-size: 20px;
+}
+
+.features__text {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.testimonial__section {
+    background-color: #087f5b;
+    color: #fff;
+    padding: 24px;
 }
 
 .testimonial__box {
@@ -53,9 +88,15 @@ h2 {
     align-self: center;
 }
 
+.testimonial__box h2 {
+    font-size: 24px;
+}
+
 .testimonial__text {
     font-style: italic;
     margin-bottom: 24px;
+    font-size: 18px;
+    line-height: 1.5;
 }
 
 .featured__box {
@@ -65,8 +106,16 @@ h2 {
 .chair__details__box {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .chair__price {
     font-weight: bolder;
+    font-size: 20px;
+}
+
+.footer {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #495057;
 }
