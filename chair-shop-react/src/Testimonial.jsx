@@ -13,7 +13,7 @@ const Testimonial = () => {
             repellat at, nesciunt quia cum minima ipsum culpa totam sapiente
             recusandae earum debitis doloribus in quasi voluptatibus!
           </blockquote>
-          <p>— Mary and Sarah Johnson</p>
+          <p className='testimonial__author'>— Mary and Sarah Johnson</p>
         </div>
       </div>
     </section>
