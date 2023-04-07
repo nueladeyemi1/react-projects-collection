@@ -1,0 +1,72 @@
+section {
+    margin-bottom: 48px;
+}
+
+.hero__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 80px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+}
+
+li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+ul {
+    margin-bottom: 24px;
+}
+
+img {
+    width: 100%;
+}
+
+.hero__textbox {
+    align-self: center;
+}
+
+.hero__text {
+    margin-bottom: 24px;
+}
+
+.grid-3-cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 80px;
+}
+
+h2 {
+    margin-bottom: 48px;
+}
+
+.features__title {
+    margin-bottom: 16px;
+    font-weight: bolder;
+}
+
+.testimonial__box {
+    grid-column: 2 / -1;
+    align-self: center;
+}
+
+.testimonial__text {
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+.featured__box {
+    padding: 24px;
+}
+
+.chair__details__box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.chair__price {
+    font-weight: bolder;
+}
