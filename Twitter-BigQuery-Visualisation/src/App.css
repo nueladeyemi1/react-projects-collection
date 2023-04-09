@@ -2,18 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'inter' sans-serif;
-  /* background-color: #FFF3D4; */
-
 }
 
-/* .container {
-  background-color: #C2ECED;
-} */
+body {
+  background-color: #D2DDF6;
+  /* background-color: #edf2ff; */
+  /* background-color: red; */
+  font-family: 'inter', sans-serif;
+}
+
 
 .top__header {
   height: 60px;
-  background-color: #E9F8FF;
+  background-color: #fcfcfc;
   position: relative;
 }
 
@@ -27,8 +28,8 @@
   width: 1170px;
   height: 50px;
   border-radius: 10px;
-  /* background-color: #FFFFFF; */
-  background-color: #bddbe9;
+  /* background-color: #e5dbff; */
+  background-color: #F6F9FF;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -48,4 +49,16 @@
 
 .btn__links:last-child {
   background-color: black;
+}
+
+/* BAR CHART */
+
+.pie__container {
+  width: 966px;
+  height: 504px;
+  border-radius: 60px;
+  background-color: #F6F9FF;
+  margin: 100px auto;
+  box-shadow: 12px 12px 2px 5px rgba(229, 237, 255, .9);;
+  /* box-shadow: 0px 50px 100px rgba(229, 237, 255, 0.788); */
 }

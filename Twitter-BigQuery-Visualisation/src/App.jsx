@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { navContent } from './content';
 // import RenderActiveShape from './Graphs';
 import './App.css'
+import Pie from './Pie';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,8 +14,8 @@ function App() {
 
   return (
     <main className="container">
-      <section className="top__header"></section>
-      <article className="nav__container">
+      {/* <section className="top__header"></section> */}
+      {/* <article className="nav__container">
         <nav className="nav__content">
           <h3>Twitter BigQuery</h3>
           <div className="link">
@@ -27,8 +28,9 @@ function App() {
             })}
           </div>
         </nav>
-      </article>
+      </article> */}
       {/* <RenderActiveShape /> */}
+      <Pie />
     </main>
   );
 }
