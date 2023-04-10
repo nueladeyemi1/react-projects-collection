@@ -1,9 +1,7 @@
 import React, {useState ,useEffect} from 'react'
-
+import { CLIENT_ID, CLIENT_SECRET } from './details';
 
 const Api = () => {
-    const CLIENT_ID = "92d64cafcb7748a9a5a7514ba489b4ac";
-    const CLIENT_SECRET = "454f33d7b3ef4d918f5bc76c42e6b484";
 
     const [accessToken, setAccesToken] = useState('')
 
@@ -30,7 +28,7 @@ const Api = () => {
 
     useEffect(()=>{
       spotifyApi()
-      
+
       console.log(accessToken);
     },[])
 
