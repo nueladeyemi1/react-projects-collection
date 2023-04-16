@@ -9,7 +9,16 @@ body {
 }
 
 header {
+  position: relative;
   height: 100vh;
+  background-image: linear-gradient(rgba(34, 34, 34, 0.6), rgba(34, 34, 34, 0.6)),url(hero.jpg);
+  background-size: cover;
+  color: #fff;
+}
+
+section {
+  margin-top: 98px;
+  margin-bottom: 98px;
 }
 
 h1 {
@@ -32,6 +41,9 @@ h2 {
 nav {
   display: flex;
   justify-content: space-between;
+  font-size: 24px;
+  font-weight: 700;
+  padding-top: 48px;
 }
 
 .container {
@@ -49,6 +61,8 @@ nav {
   margin-top: 48px;
   color: #fff;
   font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .header__container {
