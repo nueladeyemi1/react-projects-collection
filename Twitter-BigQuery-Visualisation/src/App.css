@@ -5,19 +5,17 @@
 }
 
 body {
-  background-color: #D2DDF6;
+  background-color: #d2ddf6;
   /* background-color: #edf2ff; */
   /* background-color: red; */
   font-family: 'inter', sans-serif;
 }
-
 
 .top__header {
   height: 60px;
   background-color: #fcfcfc;
   position: relative;
 }
-
 
 .nav__container {
   display: flex;
@@ -29,7 +27,7 @@ body {
   height: 50px;
   border-radius: 10px;
   /* background-color: #e5dbff; */
-  background-color: #F6F9FF;
+  background-color: #f6f9ff;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -42,7 +40,6 @@ body {
   gap: 25px;
 }
 
-
 .btn__link {
   padding: 7.5px;
 }
@@ -54,11 +51,11 @@ body {
 /* BAR CHART */
 
 .pie__container {
-  width: 966px;
-  height: 504px;
+  width: 750px;
+  height: 450px;
   border-radius: 60px;
-  background-color: #F6F9FF;
+  background-color: #f6f9ff;
   margin: 100px auto;
-  box-shadow: 12px 12px 2px 5px rgba(229, 237, 255, .9);;
+  box-shadow: 12px 12px 2px 5px rgba(229, 237, 255, 0.9);
   /* box-shadow: 0px 50px 100px rgba(229, 237, 255, 0.788); */
 }

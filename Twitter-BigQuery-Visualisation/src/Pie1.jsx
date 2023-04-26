@@ -6,18 +6,21 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 
 export const data = {
   labels: [
-    'Friday',
-    'Thursday',
-    'Saturday',
-    'Wednesday',
-    'Tuesday',
-    'Monday',
-    'Sunday',
+    'Drupz Rider',
+    'Emmanuel',
+    'David',
+    'Michael',
+    'Samuel',
+    'Temitope',
+    'Precious',
+    'Damilola',
+    'Daniel',
+    'Ola',
   ],
   datasets: [
     {
       label: '',
-      data: [12675, 12354, 12041, 10150, 10003, 9050, 7176],
+      data: [984, 112, 79, 66, 58, 57, 54, 50, 49, 48],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -39,7 +42,7 @@ export const data = {
   ],
 }
 
-export function DoughnutComponent() {
+export function PieComponent1() {
   return (
     <Doughnut
       data={data}
