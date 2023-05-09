@@ -10,3 +10,70 @@ body {
   font-weight: 400;
   color: #555;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+.hero {
+  margin: 0 auto;
+  max-width: 130rem;
+  padding: 0 3.2rem;
+  display: grid;
+  gap: 9.6rem;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-img {
+  max-width: 100%;
+}
+
+.primary-title {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+
+.hero-text {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.hero-section {
+  background-color: #fdf2e9;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  padding: 1.6rem 3.2rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 9px;
+}
+
+.btn-start:link,
+.btn-start:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn-start:hover,
+.btn-start:active {
+  /* background-color: ; */
+}
+
+.btn-see:link,
+.btn-see:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn-margin {
+  margin-right: 1.6rem !important;
+}
