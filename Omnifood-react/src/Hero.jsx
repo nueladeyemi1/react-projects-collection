@@ -1,5 +1,6 @@
 import React from 'react'
 import heroImage from './img/hero.png'
+import { theDeliveredImages } from './img/DeliveredImage'
 
 const Hero = () => {
   return (
@@ -20,6 +21,16 @@ const Hero = () => {
           <a href='#' className='btn btn-see'>
             See More &darr;
           </a>
+          <div className='delivered-image'>
+            <div className='imgs'>
+              {theDeliveredImages.map(({ id, image }) => {
+                return <img key={id} src={image} alt={image} />
+              })}
+            </div>
+            <p>
+              <span>250,000+</span> meals delivered last year!
+            </p>
+          </div>
         </div>
         <div className='hero-img-box'>
           <img
