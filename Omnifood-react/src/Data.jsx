@@ -2,6 +2,12 @@ import image1 from './img/app/app-screen-1.png'
 import image2 from './img/app/app-screen-2.png'
 import image3 from './img/app/app-screen-3.png'
 
+import businessInsider from './img/logos/business-insider.png'
+import forbes from './img/logos/forbes.png'
+import techCrunch from './img/logos/techcrunch.png'
+import newyorkTimes from './img/logos/the-new-york-times.png'
+import usaToday from './img/logos/usa-today.png'
+
 export const navbarData = [
   {
     id: 1,
@@ -48,4 +54,12 @@ export const howItWorksData = [
       'Best chefs in town will cook your selected meal every day, and we will deliver it to your door whenever works best for you. You can change delivery schedule and address daily!',
     image: image3,
   },
+]
+
+export const featuresData = [
+  { id: 1, image: businessInsider },
+  { id: 2, image: forbes },
+  { id: 3, image: techCrunch },
+  { id: 4, image: newyorkTimes },
+  { id: 5, image: usaToday },
 ]

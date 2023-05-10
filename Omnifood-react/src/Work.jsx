@@ -13,7 +13,7 @@ const Work = () => {
       <div className='container grid grid--2-cols z-pattern'>
         {howItWorksData.map(({ id, title, content, image }) => {
           return (
-            <>
+            <React.Fragment key={id}>
               <div className='how-text-box'>
                 <div className='step-number'>{`${id}`.padStart(2, '0')}</div>
                 <h3 className='heading-tertiary'>{title}</h3>
@@ -22,7 +22,7 @@ const Work = () => {
               <div className='how-img-box'>
                 <img className='how-img' src={image} alt='' />
               </div>
-            </>
+            </React.Fragment>
           )
         })}
       </div>
