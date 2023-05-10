@@ -35,14 +35,14 @@ export const howItWorksData = [
     image: image1,
   },
   {
-    id: 1,
+    id: 2,
     title: 'Approve your weekly meal plan',
     content:
       'Once per week, approve the meal plan generated for you by Omnifood AI. You can change ingredients, swap entire meals, or even add your own recipes.',
     image: image2,
   },
   {
-    id: 1,
+    id: 3,
     title: 'Receive meals at convenient time',
     content:
       'Best chefs in town will cook your selected meal every day, and we will deliver it to your door whenever works best for you. You can change delivery schedule and address daily!',
