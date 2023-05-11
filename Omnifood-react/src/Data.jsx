@@ -8,6 +8,9 @@ import techCrunch from './img/logos/techcrunch.png'
 import newyorkTimes from './img/logos/the-new-york-times.png'
 import usaToday from './img/logos/usa-today.png'
 
+import meal1 from './img/meals/meal-1.jpg'
+import meal2 from './img/meals/meal-2.jpg'
+
 export const navbarData = [
   {
     id: 1,
@@ -62,4 +65,43 @@ export const featuresData = [
   { id: 3, image: techCrunch },
   { id: 4, image: newyorkTimes },
   { id: 5, image: usaToday },
+]
+
+export const mealData = [
+  {
+    id: 1,
+    image: meal1,
+    type: ['vegetarian'],
+    name: 'Japanese Gyozas',
+    calory: '650 calories',
+    score: 'NutriScore ® 74',
+    rating: '4.9 rating (537)',
+  },
+  {
+    id: 2,
+    image: meal2,
+    type: ['vegan', 'paleo'],
+    name: 'Avocado Salad',
+    calory: '400 calories',
+    score: 'NutriScore ® 92',
+    rating: '4.8 rating (441)',
+  },
+]
+
+export const availMeal = [
+  {
+    id: 1,
+    title: 'Works with any diet',
+    lists: [
+      'Vegetarian',
+      'Vegan',
+      'Pescatarian',
+      'Gluten-free',
+      'Lactose-free',
+      'Keto',
+      'Paleo',
+      'Low FODMAP',
+      'Kid-friendly',
+    ],
+  },
 ]

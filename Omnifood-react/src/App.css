@@ -274,6 +274,15 @@ html {
   grid-template-columns: repeat(2, 1fr);
 }
 
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--3-card {
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
+}
+
 .z-pattern {
   align-items: center;
   column-gap: 6.4rem;
@@ -304,4 +313,23 @@ html {
 .z-pattern div:nth-of-type(6) {
   /* background-color: red; */
   order: 6;
+}
+
+/* MEALS SECTION/CARD */
+
+.card--img {
+  width: 100%;
+  border-radius: 1.1rem 1.1rem 0 0;
+}
+
+.card-box {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  /* background-color: red; */
+  border-radius: 1.1rem;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.card-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
 }
