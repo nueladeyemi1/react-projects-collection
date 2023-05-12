@@ -41,3 +41,12 @@ const subArraySums = function(arr, n) {
 }
 
 subArraySums([3, 8, 14, 12, 10, 7, 4])
+
+const missingWords = function(s, t) {
+  if (s.includes(t)) {
+    s.replace(t, '')
+    console.log(s)
+  }
+}
+
+missingWords('I love you', 'love you')

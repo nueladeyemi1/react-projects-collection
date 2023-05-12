@@ -10,7 +10,7 @@ const Featured = () => {
           {featuresData.map(({ id, image }) => {
             return (
               <div key={id} className='featured-imgs'>
-                <img className='featured-img' src={image} alt />
+                <img className='featured-img' src={image} alt='' />
               </div>
             )
           })}

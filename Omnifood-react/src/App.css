@@ -174,7 +174,7 @@ html {
 }
 
 .how-it-works {
-  padding: 9.6rem 0;
+  padding: 9.6rem 0 0 0;
 }
 
 .step-content {
@@ -318,6 +318,14 @@ html {
 
 /* MEALS SECTION/CARD */
 
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.content-text {
+  text-align: center;
+}
+
 .card--img {
   width: 100%;
   border-radius: 1.1rem 1.1rem 0 0;
@@ -329,6 +337,10 @@ html {
   border-radius: 1.1rem;
   overflow: hidden;
   transition: all 0.4s;
+}
+
+.card-box:hover {
+  transform: translateY(-1.2rem);
 }
 
 .card-content {
@@ -396,5 +408,30 @@ html {
 }
 
 .list {
+  display: flex;
+  gap: 1.6rem;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.all-recipes {
+  text-align: center;
   font-size: 1.8rem;
+}
+
+.see-recipes:link,
+.see-recipes:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 0.1rem solid currentColor;
+  padding-bottom: 0.2rem;
+  transition: all 0.3s;
+}
+
+.see-recipes:hover,
+.see-recipes:active {
+  display: inline-block;
+  color: #cf711f;
+  border: none;
 }

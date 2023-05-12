@@ -2,6 +2,24 @@ import image1 from './img/app/app-screen-1.png'
 import image2 from './img/app/app-screen-2.png'
 import image3 from './img/app/app-screen-3.png'
 
+import ben from './img/customers/ben.jpg'
+import dave from './img/customers/dave.jpg'
+import hannah from './img/customers/hannah.jpg'
+import steve from './img/customers/steve.jpg'
+
+import gallery1 from './img/gallery/gallery-1.jpg'
+import gallery2 from './img/gallery/gallery-2.jpg'
+import gallery3 from './img/gallery/gallery-3.jpg'
+import gallery4 from './img/gallery/gallery-4.jpg'
+import gallery5 from './img/gallery/gallery-5.jpg'
+import gallery6 from './img/gallery/gallery-6.jpg'
+import gallery7 from './img/gallery/gallery-7.jpg'
+import gallery8 from './img/gallery/gallery-8.jpg'
+import gallery9 from './img/gallery/gallery-9.jpg'
+import gallery10 from './img/gallery/gallery-10.jpg'
+import gallery11 from './img/gallery/gallery-11.jpg'
+import gallery12 from './img/gallery/gallery-12.jpg'
+
 import businessInsider from './img/logos/business-insider.png'
 import forbes from './img/logos/forbes.png'
 import techCrunch from './img/logos/techcrunch.png'
@@ -30,7 +48,7 @@ export const navbarData = [
     name: 'Pricing',
   },
   {
-    id: 1,
+    id: 5,
     name: 'Try for free',
   },
 ]
@@ -104,4 +122,50 @@ export const availMeal = [
       'Kid-friendly',
     ],
   },
+]
+
+export const testimonial = [
+  {
+    id: 1,
+    image: dave,
+    content:
+      'Inexpensive, healthy and great-tasting meals, without even having to order manually! It feels truly magical.',
+    name: 'Dave Bryson',
+  },
+  {
+    id: 2,
+    image: ben,
+    content:
+      "The AI algorithm is crazy good, it chooses the right meals for me every time. It's amazing not to worry about food anymore!",
+    name: 'Ben Hadley',
+  },
+  {
+    id: 3,
+    image: steve,
+    content:
+      "Omnifood is a life saver! I just started a company, so there's no time for cooking. I couldn't live without my daily meals now!",
+    name: 'Steve Miller',
+  },
+  {
+    id: 4,
+    image: hannah,
+    content:
+      'I got Omnifood for the whole family, and it frees up so much time! Plus, everything is organic and vegan and without plastic.',
+    name: 'Hannah Smith',
+  },
+]
+
+export const imageGallery = [
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
+  gallery10,
+  gallery11,
+  gallery11,
 ]

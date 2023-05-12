@@ -7,6 +7,7 @@ import NavBar from './NavBar'
 import Work from './Work'
 import Featured from './Featured'
 import Meals from './Meals'
+import Testimonial from './Testimonial'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Featured />
       <Work />
       <Meals />
+      <Testimonial />
     </>
   )
 }

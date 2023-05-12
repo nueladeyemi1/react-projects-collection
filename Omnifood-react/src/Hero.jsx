@@ -24,7 +24,7 @@ const Hero = () => {
           <div className='delivered-image'>
             <div className='imgs'>
               {theDeliveredImages.map(({ id, image }) => {
-                return <img key={id} src={image} alt={image} />
+                return <img key={id} src={image} alt='' />
               })}
             </div>
             <p>
