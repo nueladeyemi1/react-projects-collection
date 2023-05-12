@@ -169,3 +169,63 @@ export const imageGallery = [
   gallery11,
   gallery11,
 ]
+
+export const plansData = [
+  {
+    id: 1,
+    planPackage: 'starter',
+    price: 399,
+    text: "per month, that's just $13 per meal!",
+    planList: [
+      '1 meal per day',
+      'order from 11am to 9pm',
+      'delivery is free',
+      '',
+    ],
+    signUpPlan: 'Start eating well',
+  },
+  {
+    id: 2,
+    planPackage: 'complete',
+    price: 649,
+    text: "per month, that's just $11 per meal!",
+    planList: [
+      '2 meals per day',
+      'order 24/7',
+      'delivery is free',
+      'get access to latest recipes',
+    ],
+    signUpPlan: 'Start eating well',
+  },
+]
+
+export const featureData = [
+  {
+    id: 1,
+    title: 'Never cook again!',
+    icon: <ion-icon name='infinite-outline'></ion-icon>,
+    content:
+      'Our subscriptions cover 365 days per year, even including major holidays.',
+  },
+  {
+    id: 2,
+    title: 'Local and organic',
+    icon: <ion-icon name='nutrition-outline'></ion-icon>,
+    content:
+      'Our cooks only use local, fresh, and organic products to prepare your meals.',
+  },
+  {
+    id: 1,
+    title: 'No waste',
+    icon: <ion-icon name='leaf-outline'></ion-icon>,
+    content:
+      'All our partners only use reusable containers to package all your meals.',
+  },
+  {
+    id: 1,
+    title: 'Pause anytime',
+    icon: <ion-icon name='pause-outline'></ion-icon>,
+    content:
+      'Going on vacation? Just pause your subscription, and we refund unused days.',
+  },
+]

@@ -8,6 +8,7 @@ import Work from './Work'
 import Featured from './Featured'
 import Meals from './Meals'
 import Testimonial from './Testimonial'
+import Plans from './Plans'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Work />
       <Meals />
       <Testimonial />
+      <Plans />
     </>
   )
 }
