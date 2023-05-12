@@ -3,24 +3,32 @@ import { imageGallery, testimonial } from './Data'
 
 const Testimonial = () => {
   return (
-    <section className='grid grid--2-cols'>
-      <div className='grid grid--2-cols'>
-        {testimonial.map(({ id, image, content, name }) => {
-          return (
-            <div key={id}>
-              <img src={image} />
-              <p>{content}</p>
-              <p>{name}</p>
-            </div>
-          )
-        })}
+    <section className='testimonial-section'>
+      <div className='testimonial-container'>
+        <span className='subheading'>testimonial</span>
+        <h2 className='heading-secondary'>
+          Once you try it, you can't go back
+        </h2>
+        <div className='testimonials'>
+          {testimonial.map(({ id, image, content, name }) => {
+            return (
+              <div className='testimonial' key={id}>
+                <img className='testimonial-img' src={image} alt='' />
+                <blockquote className='testimonial-content'>
+                  {content}
+                </blockquote>
+                <p className='testimonial-name'>{name}</p>
+              </div>
+            )
+          })}
+        </div>
       </div>
-      <div className='grid grid--3-cols'>
+      <div className='gallery'>
         {imageGallery.map((image) => {
           return (
-            <div>
+            <figure className='gallery-item'>
               <img src={image} />
-            </div>
+            </figure>
           )
         })}
       </div>
