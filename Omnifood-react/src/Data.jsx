@@ -229,3 +229,21 @@ export const featureData = [
       'Going on vacation? Just pause your subscription, and we refund unused days.',
   },
 ]
+
+export const footLinkData = [
+  {
+    id: 1,
+    heading: 'Account',
+    links: ['Create account', 'Sign in', 'iOS app', 'Android app'],
+  },
+  {
+    id: 2,
+    heading: 'Company',
+    links: ['About Omnifood', 'For Business', 'Cooking partners', 'Careers'],
+  },
+  {
+    id: 3,
+    heading: 'Resources',
+    links: ['Recipes directory', 'Help center', 'Privacy & terms', ''],
+  },
+]
