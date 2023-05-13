@@ -52,7 +52,6 @@ const Plans = () => {
           return (
             <div key={id} className='feature'>
               <div className='feature-icon'>{icon}</div>
-
               <div className='feature-title'>{title}</div>
               <div className='feature-text'>{content}</div>
             </div>
