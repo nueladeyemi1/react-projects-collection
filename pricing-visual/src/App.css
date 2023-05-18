@@ -1,0 +1,68 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 10rem;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 62.5%;
+  font-family: 'Rubik', sans-serif;
+  background-color: #e6e6e6;
+}
+
+table {
+  border: none;
+  border-collapse: collapse;
+}
+
+/* HEADER */
+table {
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+td {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.2);
+}
+
+th {
+  padding: 1.2rem 0 1.2rem 0;
+  /* border: 1px solid black; */
+}
+
+td:nth-child(1) {
+  width: 50%;
+}
+
+td:nth-child(2),
+td:nth-child(3) {
+  width: 25%;
+}
+
+.table-head {
+  font-size: 14px;
+  color: white;
+}
+.table-head-1 {
+  background-color: blue;
+}
+
+.table-head-2 {
+  background-color: red;
+}
+
+.switch-color {
+  background: white;
+  color: black;
+}
+
+td {
+  padding: 0.8rem 0 0.8rem 0;
+}
