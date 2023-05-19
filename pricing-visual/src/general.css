@@ -1,0 +1,92 @@
+/* HERO CSS  */
+
+.primary-heading {
+  font-size: 3.6rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.5;
+  /* color: #4c45b3; */
+  color: #2b2866;
+  text-align: justify;
+  margin-bottom: 2.4rem;
+}
+
+.hero-text {
+  font-size: 1.5rem;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  text-align: justify;
+  margin-bottom: 1.2rem;
+  color: #2b2866;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4.8rem;
+}
+
+.hero-image {
+  width: 75%;
+}
+
+.btn-hero,
+.btn-hero:link,
+.btn-hero:visited {
+  background-color: #4c45b3;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 3.2rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+}
+
+.btn-hero:hover,
+.btn-hero:active {
+  background-color: #6159e6;
+}
+
+.hero-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-nav p,
+.hero-nav span {
+  font-size: 1rem;
+  color: #2b2866;
+}
+
+.hero-nav span {
+  color: #6159e6;
+}
+
+/* INPUT CSS  */
+
+input {
+  display: block;
+  height: 2.4rem;
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+  border: none;
+  border-radius: 8px;
+  transition: color 0.2s;
+  width: 50%;
+}
+
+form {
+  margin-top: 9.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
