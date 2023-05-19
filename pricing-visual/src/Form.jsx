@@ -1,33 +1,20 @@
 import React from 'react'
+import { formInputs } from './formdata'
 
 const Form = () => {
   return (
     <section className='form-section'>
       <form>
-        <label>
-          First Name*
-          <input type='text' required />
-        </label>
-        <label>
-          Last Name*
-          <input type='text' required />
-        </label>
-        <label>
-          Phone Number*
-          <input type='text' required />
-        </label>
-        <label>
-          Work Email*
-          <input type='email' required />
-        </label>
-        <label>
-          Name*
-          <input type='text' required />
-        </label>
-        <label>
-          Name*
-          <input type='text' required />
-        </label>
+        {formInputs.map(({ id, title, type, placeHolder }) => {
+          return (
+            <div>
+              <label>
+                {title}
+                <input type={title} placeholder={placeHolder} required />
+              </label>
+            </div>
+          )
+        })}
       </form>
     </section>
   )
