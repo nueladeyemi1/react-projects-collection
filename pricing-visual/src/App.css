@@ -11,8 +11,11 @@
   box-sizing: border-box;
 }
 
-body {
+html {
   font-size: 62.5%;
+}
+
+body {
   font-family: 'Rubik', sans-serif;
   background-color: #c3d0e7;
   /* background-color: #e6e6e6; */

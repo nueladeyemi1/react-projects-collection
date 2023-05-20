@@ -41,7 +41,9 @@ export const selectData = [
   {
     id: 1,
     question: "Please select your ideal lead's management level*",
+    name1: 'level',
     options: [
+      '--select options--',
       'owner',
       'partner',
       'cxo',
@@ -57,7 +59,9 @@ export const selectData = [
   {
     id: 2,
     question: "Please select your ideal lead's role*",
+    name1: 'role',
     options: [
+      '--select options--',
       'customer service',
       'design',
       'education',
@@ -78,7 +82,9 @@ export const selectData = [
   {
     id: 3,
     question: "Please select your ideal lead's company size*",
+    name1: 'size',
     options: [
+      '--select options--',
       '1-10',
       '11-50',
       '51-200',
@@ -92,7 +98,9 @@ export const selectData = [
   {
     id: 4,
     question: "Please select your ideal prospect's industry*",
+    name1: 'industry',
     options: [
+      '--select options--',
       'accounting',
       'airlines/aviation',
       'alternative dispute resolution',
@@ -240,6 +248,133 @@ export const selectData = [
       'wine and spirits',
       'wireless',
       'writing and editing',
+    ],
+  },
+]
+
+export const textAreaData = [
+  {
+    id: 1,
+    name: 'whoYouAre',
+    title:
+      'Please provide a brief sentence of who you are, beginning with the phrase "who is"...*',
+    sample:
+      '(My example) who is an award-winning digital marketing consultant & founder of Ben Ijah LLC.',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 2,
+    name: 'listOfService',
+    title:
+      "Please provide a list of the service(s) you'd like to sell to the client profile provided in the earlier section *",
+    sample:
+      '(My example) Human-Guided, AI-Driven lead generation software that automates the entire B2B biz dev process and reduces acquisition costs.',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 3,
+    name: 'describeYourOffer',
+    title:
+      'In one sentence describe your offer/guarantee? In other words, why should this lead meet with you? *',
+    sample:
+      '(My example) We guarantee our system saves your business time and/or money generating B2B leads or your money back',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 4,
+    name: 'ListOfPastSuccess',
+    title:
+      "Provide a brief list of past success/clients? We're looking to add social proof to your pitchThis question is required. *",
+    sample:
+      '(My example) has generated millions of dollars across numerous industries with clients including Kareem Abdul-Jabbar & Fix It Bathworks, also personally developed an AI-driven software stack that researches prospects then contacts them with bespoke messaging based on that research.',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 5,
+    name: 'previousStatement',
+    title:
+      'Break down the previous statement into a one-line elevator pitch. *',
+    sample:
+      "(My example) I've generated millions of dollars in numerous industries and developed an AI-driven BDR guaranteed to save your sales team time & money.",
+    placeHolder: 'Type your answer here...',
+  },
+]
+
+export const inputData = [
+  {
+    id: 1,
+    name: 'averageSalesCycle',
+    title: 'How many months does your average sales cycle take? *',
+    sample: 'Only positive numbers are required',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 2,
+    name: 'peopleInYourOrganisation',
+    title:
+      'How many people in your organization are responsible for business development? *',
+    sample: 'If you alone handle all biz dev & sales, list 1.',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 3,
+    name: 'howManyProspects',
+    title:
+      'On average, how many prospects does your team contact directly each month? *',
+    sample: 'Please do not include PPC or SMM marketing campaigns.',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 4,
+    name: 'howManyLeads',
+    title: 'On average, how many leads does your team generate each month? *',
+    sample: 'Only positive numbers are required',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 5,
+    name: 'howManyQualifiedLeads',
+    title:
+      'On average, how many qualified leads does your team generate each month? *',
+    sample: 'Only positive numbers are required',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 6,
+    name: 'teamCloseRate',
+    title: "On average, what is your team's close rate on qualified leads? *",
+    sample: 'Provide percent as a number. Ex. if 50% list 50',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 7,
+    name: 'averageDealSize',
+    title: 'What is your average deal size? *',
+    sample: 'Provide amount as number. Ex. if $50,000 list 50,000',
+    placeHolder: 'Type your answer here...',
+  },
+  {
+    id: 6,
+    name: 'prospectContactInfo',
+    title:
+      "On average, how much does each prospect's contact information cost you? *",
+    sample: "If you don't pay for contact info, list 0",
+    placeHolder: 'Type your answer here...',
+  },
+]
+
+export const selectData1 = [
+  {
+    id: 1,
+    question: 'How are you contacting prospects? *',
+    name1: 'contacting',
+    options: [
+      'Cold Calling',
+      'One-On-One Email',
+      'Email Blasts',
+      'Text',
+      "Social Media DM's",
+      'Paid Ads',
     ],
   },
 ]

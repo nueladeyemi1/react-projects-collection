@@ -6,6 +6,7 @@ import './general.css'
 import Pricing from './Pricing'
 import Hero from './Hero'
 import Form from './Form'
+import Form2 from './Form2'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,8 +14,9 @@ function App() {
   return (
     <>
       <Hero />
-      <Pricing />
       <Form />
+      {/* <Form2 /> */}
+      {/* <Pricing /> */}
     </>
   )
 }
