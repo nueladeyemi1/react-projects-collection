@@ -186,7 +186,9 @@ option {
 .checkbox {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  row-gap: 2rem;
   margin-bottom: 9.6rem;
+  padding-left: 4rem;
 }
 
 .checkbox div {
@@ -194,7 +196,6 @@ option {
   align-items: center;
   font-size: 1.6rem;
   color: #2b2866;
-  padding-left: 4rem;
 }
 
 .thecheckbox {
@@ -234,6 +235,10 @@ option {
   text-align: justify;
   margin-left: 4rem;
   line-height: 1.5;
+}
+
+.opacity {
+  display: none;
 }
 /* input {
   display: block;
