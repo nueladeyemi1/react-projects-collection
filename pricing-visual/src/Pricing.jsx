@@ -6,6 +6,8 @@ import { IconContext } from 'react-icons'
 import { MdNextPlan } from 'react-icons/md'
 import { TbBusinessplan } from 'react-icons/tb'
 import { RxCross2 } from 'react-icons/rx'
+import testing from './RevenueColor.svg'
+import testing2 from './SalesmanColor.svg'
 
 const Pricing = () => {
   const [isLoading, setLoading] = useState(true)
@@ -34,7 +36,8 @@ const Pricing = () => {
       }
     }
     fetchApi()
-    setLoading(!isLoading)
+    setLoading(false)
+    // setLoading(!isLoading)
   }, [])
 
   const mockDate = [
@@ -446,12 +449,28 @@ const Pricing = () => {
   return (
     <div>
       {isLoading ? (
-        <p>Fetching data</p>
+        <div className='loader'></div>
       ) : (
         <section className='container '>
           <h2 className='welcome--name'>
             Hey, <span>{data.seller_name}</span>
           </h2>
+          <div className='visual--grid'>
+            <div className='visual--output'>
+              <div className='visual--high-value'>
+                <div>Your Current plan values</div>$
+                {Number(data.Annual_Organization_BDR_Costs).toFixed(2)}
+                <div>Per year</div>
+              </div>
+              <img src={testing} />
+              <div className='visual--low-value'>
+                <div>ABDD offers you</div>$
+                {Number(data.ABDD_cost_per_year).toFixed(2)}
+                <div>Per year</div>
+              </div>
+            </div>
+            <img src={testing2} />
+          </div>
           {/* <button className='btn' onClick={() => window.location.reload()}>
             Fetch Dashboard
           </button> */}
@@ -501,11 +520,11 @@ const Pricing = () => {
               <th className='thead--bottom'></th>
               <th className='table-head table-head-1' rowSpan={2}>
                 $ {Number(data.Annual_Organization_BDR_Costs).toFixed(2)}
-                <span>Per year</span>
+                <span> Per year</span>
               </th>
               <th className='table-head table-head-2' rowSpan={2}>
                 $ {Number(data.ABDD_cost_per_year).toFixed(2)}
-                <span>Per year</span>
+                <span> Per year</span>
               </th>
             </thead>
           </table>

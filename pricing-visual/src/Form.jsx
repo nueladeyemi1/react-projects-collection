@@ -122,12 +122,14 @@ const Form = () => {
         setApiResponse(response.data)
         console.log(response.data)
       })
-  }
 
-  const handleGet = function() {
-    // setLoading(true)
     naviagate('/roidata')
   }
+
+  //   const handleGet = function() {
+  //     setLoading(true)
+  //     naviagate('/roidata')
+  //   }
 
   return (
     <div>
@@ -276,11 +278,7 @@ const Form = () => {
 
             {/* </section> */}
           </div>
-          {show && (
-            <button onClick={() => handleGet()} className='btn-hero opacity1'>
-              Submit
-            </button>
-          )}
+          {show && <button className='btn-hero opacity1'>Submit</button>}
         </form>
       </section>
     </div>

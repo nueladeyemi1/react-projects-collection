@@ -262,6 +262,71 @@ option {
   font-size: 1.6rem;
   text-transform: capitalize;
 }
+
+/* SPINNER */
+
+.loader {
+  margin: 10% auto;
+  /* position: absolute; */
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  /* border-top: 16px solid #3498db; */
+  border-top: 16px solid #2b2866;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* GRAPGH */
+
+.visual--grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.visual--output {
+  position: relative;
+  margin-bottom: 9.6rem;
+}
+
+.visual--high-value {
+  position: absolute;
+  right: 8.5%;
+  bottom: 69%;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #6159e6;
+}
+
+.visual--low-value {
+  position: absolute;
+  left: 15%;
+  bottom: 18%;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #6159e6;
+}
+
 /* input {
   display: block;
   height: 2.4rem;
