@@ -245,6 +245,23 @@ option {
   margin-bottom: 9.6rem;
 }
 
+/* PRICING DATA PAGE */
+
+.container {
+  margin-bottom: 9.6rem;
+}
+
+.welcome--name {
+  text-align: start;
+  color: #2b2866;
+  margin-bottom: 4.8rem;
+  margin-left: 9.6rem;
+}
+
+.welcome--name span {
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
 /* input {
   display: block;
   height: 2.4rem;

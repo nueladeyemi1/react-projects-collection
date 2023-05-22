@@ -7,10 +7,10 @@ import { MdNextPlan } from 'react-icons/md'
 import { TbBusinessplan } from 'react-icons/tb'
 import { RxCross2 } from 'react-icons/rx'
 
-const Pricing = ({ data }) => {
-  const [isLoading, setLoading] = useState(false)
+const Pricing = () => {
+  const [isLoading, setLoading] = useState(true)
 
-  //   const [data, setData] = useState([])
+  const [data, setData] = useState([])
 
   //////////
 
@@ -20,22 +20,22 @@ const Pricing = ({ data }) => {
 
   //////////
 
-  //   useEffect(() => {
-  //     const fetchApi = async function() {
-  //       try {
-  //         const response = await axios.get(
-  //           'https://businessapi-production.up.railway.app/api/v1/detail/'
-  //         )
-  //         const data1 = await response.data
-  //         setData(data1)
-  //         console.log(data1)
-  //       } catch (error) {
-  //         setLoading(true)
-  //       }
-  //     }
-  //     fetchApi()
-  //     setLoading(!isLoading)
-  //   }, [])
+  useEffect(() => {
+    const fetchApi = async function() {
+      try {
+        const response = await axios.get(
+          'https://businessapi-production.up.railway.app/api/v1/detail/'
+        )
+        const data1 = await response.data
+        setData(data1)
+        console.log(data1)
+      } catch (error) {
+        setLoading(true)
+      }
+    }
+    fetchApi()
+    setLoading(!isLoading)
+  }, [])
 
   const mockDate = [
     {
@@ -449,6 +449,9 @@ const Pricing = ({ data }) => {
         <p>Fetching data</p>
       ) : (
         <section className='container '>
+          <h2 className='welcome--name'>
+            Hey, <span>{data.seller_name}</span>
+          </h2>
           {/* <button className='btn' onClick={() => window.location.reload()}>
             Fetch Dashboard
           </button> */}

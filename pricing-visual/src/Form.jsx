@@ -12,9 +12,11 @@ import axios from 'axios'
 import { Fade } from 'react-reveal'
 import { useEffect } from 'react'
 import Pricing from './Pricing'
+import { useNavigate } from 'react-router-dom'
+import Hero from './Hero'
 
 const Form = () => {
-  const [isLoading, setLoading] = useState(true)
+  const naviagate = useNavigate()
   const [checkboxState, setCheckboxState] = useState([])
   const [show, setShow] = useState(false)
   const [hideNext, setHideNext] = useState(true)
@@ -123,11 +125,13 @@ const Form = () => {
   }
 
   const handleGet = function() {
-    setLoading(true)
+    // setLoading(true)
+    naviagate('/roidata')
   }
 
   return (
     <div>
+      <Hero />
       <section className='form-section'>
         <form onSubmit={(e) => postRequest(e)}>
           <div className='form-box'>
@@ -279,7 +283,6 @@ const Form = () => {
           )}
         </form>
       </section>
-      {isLoading && <Pricing data={apiResponse} />}
     </div>
   )
 }

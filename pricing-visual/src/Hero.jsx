@@ -11,10 +11,11 @@ const Hero = () => {
   return (
     <section className='hero-container'>
       <div>
-        <h1 className='primary-heading'>Organise your sales</h1>
+        <h1 className='primary-heading'>Manage your sales</h1>
         <p className='hero-text'>
-          Calculate the return on investment the Netlify platform delivers
-          through enhanced site performance and developer productivity.
+          We provide you with comprehensive resources, tools, and guidance to
+          help you calculate, analyze, and interpret sales ROI accurately.
+          Whether you're a sales professional, business owner, or sales manager.
         </p>
         <div className='hero-nav'>
           <button onClick={() => handleScroll()} className='btn-hero'>
