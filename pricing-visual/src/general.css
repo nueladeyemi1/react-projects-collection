@@ -240,6 +240,11 @@ option {
 .opacity {
   display: none;
 }
+
+.form-section {
+  margin-bottom: 9.6rem;
+}
+
 /* input {
   display: block;
   height: 2.4rem;
