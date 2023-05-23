@@ -454,6 +454,7 @@ const Pricing = () => {
         <section className='container '>
           <h2 className='welcome--name'>
             Hey, <span>{data.seller_name}</span>
+            {/* <div></div> */}
           </h2>
           <div className='visual--grid'>
             <div className='visual--output'>
