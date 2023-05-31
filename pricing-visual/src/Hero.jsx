@@ -1,5 +1,6 @@
 import React from 'react'
 import heroImg from './undraw_data_reports.svg'
+import darkAnalytic from './undraw_dark_analytics.svg'
 
 const Hero = () => {
   const handleScroll = function() {
@@ -26,8 +27,9 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <div>
-        <img className='hero-image' src={heroImg} />
+      <div className='hero-image-flex'>
+        {/* <img className='hero-image' src={heroImg} /> */}
+        <img className='hero-image' src={darkAnalytic} />
       </div>
     </section>
   )

@@ -9,6 +9,7 @@
   color: #2b2866;
   text-align: justify;
   margin-bottom: 2rem;
+  margin-top: 2.5rem;
 }
 
 .hero-text {
@@ -16,7 +17,7 @@
   letter-spacing: -0.5px;
   line-height: 1.4;
   text-align: justify;
-  margin-bottom: 3.6rem;
+  margin-bottom: 5rem;
   color: #2b2866;
 }
 
@@ -29,12 +30,20 @@
 }
 
 .hero-image {
-  width: 65%;
+  width: 75%;
+}
+
+.hero-image-flex {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 5rem;
 }
 
 .btn-hero,
 .btn-hero:link,
 .btn-hero:visited {
+  display: inline-block;
   background-color: #4c45b3;
   color: #fff;
   border: none;
@@ -52,7 +61,7 @@
 .hero-nav {
   display: flex;
   align-items: center;
-  gap: 3.2rem;
+  gap: 4rem;
 }
 
 .hero-nav p,
@@ -77,6 +86,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 label {
@@ -98,7 +108,7 @@ label span {
 }
 
 .input {
-  width: 75%;
+  width: 90%;
   border: none;
   padding: 0.5rem;
   border-radius: 0.5rem;

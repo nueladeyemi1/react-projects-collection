@@ -108,3 +108,43 @@ btn:active {
 span {
   font-size: 1.2rem;
 }
+
+.invest {
+  width: 95%;
+}
+
+.logic,
+.savings {
+  padding-top: 2.5rem;
+  width: 75%;
+}
+
+.savings {
+  padding-top: 10rem;
+  margin-bottom: 0.5rem;
+}
+
+.termsheet {
+  padding-top: 10rem;
+  width: 90%;
+}
+
+.online--discussion {
+  margin-top: 5rem;
+  width: 100%;
+  /* left: -10rem;
+  position: relative; */
+}
+
+.datapoint {
+  width: 100%;
+  margin-top: 15rem;
+  /* position: absolute; */
+  /* position: relative; */
+  /* bottom: 1rem;
+  left: 5rem; */
+}
+
+.last--images {
+  position: relative;
+}

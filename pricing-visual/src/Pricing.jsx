@@ -30,7 +30,7 @@ const Pricing = () => {
         )
         const data1 = await response.data
         setData(data1)
-        console.log(data1)
+        // console.log(data1)
       } catch (error) {
         setLoading(true)
       }
@@ -140,9 +140,9 @@ const Pricing = () => {
     {
       id: 10,
       message: 'Days to generate lead',
-      content1: `$ ${Number(
-        data.Organization_Lead_Generation_Rate_daily
-      ).toFixed(2)}`,
+      content1: `${Number(data.Organization_Lead_Generation_Rate_daily).toFixed(
+        2
+      )}`,
       content2: (
         <IconContext.Provider
           value={{
@@ -158,7 +158,7 @@ const Pricing = () => {
     {
       id: 11,
       message: 'Hours to generate lead',
-      content1: `$ ${Number(
+      content1: `${Number(
         data.Organization_Lead_Generation_Rate_hourly
       ).toFixed(2)}`,
       content2: (
@@ -176,14 +176,14 @@ const Pricing = () => {
     {
       id: 12,
       message: 'Monthly lead generation rate',
-      content1: `$ ${Number(data.Leads_Monthly).toFixed(2)}`,
-      content2: `$ ${Number(data.ABDD_Lead_Generation_Rate).toFixed(2)}`,
+      content1: `${Number(data.Leads_Monthly).toFixed(2)}`,
+      content2: `${Number(data.ABDD_Lead_Generation_Rate).toFixed(2)}`,
     },
     {
       id: 13,
       message: 'monthly prospect',
-      content1: `$ ${Number(data.Contacts_Monthly).toFixed(2)}`,
-      content2: `$ ${Number(data.ABDD_contacts_per_month).toFixed(2)}`,
+      content1: `${Number(data.Contacts_Monthly).toFixed(2)}`,
+      content2: `${Number(data.ABDD_contacts_per_month).toFixed(2)}`,
     },
     {
       id: 14,
@@ -199,7 +199,7 @@ const Pricing = () => {
           <RxCross2 />
         </IconContext.Provider>
       ),
-      content2: `$ ${Number(data.ABDD_contacts_per_hour).toFixed(2)}`,
+      content2: `${Number(data.ABDD_contacts_per_hour).toFixed(2)}`,
     },
     {
       id: 15,
@@ -215,12 +215,12 @@ const Pricing = () => {
           <RxCross2 />
         </IconContext.Provider>
       ),
-      content2: `$ ${Number(data.ABDD_contacts_per_day).toFixed(2)}`,
+      content2: `${Number(data.ABDD_contacts_per_day).toFixed(2)}`,
     },
     {
       id: 16,
       message: 'contact to generate lead',
-      content1: `$ ${Number(data.contacts_to_generate_each_lead).toFixed(2)}`,
+      content1: `${Number(data.contacts_to_generate_each_lead).toFixed(2)}`,
       content2: (
         <IconContext.Provider
           value={{
@@ -236,15 +236,13 @@ const Pricing = () => {
     {
       id: 17,
       message: 'Monthly lead conversion rate',
-      content1: `$ ${Number(data.Contact_to_Lead_Rate).toFixed(2)}`,
-      content2: `$ ${Number(data.ABDD_Lead_Generation_Rate).toFixed(2)}`,
+      content1: `${Number(data.Contact_to_Lead_Rate).toFixed(2)}`,
+      content2: `${Number(data.ABDD_Lead_Generation_Rate).toFixed(2)}`,
     },
     {
       id: 18,
       message: 'Organisation lead to close',
-      content1: `$ ${Number(data.leads_needed_to_generate_each_sale).toFixed(
-        2
-      )}`,
+      content1: `${Number(data.leads_needed_to_generate_each_sale).toFixed(2)}`,
       content2: (
         <IconContext.Provider
           value={{

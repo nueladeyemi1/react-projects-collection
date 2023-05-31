@@ -14,12 +14,22 @@ import { useEffect } from 'react'
 import Pricing from './Pricing'
 import { useNavigate } from 'react-router-dom'
 import Hero from './Hero'
+import invest from './undraw_investor.svg'
+import logic from './undraw_logic.svg'
+import termSheet from './undraw_term_sheet.svg'
+import savings from './undraw_savings.svg'
+import dataPoint from './undraw_data_points.svg'
+import onlineDiscussion from './undraw_online_discussion.svg'
 
 const Form = () => {
   const naviagate = useNavigate()
   const [checkboxState, setCheckboxState] = useState([])
   const [show, setShow] = useState(false)
+  const [show1, setShow1] = useState(false)
+  const [show2, setShow2] = useState(false)
   const [hideNext, setHideNext] = useState(true)
+  const [hideNext1, setHideNext1] = useState(true)
+  const [hideNext2, setHideNext2] = useState(true)
   const [apiResponse, setApiResponse] = useState([])
   const [data, setData] = useState({
     firstName: '',
@@ -84,7 +94,23 @@ const Form = () => {
   const handleNext = function() {
     setShow(!show)
     setHideNext(false)
+    document.querySelector('.form-basic-2').scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
+
+  const handleNext1 = function() {
+    setShow1(!show1)
+    setHideNext1(false)
     document.querySelector('.into--scroll').scrollIntoView({
+      behavior: 'smooth',
+    })
+  }
+
+  const handleNext2 = function() {
+    setShow2(!show2)
+    setHideNext2(false)
+    document.querySelector('.last--images').scrollIntoView({
       behavior: 'smooth',
     })
   }
@@ -137,47 +163,26 @@ const Form = () => {
       <section className='form-section'>
         <form onSubmit={(e) => postRequest(e)}>
           <div className='form-box'>
-            <div className='form-basic'>
-              {formInputs.map(({ id, title, type, placeHolder, name }) => {
-                return (
-                  <label key={id}>
-                    <p>{title}</p>
-                    <input
-                      className='input'
-                      onChange={(e) => handle(e)}
-                      type={type}
-                      id={name}
-                      value={data.name}
-                      placeholder={placeHolder}
-                      required
-                    />
-                  </label>
-                )
-              })}
-            </div>
-            <div className='form-basic-2'>
-              <h2>Tell us a little about your ideal prospect.</h2>
-              <p className='form-sub'>
-                This info will be used to generate your Prospect Report &
-                outreach messages in real-time during our demo.
-              </p>
-
-              {selectData.map(({ id, question, name1, options }) => {
-                return (
-                  <div className='select' key={id}>
-                    <p className='select-label'>{question}</p>
-                    <select
-                      onChange={(e) => handle(e)}
-                      id={name1}
-                      value={data.name1}
-                    >
-                      {options.map((opt, index) => (
-                        <option key={index}>{opt}</option>
-                      ))}
-                    </select>
-                  </div>
-                )
-              })}
+            <img className='invest' src={invest} />
+            <div>
+              <div className='form-basic'>
+                {formInputs.map(({ id, title, type, placeHolder, name }) => {
+                  return (
+                    <label key={id}>
+                      <p>{title}</p>
+                      <input
+                        className='input'
+                        onChange={(e) => handle(e)}
+                        type={type}
+                        id={name}
+                        value={data.name}
+                        placeholder={placeHolder}
+                        required
+                      />
+                    </label>
+                  )
+                })}
+              </div>
               {hideNext && (
                 <button onClick={() => handleNext()} className='btn-hero next'>
                   Next
@@ -185,11 +190,52 @@ const Form = () => {
               )}
             </div>
 
+            {show && (
+              <div className='form-basic-2'>
+                <h2>Tell us a little about your ideal prospect.</h2>
+                <p className='form-sub'>
+                  This info will be used to generate your Prospect Report &
+                  outreach messages in real-time during our demo.
+                </p>
+
+                {selectData.map(({ id, question, name1, options }) => {
+                  return (
+                    <div className='select' key={id}>
+                      <p className='select-label'>{question}</p>
+                      <select
+                        onChange={(e) => handle(e)}
+                        id={name1}
+                        value={data.name1}
+                      >
+                        {options.map((opt, index) => (
+                          <option key={index}>{opt}</option>
+                        ))}
+                      </select>
+                    </div>
+                  )
+                })}
+              </div>
+            )}
+
+            {show && (
+              <div>
+                <img className='logic' src={logic} />
+                {hideNext1 && (
+                  <button
+                    onClick={() => handleNext1()}
+                    className='btn-hero next'
+                  >
+                    Next
+                  </button>
+                )}
+              </div>
+            )}
+
             {/* // */}
 
             {/* <section className='section-form--2'> */}
 
-            {show && (
+            {show1 && (
               <div className='into--scroll'>
                 <Fade Top>
                   <div className='opacity1'>
@@ -223,7 +269,29 @@ const Form = () => {
                 </Fade>
               </div>
             )}
-            {show && (
+
+            {show1 && (
+              <div>
+                <img className='termsheet' src={termSheet} />
+                <img className='savings' src={savings} />
+                {hideNext2 && (
+                  <button
+                    onClick={() => handleNext2()}
+                    className='btn-hero next'
+                  >
+                    Next
+                  </button>
+                )}
+              </div>
+            )}
+
+            {show2 && (
+              <div className='last--images'>
+                <img className='online--discussion' src={onlineDiscussion} />
+                <img className='datapoint' src={dataPoint} />
+              </div>
+            )}
+            {show2 && (
               <Fade Top>
                 <div className='opacity1 into--scroll'>
                   <h2 className='second-form--2'>
@@ -250,6 +318,7 @@ const Form = () => {
                       </label>
                     )
                   })}
+
                   {selectData1.map(({ id, name1, question, options }) => {
                     return (
                       <>
@@ -278,7 +347,7 @@ const Form = () => {
 
             {/* </section> */}
           </div>
-          {show && <button className='btn-hero opacity1'>Submit</button>}
+          {show2 && <button className='btn-hero opacity1'>Submit</button>}
         </form>
       </section>
     </div>
