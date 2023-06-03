@@ -31,7 +31,7 @@ export const formInputs = [
   },
   {
     id: 6,
-    title: 'What is your position/title?This question is required. *',
+    title: 'What is your position/title? *',
     type: 'text',
     name: 'position',
   },
@@ -284,7 +284,7 @@ export const textAreaData = [
     id: 4,
     name: 'ListOfPastSuccess',
     title:
-      "Provide a brief list of past success/clients? We're looking to add social proof to your pitchThis question is required. *",
+      "Provide a brief list of past success/clients? We're looking to add social proof to your pitch *",
     sample:
       '(My example) has generated millions of dollars across numerous industries with clients including Kareem Abdul-Jabbar & Fix It Bathworks, also personally developed an AI-driven software stack that researches prospects then contacts them with bespoke messaging based on that research.',
     placeHolder: 'Type your answer here...',

@@ -360,3 +360,39 @@ option {
   align-items: center;
   gap: 2rem;
 } */
+
+@media (max-width: 600px) {
+  .hero-container {
+    display: block;
+    margin-bottom: 4.8rem;
+  }
+
+  .hero-image-flex {
+    display: none;
+  }
+
+  .form-box {
+    display: block;
+  }
+
+  .form-basic-2 {
+    margin: auto auto;
+  }
+
+  .form-sub {
+    max-width: 100%;
+  }
+
+  .second-form--1,
+  .second-form--2,
+  .second-form-text--2,
+  .second-form-text--1,
+  .textarea-label {
+    margin-left: 0;
+  }
+
+  .title-check,
+  .checkbox {
+    padding-left: 0;
+  }
+}

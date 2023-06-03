@@ -148,3 +148,25 @@ span {
 .last--images {
   position: relative;
 }
+
+@media (max-width: 600px) {
+  html {
+    font-size: 60%;
+  }
+
+  .invest,
+  .logic {
+    margin-bottom: 3.2rem;
+  }
+
+  .termsheet {
+    padding-top: 3.2rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .online--discussion,
+  .datapoint,
+  .savings {
+    display: none;
+  }
+}
