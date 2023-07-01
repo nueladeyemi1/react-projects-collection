@@ -11,6 +11,7 @@ import Testimonial from './Testimonial'
 import Plans from './Plans'
 import Subscribe from './Subscribe'
 import Footer from './Footer'
+import './queries.css'
 
 function App() {
   return (

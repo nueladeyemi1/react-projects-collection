@@ -1,6 +1,7 @@
 import React from 'react'
 import navLogo from './img/omnifood-logo.png'
 import { navbarData } from './Data'
+import { MenuOutline, CloseOutline } from 'react-ionicons'
 
 const NavBar = () => {
   return (
@@ -19,6 +20,18 @@ const NavBar = () => {
               </li>
             )
           })}
+          <MenuOutline
+            className='menu'
+            color={'#00000'}
+            height='25px'
+            width='25px'
+          />
+          <CloseOutline
+            className='close'
+            color={'#00000'}
+            height='25px'
+            width='25px'
+          />
         </ul>
       </nav>
     </header>

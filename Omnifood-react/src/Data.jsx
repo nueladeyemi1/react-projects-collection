@@ -29,6 +29,13 @@ import usaToday from './img/logos/usa-today.png'
 import meal1 from './img/meals/meal-1.jpg'
 import meal2 from './img/meals/meal-2.jpg'
 
+import {
+  InfiniteOutline,
+  NutritionOutline,
+  LeafOutline,
+  PauseOutline,
+} from 'react-ionicons'
+
 export const navbarData = [
   {
     id: 1,
@@ -203,28 +210,28 @@ export const featureData = [
   {
     id: 1,
     title: 'Never cook again!',
-    icon: <ion-icon name='infinite-outline'></ion-icon>,
+    icon: <InfiniteOutline color={'#00000'} height='25px' width='25px' />,
     content:
       'Our subscriptions cover 365 days per year, even including major holidays.',
   },
   {
     id: 2,
     title: 'Local and organic',
-    icon: <ion-icon name='nutrition-outline'></ion-icon>,
+    icon: <NutritionOutline color={'#00000'} height='25px' width='25px' />,
     content:
       'Our cooks only use local, fresh, and organic products to prepare your meals.',
   },
   {
     id: 1,
     title: 'No waste',
-    icon: <ion-icon name='leaf-outline'></ion-icon>,
+    icon: <LeafOutline color={'#00000'} height='25px' width='25px' />,
     content:
       'All our partners only use reusable containers to package all your meals.',
   },
   {
     id: 1,
     title: 'Pause anytime',
-    icon: <ion-icon name='pause-outline'></ion-icon>,
+    icon: <PauseOutline color={'#00000'} height='25px' width='25px' />,
     content:
       'Going on vacation? Just pause your subscription, and we refund unused days.',
   },

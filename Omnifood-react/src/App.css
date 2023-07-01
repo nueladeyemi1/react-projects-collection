@@ -768,3 +768,9 @@ select {
   flex-direction: column;
   gap: 2.4rem;
 }
+
+/* MOBILE MENU */
+.menu,
+.close {
+  display: none;
+}
