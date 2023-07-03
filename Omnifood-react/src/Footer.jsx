@@ -3,6 +3,8 @@ import { footLinkData } from './Data'
 import omnifoodLogo from './img/omnifood-logo.png'
 
 const Footer = () => {
+  const date = new Date().getFullYear()
+
   return (
     <footer className='footer-section'>
       <div className='container grid footer-grid'>
@@ -43,7 +45,7 @@ const Footer = () => {
             </li>
           </ul>
           <p class='copyright'>
-            Copyright © <span class='year'>2023</span> by Omnifood, Inc. All
+            Copyright © <span class='year'>{date}</span> by Omnifood, Inc. All
             rights reserved.
           </p>
         </div>

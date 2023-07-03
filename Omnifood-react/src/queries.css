@@ -104,7 +104,136 @@
     margin-top: 1.2rem;
   }
 
-  .menu {
+  .btn-mobile-nav {
     display: block;
+    z-index: 9999;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.97);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transition: all 0.5s;
+    opacity: 1;
+    pointer-events: none;
+    visibility: visible;
+    /* visibility: hidden; */
+  }
+
+  .nav-lists {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .nav-link:link,
+  .nav-link:visited {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meal-list {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    /* font-size: 3.6rem; */
+    margin-top: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .nav-column {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+
+  .logo-column,
+  .address-column {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 34em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
+
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols,
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  .hero-section {
+    padding: 2.4rem 0 6.4rem 0;
+  }
+
+  .btn:link,
+  .btn:visited,
+  .btn {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .hero-img {
+    width: 80%;
+  }
+
+  .featured-img {
+    height: 1.2rem;
+  }
+
+  .how-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .how-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+
+  .how-img-box {
+    transform: translateY(2.8rem);
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .subscribe-section {
+    grid-template-columns: 1fr;
+  }
+
+  .subcribe-img {
+    height: 32rem;
+    grid-row: 1;
+  }
+
+  .subcribe-form-box {
+    padding: 3.2rem;
   }
 }
