@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20rem 20rem;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.profile--container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.addfriend--container {
+  background-color: #fff4e6;
+  width: 40rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.add-friend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.active {
+  background-color: #fff4e6;
+}
+
+.profile-details {
+  display: flex;
+}
+
+.profile-detail {
+  margin-left: 2rem;
+}
+
+.profile-detail p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background-color: #ff922b;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+}
+
+img {
+  border-radius: 50%;
+}
+
+.bill-container {
+  padding: 2.5rem 5rem;
+  width: 50rem;
+  background-color: #ffe8cc;
+  border-radius: 0.5rem;
+}
+
+.bill-form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+input,
+select {
+  border: none;
+  width: 15rem;
+  height: 3rem;
+}
+
+h1 {
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+span {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
