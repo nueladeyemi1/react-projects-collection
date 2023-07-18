@@ -169,4 +169,22 @@ span {
   .savings {
     display: none;
   }
+
+  table {
+    width: 100%;
+  }
+
+  .table-head,
+  .content--text {
+    font-size: 1.2rem;
+  }
+
+  .table-head span {
+    font-size: 1rem;
+  }
+
+  .content--title {
+    padding-left: 1rem;
+    font-size: 1.2rem;
+  }
 }

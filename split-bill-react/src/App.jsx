@@ -28,31 +28,59 @@ const initialFriends = [
 ]
 
 function App() {
-  const [showBill, setShowBill] = useState(false)
-  const [handleAdd, setHandleAdd] = useState('')
   const [friends, setFriends] = useState(initialFriends)
+  const [showAddFriend, setShowAddFriend] = useState(false)
+  const [selectedFriend, setSelectedFriend] = useState(null)
+
+  function handleShowAddFriend() {
+    setShowAddFriend((show) => !show)
+  }
+
+  function handleAddFriend(friend) {
+    setFriends((friends) => [...friends, friend])
+    setShowAddFriend(false)
+  }
+
+  function handleSelection(friend) {
+    setSelectedFriend((cur) => (cur?.id === friend.id ? null : friend))
+    setShowAddFriend(false)
+  }
+
+  function handleSplitBill(value) {
+    setFriends((friends) =>
+      friends.map((friend) =>
+        friend.id === selectedFriend.id
+          ? { ...friend, balance: friend.balance + value }
+          : friend
+      )
+    )
+
+    setSelectedFriend(null)
+  }
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        gap: '4rem',
-      }}
-    >
-      <div>
-        {initialFriends.map(({ id, name, image, balance }) => {
-          return (
-            <Profile key={id} name={name} image={image} balance={balance} />
-          )
-        })}
-        <Addfriend
+    <div className='app'>
+      <div className='sidebar'>
+        <Profile
           friends={friends}
-          setFriends={setFriends}
-          handleAdd={handleAdd}
+          selectedFriend={selectedFriend}
+          onSelection={handleSelection}
         />
-        <Button>Add friend</Button>
+
+        {showAddFriend && <Addfriend onAddFriend={handleAddFriend} />}
+
+        <Button onClick={handleShowAddFriend}>
+          {showAddFriend ? 'close' : 'Add friend'}
+        </Button>
       </div>
-      <Bill />
+
+      {selectedFriend && (
+        <Bill
+          selectedFriend={selectedFriend}
+          onSplitBill={handleSplitBill}
+          key={selectedFriend.id}
+        />
+      )}
     </div>
   )
 }

@@ -391,8 +391,39 @@ option {
     margin-left: 0;
   }
 
+  .welcome--name {
+    margin-left: 0;
+  }
+
   .title-check,
   .checkbox {
     padding-left: 0;
+  }
+
+  .visual--grid {
+    display: block;
+    margin-bottom: 4.8rem;
+  }
+
+  .visual--grid img {
+    width: 100%;
+  }
+
+  .visual--output {
+    margin-bottom: 0;
+  }
+
+  .visual--low-value {
+    left: -8%;
+    bottom: 14%;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .visual--high-value {
+    right: -12%;
+    bottom: 80%;
+    font-size: 1.3rem;
+    font-weight: 700;
   }
 }

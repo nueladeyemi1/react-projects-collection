@@ -1,8 +1,6 @@
-import React from 'react'
 import { useState } from 'react'
-import Item from './Item'
 
-const Form = ({ newItems }) => {
+const Form = ({ handleItems, check }) => {
   //   const [data, setData] = useState({
   //     quantity: 1,
   //     description: '',
@@ -15,18 +13,17 @@ const Form = ({ newItems }) => {
     e.preventDefault()
     if (!description) return
 
-    const theItems = [
-      {
-        id: Date.now(),
-        quantity: quantity,
-        description: description,
-        packed: false,
-      },
-    ]
+    const theItems = {
+      id: Date.now(),
+      quantity: quantity,
+      description: description,
+      packed: false,
+    }
 
-    newItems((item) => {
-      return [...theItems, ...item]
-    })
+    handleItems(theItems)
+
+    setQuantity('')
+    setDescription('')
     // console.log(newItems)
   }
 
