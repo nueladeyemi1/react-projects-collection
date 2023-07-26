@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import Box from './Box'
+import Error from './Error'
 import Loader from './Loader'
+import MovieDetails from './MovieDetails'
 import MovieList from './MovieList'
 import MovieSummaryList from './MovieSummaryList'
 import MovieWatchedList from './MovieWatchedList'
@@ -55,41 +57,69 @@ import StartRating from './StarRating'
 // ]
 
 const KEY = 'a11bbaa7'
-const title = 'Interstellar'
+// const title = 'Interstellar2'
 
 export default function App() {
+  const [query, setQuery] = useState('')
   const [movies, setMovies] = useState([])
   const [watched, setWatched] = useState([])
-
   const [isLoading, setIsLoading] = useState(false)
   const [message, SetMessage] = useState('')
+  const [selectedId, setSelectedId] = useState(null)
 
-  const fetchData = async function() {
-    try {
-      setIsLoading(true)
-      const response = await fetch(
-        `http://www.omdbapi.com/?s=${title}&apikey=${KEY}`
-      )
-
-      // console.log(response)
-
-      if (!response.ok)
-        throw new Error('Something went wrong with fetching movies')
-
-      const data = await response.json()
-
-      setMovies(data.Search)
-      console.log(data)
-    } catch (error) {
-      SetMessage(error.message)
-    } finally {
-      setIsLoading(false)
-    }
+  const handleClickedMovie = function(id) {
+    setSelectedId((selectedId) => (id === selectedId ? null : id))
   }
 
-  useEffect(function() {
-    fetchData()
-  }, [])
+  const handleBack = function() {
+    setSelectedId(null)
+  }
+
+  function handleAddWatched(movie) {
+    setWatched((watched) => [...watched, movie])
+  }
+
+  useEffect(
+    function() {
+      const fetchData = async function() {
+        try {
+          setIsLoading(true)
+          SetMessage('')
+          // console.log(query)
+          const response = await fetch(
+            `http://www.omdbapi.com/?s=${query}&apikey=${KEY}`
+          )
+
+          // console.log(response)
+
+          if (!response.ok)
+            throw new Error('Something went wrong with fetching movies')
+
+          const data = await response.json()
+
+          // console.log(data)
+
+          if (data.Response === 'False') throw new Error('Movie not found')
+
+          setMovies(data.Search)
+        } catch (error) {
+          SetMessage(error.message)
+        } finally {
+          setIsLoading(false)
+        }
+      }
+
+      if (query.length < 3) {
+        setMovies([])
+        SetMessage('')
+        return
+      }
+
+      fetchData()
+    },
+
+    [query]
+  )
 
   return (
     <>
@@ -98,13 +128,35 @@ export default function App() {
       <StartRating color='red' size={16} /> */}
 
       {/* <Fetch setMovies={setMovies} /> */}
-      <Navbar movies={movies} />
+      <Navbar movies={movies} query={query} setQuery={setQuery} />
       <main className='main'>
-        <Box>{isLoading ? <Loader /> : <MovieList movies={movies} />}</Box>
+        <Box>
+          {isLoading ? (
+            <Loader />
+          ) : message ? (
+            <Error error={message} />
+          ) : (
+            <MovieList
+              movies={movies}
+              handleClickedMovie={handleClickedMovie}
+            />
+          )}
+        </Box>
 
         <Box>
-          <MovieSummaryList watched={watched} />
-          <MovieWatchedList watched={watched} />
+          {selectedId ? (
+            <MovieDetails
+              KEY={KEY}
+              selectedId={selectedId}
+              handleBack={handleBack}
+              onAddWatched={handleAddWatched}
+            />
+          ) : (
+            <>
+              <MovieSummaryList watched={watched} />
+              <MovieWatchedList watched={watched} />
+            </>
+          )}
         </Box>
       </main>
     </>
