@@ -79,15 +79,22 @@ export default function App() {
     setWatched((watched) => [...watched, movie])
   }
 
+  function handleDeleteWatched(id) {
+    setWatched((watched) => watched.filter((movie) => movie.imdbID !== id))
+  }
+
   useEffect(
     function() {
+      const controller = new AbortController()
+
       const fetchData = async function() {
         try {
           setIsLoading(true)
           SetMessage('')
           // console.log(query)
           const response = await fetch(
-            `http://www.omdbapi.com/?s=${query}&apikey=${KEY}`
+            `http://www.omdbapi.com/?s=${query}&apikey=${KEY}`,
+            { signal: controller.signal }
           )
 
           // console.log(response)
@@ -102,8 +109,11 @@ export default function App() {
           if (data.Response === 'False') throw new Error('Movie not found')
 
           setMovies(data.Search)
+          SetMessage('')
         } catch (error) {
-          SetMessage(error.message)
+          if (error.name !== 'AbortError') {
+            SetMessage(error.message)
+          }
         } finally {
           setIsLoading(false)
         }
@@ -116,6 +126,11 @@ export default function App() {
       }
 
       fetchData()
+      handleBack()
+
+      return function() {
+        controller.abort()
+      }
     },
 
     [query]
@@ -150,11 +165,15 @@ export default function App() {
               selectedId={selectedId}
               handleBack={handleBack}
               onAddWatched={handleAddWatched}
+              watched={watched}
             />
           ) : (
             <>
               <MovieSummaryList watched={watched} />
-              <MovieWatchedList watched={watched} />
+              <MovieWatchedList
+                watched={watched}
+                onDeleteWatched={handleDeleteWatched}
+              />
             </>
           )}
         </Box>

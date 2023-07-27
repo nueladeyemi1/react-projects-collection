@@ -1,13 +1,23 @@
-import { func } from 'prop-types'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import Loader from './Loader'
 import StarRating from './StarRating'
 
-const MovieDetails = ({ KEY, selectedId, handleBack, onAddWatched }) => {
+const MovieDetails = ({
+  KEY,
+  selectedId,
+  handleBack,
+  onAddWatched,
+  watched,
+}) => {
   const [movie, setMovie] = useState({})
   const [isLoading, setIsLoading] = useState(false)
   const [userRating, setUserRating] = useState('')
+
+  const isWatched = watched.map((movie) => movie.imdbID).includes(selectedId)
+  const watchedUserRating = watched.find(
+    (mmovie) => movie.imdbID === selectedId
+  )?.userRating
 
   const {
     Title: title,
@@ -55,6 +65,34 @@ const MovieDetails = ({ KEY, selectedId, handleBack, onAddWatched }) => {
     [selectedId]
   )
 
+  useEffect(
+    function() {
+      document.title = `Movie | ${title}`
+
+      return function() {
+        document.title = 'usePopcorn'
+      }
+    },
+    [title]
+  )
+
+  useEffect(
+    function() {
+      function callback(e) {
+        if (e.code === 'Escape') {
+          handleBack()
+        }
+      }
+
+      document.addEventListener('keydown', callback)
+
+      return function() {
+        document.removeEventListener('keydown', callback)
+      }
+    },
+    [handleBack]
+  )
+
   return (
     <div className='details'>
       {isLoading ? (
@@ -80,11 +118,19 @@ const MovieDetails = ({ KEY, selectedId, handleBack, onAddWatched }) => {
           </header>
           <section>
             <div className='rating'>
-              <StarRating maxRating={10} size={24} onSet={setUserRating} />
-              {userRating > 0 && (
-                <button className='btn-add' onClick={handleAdd}>
-                  + Add to list
-                </button>
+              {!isWatched ? (
+                <>
+                  <StarRating maxRating={10} size={24} onSet={setUserRating} />
+                  {userRating > 0 && (
+                    <button className='btn-add' onClick={handleAdd}>
+                      + Add to list
+                    </button>
+                  )}
+                </>
+              ) : (
+                <p>
+                  You have rated this movie {watchedUserRating} <span>⭐</span>
+                </p>
               )}
             </div>
             <p>
