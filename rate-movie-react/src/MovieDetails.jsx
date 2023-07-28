@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { useKey } from './Hooks/useKey'
 import Loader from './Loader'
 import StarRating from './StarRating'
 
@@ -76,22 +77,7 @@ const MovieDetails = ({
     [title]
   )
 
-  useEffect(
-    function() {
-      function callback(e) {
-        if (e.code === 'Escape') {
-          handleBack()
-        }
-      }
-
-      document.addEventListener('keydown', callback)
-
-      return function() {
-        document.removeEventListener('keydown', callback)
-      }
-    },
-    [handleBack]
-  )
+  useKey(handleBack, 'Escape')
 
   return (
     <div className='details'>
