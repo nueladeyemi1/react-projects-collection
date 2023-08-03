@@ -3,28 +3,9 @@ import { useEffect } from 'react'
 import './App.css'
 import { Weather } from './Weather'
 
-function getWeatherIcon(wmoCode) {
-  const icons = new Map([
-    [[0], '☀️'],
-    [[1], '🌤'],
-    [[2], '⛅️'],
-    [[3], '☁️'],
-    [[45, 48], '🌫'],
-    [[51, 56, 61, 66, 80], '🌦'],
-    [[53, 55, 63, 65, 57, 67, 81, 82], '🌧'],
-    [[71, 73, 75, 77, 85, 86], '🌨'],
-    [[95], '🌩'],
-    [[96, 99], '⛈'],
-  ])
-  const arr = [...icons.keys()].find((key) => key.includes(wmoCode))
-  console.log(arr)
-  if (!arr) return 'NOT FOUND'
-  return icons.get(arr)
-}
-
 function App() {
   const [isLoading, setIsLoading] = useState(false)
-  const [inputValue, setInputValue] = useState('Nigeria')
+  const [inputValue, setInputValue] = useState('')
   const [data, setData] = useState({})
   const [countryCode, setCountryCode] = useState('')
   const [displayLocation, setDisplayLocation] = useState({})
@@ -35,27 +16,21 @@ function App() {
       .split('')
       .map((char) => 127397 + char.charCodeAt())
 
-    console.log(codePoints)
     return String.fromCodePoint(...codePoints)
-  }
-
-  function formatDay(dateStr) {
-    return new Intl.DateTimeFormat('en', {
-      weekday: 'short',
-    }).format(new Date(dateStr))
   }
 
   useEffect(
     function() {
-      setIsLoading(true)
+      if (inputValue.length < 3) return
+
       async function getWeather(location) {
+        setIsLoading(true)
         try {
           // 1) Getting location (geocoding)
           const geoRes = await fetch(
             `https://geocoding-api.open-meteo.com/v1/search?name=${location}`
           )
           const geoData = await geoRes.json()
-          console.log(geoData)
 
           if (!geoData.results) throw new Error('Location not found')
 
@@ -89,19 +64,6 @@ function App() {
     [inputValue]
   )
 
-  const {
-    temperature_2m_max: maximumTemp,
-    temperature_2m_min: minimumTemp,
-    time,
-    weathercode,
-  } = data
-
-  getWeatherIcon(weathercode)
-  convertToFlag(countryCode)
-  console.log(weathercode)
-
-  console.log(data)
-
   return (
     <div className='app'>
       <h1>Classy Weather</h1>
@@ -113,7 +75,9 @@ function App() {
         />
       </div>
       {isLoading && <p>Loading...</p>}
-      {weathercode && <Weather />}
+      {data?.weathercode && (
+        <Weather data={data} displayLocation={displayLocation} />
+      )}
     </div>
   )
 }
