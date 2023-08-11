@@ -1,8 +1,12 @@
 import React from 'react'
-import { useQuiz } from '../context/QuizContext'
 
-const Progress = () => {
-  const { totalQuestions, index, answer, points, maxPossiblePoints } = useQuiz()
+const Progress = ({
+  index,
+  totalQuestions,
+  points,
+  maxPossiblePoints,
+  answer,
+}) => {
   return (
     <header className='progress'>
       <progress max={totalQuestions} value={index + Number(answer !== null)} />
