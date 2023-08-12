@@ -1,0 +1,32 @@
+.numberButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.eachBtn {
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5rem;
+  border: 1px solid blue;
+  padding: 2rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+}
+
+/* .eachBtn {
+  width: 2rem;
+  height: 2rem;
+  background: #fff;
+  border-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0.5rem;
+  transition: var(--transition);
+} */

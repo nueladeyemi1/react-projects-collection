@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Box from './Box'
 import Error from './Error'
+import { Paginate } from './Hooks/Paginate'
 import { useLocalstorageState } from './Hooks/useLocalstorageState'
 import { useMovie } from './Hooks/useMovie'
 import Loader from './Loader'
@@ -39,6 +40,10 @@ export default function App() {
 
   return (
     <>
+      <Paginate
+        // type='number'
+        URL='https://jsonplaceholder.typicode.com/posts/'
+      />
       {/* THE STAR RATING COMPONENT */}
       {/* <StartRating maxRating={10} />
       <StartRating color='red' size={16} /> */}
