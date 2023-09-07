@@ -19,5 +19,9 @@ setInterval(() => {
 
   //DOM  manipulation
   currentDay.innerHTML = theWeek
-  currentUTCTime.innerHTML = `${hour}:${minutes}:${seconds}`
+  currentUTCTime.innerHTML = `${
+    hour < 10 ? hour.toString().padStart(2, 0) : hour
+  }:${minutes < 10 ? minutes.toString().padStart(2, 0) : minutes}:${
+    seconds < 10 ? seconds.toString().padStart(2, 0) : seconds
+  }`
 }, 1000)
