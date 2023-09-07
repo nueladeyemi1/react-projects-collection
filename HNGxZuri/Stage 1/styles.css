@@ -1,0 +1,49 @@
+/* Global reset  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* main CSS */
+
+body {
+  font-family: sans-serif;
+  margin: auto auto;
+  font-size: 1.6rem;
+}
+
+.container {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  display: flex;
+  gap: 1rem;
+}
+
+button,
+.github__link {
+  border: none;
+  padding: 1.2rem 2.4rem;
+  background-color: rgb(130, 130, 239);
+  color: rgb(255, 255, 255);
+}
+
+.github__link:hover {
+  background-color: rgb(141, 141, 227);
+}
+
+img {
+  border-radius: 50%;
+  max-width: 15%;
+}
