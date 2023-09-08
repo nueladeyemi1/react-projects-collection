@@ -31,9 +31,10 @@ span {
   gap: 1rem;
 }
 
-button,
+a,
 .github__link {
   border: none;
+  text-decoration: none;
   padding: 1.2rem 2.4rem;
   background-color: rgb(130, 130, 239);
   color: rgb(255, 255, 255);
