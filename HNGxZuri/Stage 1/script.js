@@ -1,6 +1,6 @@
 // Element selection
-const currentDay = document.querySelector('.current__day')
-const currentUTCTime = document.querySelector('.curent__UTC__Time')
+const currentDay = document.querySelector('[data-testid="currentDayOfTheWeek"]')
+const currentUTCTime = document.querySelector('[data-testid="currentUTCTime"]')
 
 //Handling time changes
 setInterval(() => {
@@ -23,5 +23,5 @@ setInterval(() => {
     hour < 10 ? hour.toString().padStart(2, 0) : hour
   }:${minutes < 10 ? minutes.toString().padStart(2, 0) : minutes}:${
     seconds < 10 ? seconds.toString().padStart(2, 0) : seconds
-  }`
+  } UTC`
 }, 1000)
