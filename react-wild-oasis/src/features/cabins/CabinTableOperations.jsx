@@ -1,6 +1,6 @@
-import SortBy from 'ui/SortBy';
-import Filter from 'ui/Filter';
-import TableOperations from 'ui/TableOperations';
+import SortBy from '../../ui/SortBy'
+import Filter from '../../ui/Filter'
+import TableOperations from '../../ui/TableOperations'
 
 function CabinTableOperations() {
   return (
@@ -14,7 +14,6 @@ function CabinTableOperations() {
           { value: 'with-discount', label: 'With discount' },
         ]}
       />
-
       <SortBy
         options={[
           { value: 'name-asc', label: 'Sort by name (A-Z)' },
@@ -32,7 +31,7 @@ function CabinTableOperations() {
         ]}
       />
     </TableOperations>
-  );
+  )
 }
 
-export default CabinTableOperations;
+export default CabinTableOperations
