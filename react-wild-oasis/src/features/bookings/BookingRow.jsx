@@ -1,24 +1,24 @@
-import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
-import {
-  HiPencil,
-  HiTrash,
-  HiEye,
-  HiArrowUpOnSquare,
-  HiArrowDownOnSquare,
-} from 'react-icons/hi2';
+import styled from 'styled-components'
+// import { useNavigate } from 'react-router-dom';
+// import {
+//   HiPencil,
+//   HiTrash,
+//   HiEye,
+//   HiArrowUpOnSquare,
+//   HiArrowDownOnSquare,
+// } from 'react-icons/hi2';
 
-import Tag from 'ui/Tag';
-import Menus from 'ui/Menus';
-import Modal from 'ui/Modal';
-import ConfirmDelete from 'ui/ConfirmDelete';
-import Table from 'ui/Table';
+// import Tag from 'ui/Tag';
+// import Menus from 'ui/Menus';
+// import Modal from 'ui/Modal';
+// import ConfirmDelete from 'ui/ConfirmDelete';
+// import Table from 'ui/Table';
 
-import { useDeleteBooking } from 'features/bookings/useDeleteBooking';
-import { formatCurrency } from 'utils/helpers';
-import { formatDistanceFromNow } from 'utils/helpers';
-import { useCheckout } from 'features/check-in-out/useCheckout';
-import { format, isToday } from 'date-fns';
+// import { useDeleteBooking } from 'features/bookings/useDeleteBooking';
+// import { formatCurrency } from 'utils/helpers';
+// import { formatDistanceFromNow } from 'utils/helpers';
+// import { useCheckout } from 'features/check-in-out/useCheckout';
+// import { format, isToday } from 'date-fns';
 
 // v1
 // const TableRow = styled.div`
@@ -38,7 +38,7 @@ const Cabin = styled.div`
   font-weight: 600;
   color: var(--color-grey-600);
   font-family: 'Sono';
-`;
+`
 
 const Stacked = styled.div`
   display: flex;
@@ -53,12 +53,12 @@ const Stacked = styled.div`
     color: var(--color-grey-500);
     font-size: 1.2rem;
   }
-`;
+`
 
 const Amount = styled.div`
   font-family: 'Sono';
   font-weight: 500;
-`;
+`
 
 function BookingRow({
   booking: {
@@ -74,18 +74,18 @@ function BookingRow({
     cabins: { name: cabinName },
   },
 }) {
-  const { mutate: deleteBooking, isLoading: isDeleting } = useDeleteBooking();
-  const { mutate: checkout, isLoading: isCheckingOut } = useCheckout();
+  // const { mutate: deleteBooking, isLoading: isDeleting } = useDeleteBooking();
+  // const { mutate: checkout, isLoading: isCheckingOut } = useCheckout();
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   // We will not allow editing at this point, as it's too complex for bookings... People just need to delete a booking and create a new one
 
-  const statusToTagName = {
-    unconfirmed: 'blue',
-    'checked-in': 'green',
-    'checked-out': 'silver',
-  };
+  // const statusToTagName = {
+  //   unconfirmed: 'blue',
+  //   'checked-in': 'green',
+  //   'checked-out': 'silver',
+  // };
 
   return (
     <Table.Row role='row'>
@@ -179,7 +179,7 @@ function BookingRow({
         <Link to={`/bookings/${bookingId}`}>Details &rarr;</Link>
       </div> */}
     </Table.Row>
-  );
+  )
 }
 
-export default BookingRow;
+export default BookingRow
