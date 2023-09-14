@@ -1,4 +1,11 @@
 import styled from 'styled-components'
+import Tag from '../../ui/Tag'
+import { formatCurrency } from '../../utils/helpers'
+import { formatDistanceFromNow } from '../../utils/helpers'
+import Table from '../../ui/Table'
+
+import { format, isToday } from 'date-fns'
+
 // import { useNavigate } from 'react-router-dom';
 // import {
 //   HiPencil,
@@ -12,14 +19,9 @@ import styled from 'styled-components'
 // import Menus from 'ui/Menus';
 // import Modal from 'ui/Modal';
 // import ConfirmDelete from 'ui/ConfirmDelete';
-// import Table from 'ui/Table';
 
 // import { useDeleteBooking } from 'features/bookings/useDeleteBooking';
-// import { formatCurrency } from 'utils/helpers';
-// import { formatDistanceFromNow } from 'utils/helpers';
 // import { useCheckout } from 'features/check-in-out/useCheckout';
-// import { format, isToday } from 'date-fns';
-
 // v1
 // const TableRow = styled.div`
 //   display: grid;
@@ -81,11 +83,11 @@ function BookingRow({
 
   // We will not allow editing at this point, as it's too complex for bookings... People just need to delete a booking and create a new one
 
-  // const statusToTagName = {
-  //   unconfirmed: 'blue',
-  //   'checked-in': 'green',
-  //   'checked-out': 'silver',
-  // };
+  const statusToTagName = {
+    unconfirmed: 'blue',
+    'checked-in': 'green',
+    'checked-out': 'silver',
+  }
 
   return (
     <Table.Row role='row'>
@@ -114,6 +116,8 @@ function BookingRow({
       <Amount>{formatCurrency(totalPrice)}</Amount>
 
       {/* VIDEO we could export this into own component... */}
+
+      {/*     
       <Modal>
         <Menus.Menu>
           <Menus.Toggle id={bookingId} />
@@ -145,17 +149,21 @@ function BookingRow({
             )}
 
             <Menus.Button icon={<HiPencil />}>Edit booking</Menus.Button>
-            {/* <Menus.Button>Delete</Menus.Button> */}
+            */}
 
-            {/* Now it gets a bit confusing... */}
-            <Modal.Toggle opens='delete'>
+      {/* <Menus.Button>Delete</Menus.Button> */}
+
+      {/* Now it gets a bit confusing... */}
+
+      {/* <Modal.Toggle opens='delete'>
               <Menus.Button icon={<HiTrash />}>Delete booking</Menus.Button>
             </Modal.Toggle>
           </Menus.List>
-        </Menus.Menu>
+        </Menus.Menu> */}
 
-        {/* This needs to be OUTSIDE of the menu, which in no problem. The compound component gives us this flexibility */}
-        <Modal.Window name='delete'>
+      {/* This needs to be OUTSIDE of the menu, which in no problem. The compound component gives us this flexibility */}
+
+      {/* <Modal.Window name='delete'>
           <ConfirmDelete
             resource='booking'
             // These options will be passed wherever the function gets called, and they determine what happens next
@@ -163,7 +171,7 @@ function BookingRow({
             disabled={isDeleting}
           />
         </Modal.Window>
-      </Modal>
+      </Modal> */}
 
       {/* <div>
         <ButtonWithConfirm

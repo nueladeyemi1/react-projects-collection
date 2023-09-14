@@ -2,8 +2,10 @@
 import BookingRow from './BookingRow'
 import Menus from '../../ui/Menus'
 import Table from '../../ui/Table'
+import Empty from '../../ui/Empty'
+import Spinner from '../../ui/Spinner'
 
-// import Spinner from 'ui/Spinner';
+import { useBookings } from './useBookings'
 // import { useBookings } from 'features/bookings/useBookings';
 // import Pagination from 'ui/Pagination';
 // import Empty from 'ui/Empty';
@@ -30,11 +32,11 @@ import Table from '../../ui/Table'
 // We want each table row to have a menu, and we only want one of them to be open at the same time. We also want this functionality to be reusable. We could add a openID state here to the table, but that wouldn't really be reusable... The best way is to use a compound component
 
 function BookingTable() {
-  // const { bookings, count, isLoading } = useBookings();
-  const bookings = []
+  const { bookings, count, isLoading } = useBookings()
+  // const bookings = []
 
-  // if (isLoading) return <Spinner />;
-  // if (!bookings) return <Empty resource={'bookings'} />;
+  if (isLoading) return <Spinner />
+  if (!bookings) return <Empty resource={'bookings'} />
 
   // VIDEO stupid JS bug, just an example of course
   // null.toUpperCase();
@@ -57,6 +59,7 @@ function BookingTable() {
           ))} */}
 
         {/* Render props! */}
+
         <Table.Body
           data={bookings}
           render={(booking) => (
@@ -64,9 +67,9 @@ function BookingTable() {
           )}
         />
 
-        <Table.Footer>
+        {/* <Table.Footer>
           <Pagination count={count} />
-        </Table.Footer>
+        </Table.Footer> */}
       </Table>
     </Menus>
   )
