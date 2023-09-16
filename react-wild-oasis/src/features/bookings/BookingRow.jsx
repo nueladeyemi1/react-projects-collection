@@ -6,19 +6,18 @@ import Table from '../../ui/Table'
 
 import { format, isToday } from 'date-fns'
 
-// import { useNavigate } from 'react-router-dom';
-// import {
-//   HiPencil,
-//   HiTrash,
-//   HiEye,
-//   HiArrowUpOnSquare,
-//   HiArrowDownOnSquare,
-// } from 'react-icons/hi2';
+import { useNavigate } from 'react-router-dom'
+import {
+  HiPencil,
+  HiTrash,
+  HiEye,
+  HiArrowUpOnSquare,
+  HiArrowDownOnSquare,
+} from 'react-icons/hi2'
 
-// import Tag from 'ui/Tag';
-// import Menus from 'ui/Menus';
-// import Modal from 'ui/Modal';
-// import ConfirmDelete from 'ui/ConfirmDelete';
+import Menus from '../../ui/Menus'
+import Modal from '../../ui/Modal'
+import ConfirmDelete from '../../ui/ConfirmDelete'
 
 // import { useDeleteBooking } from 'features/bookings/useDeleteBooking';
 // import { useCheckout } from 'features/check-in-out/useCheckout';
@@ -79,9 +78,7 @@ function BookingRow({
   // const { mutate: deleteBooking, isLoading: isDeleting } = useDeleteBooking();
   // const { mutate: checkout, isLoading: isCheckingOut } = useCheckout();
 
-  // const navigate = useNavigate();
-
-  // We will not allow editing at this point, as it's too complex for bookings... People just need to delete a booking and create a new one
+  const navigate = useNavigate()
 
   const statusToTagName = {
     unconfirmed: 'blue',
@@ -115,51 +112,47 @@ function BookingRow({
 
       <Amount>{formatCurrency(totalPrice)}</Amount>
 
-      {/* VIDEO we could export this into own component... */}
+      {/* <Modal> */}
+      <Menus.Menu>
+        <Menus.Toggle id={bookingId} />
+        <Menus.List id={bookingId}>
+          <Menus.Button
+            onClick={() => navigate(`/bookings/${bookingId}`)}
+            icon={<HiEye />}
+          >
+            See details
+          </Menus.Button>
 
-      {/*     
-      <Modal>
-        <Menus.Menu>
-          <Menus.Toggle id={bookingId} />
-          <Menus.List id={bookingId}>
+          {status === 'unconfirmed' && (
             <Menus.Button
-              onClick={() => navigate(`/bookings/${bookingId}`)}
-              icon={<HiEye />}
+              onClick={() => navigate(`/checkin/${bookingId}`)}
+              icon={<HiArrowDownOnSquare />}
             >
-              See details
+              Check in
             </Menus.Button>
+          )}
 
-            {status === 'unconfirmed' && (
-              <Menus.Button
-                onClick={() => navigate(`/checkin/${bookingId}`)}
-                icon={<HiArrowDownOnSquare />}
-              >
-                Check in
-              </Menus.Button>
-            )}
+          {/* {status === 'checked-in' && (
+            <Menus.Button
+              onClick={() => checkout(bookingId)}
+              disabled={isCheckingOut}
+              icon={<HiArrowUpOnSquare />}
+            >
+              Check out
+            </Menus.Button>
+          )}
 
-            {status === 'checked-in' && (
-              <Menus.Button
-                onClick={() => checkout(bookingId)}
-                disabled={isCheckingOut}
-                icon={<HiArrowUpOnSquare />}
-              >
-                Check out
-              </Menus.Button>
-            )}
+          <Menus.Button icon={<HiPencil />}>Edit booking</Menus.Button> */}
 
-            <Menus.Button icon={<HiPencil />}>Edit booking</Menus.Button>
-            */}
+          {/* <Menus.Button>Delete</Menus.Button> */}
 
-      {/* <Menus.Button>Delete</Menus.Button> */}
+          {/* Now it gets a bit confusing... */}
 
-      {/* Now it gets a bit confusing... */}
-
-      {/* <Modal.Toggle opens='delete'>
-              <Menus.Button icon={<HiTrash />}>Delete booking</Menus.Button>
-            </Modal.Toggle>
-          </Menus.List>
-        </Menus.Menu> */}
+          {/* <Modal.Toggle opens='delete'>
+            <Menus.Button icon={<HiTrash />}>Delete booking</Menus.Button>
+          </Modal.Toggle> */}
+        </Menus.List>
+      </Menus.Menu>
 
       {/* This needs to be OUTSIDE of the menu, which in no problem. The compound component gives us this flexibility */}
 
