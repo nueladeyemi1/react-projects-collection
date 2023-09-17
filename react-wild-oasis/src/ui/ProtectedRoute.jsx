@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useUser } from '../features/authentication/useUser'
 import Spinner from './Spinner'
 
-const fullPage = styled.div`
+const FullPage = styled.div`
     height: 100vh;
     background-color: var(--color-grey-50)
     display: flex;
@@ -26,9 +26,9 @@ const ProtectedRoute = ({ children }) => {
 
   if (isLoading) {
     return (
-      <fullPage>
+      <FullPage>
         <Spinner />
-      </fullPage>
+      </FullPage>
     )
   }
 
