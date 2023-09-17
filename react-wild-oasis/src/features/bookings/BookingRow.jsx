@@ -18,9 +18,9 @@ import {
 import Menus from '../../ui/Menus'
 import Modal from '../../ui/Modal'
 import ConfirmDelete from '../../ui/ConfirmDelete'
+import { useCheckout } from '../check-in-out/useCheckout'
+import { useDeleteBooking } from './useDeleteBooking'
 
-// import { useDeleteBooking } from 'features/bookings/useDeleteBooking';
-// import { useCheckout } from 'features/check-in-out/useCheckout';
 // v1
 // const TableRow = styled.div`
 //   display: grid;
@@ -75,8 +75,8 @@ function BookingRow({
     cabins: { name: cabinName },
   },
 }) {
-  // const { mutate: deleteBooking, isLoading: isDeleting } = useDeleteBooking();
-  // const { mutate: checkout, isLoading: isCheckingOut } = useCheckout();
+  const { deleteBooking, isDeleting } = useDeleteBooking()
+  const { checkout, isCheckingOut } = useCheckout()
 
   const navigate = useNavigate()
 
@@ -112,51 +112,47 @@ function BookingRow({
 
       <Amount>{formatCurrency(totalPrice)}</Amount>
 
-      {/* <Modal> */}
-      <Menus.Menu>
-        <Menus.Toggle id={bookingId} />
-        <Menus.List id={bookingId}>
-          <Menus.Button
-            onClick={() => navigate(`/bookings/${bookingId}`)}
-            icon={<HiEye />}
-          >
-            See details
-          </Menus.Button>
-
-          {status === 'unconfirmed' && (
+      <Modal>
+        <Menus.Menu>
+          <Menus.Toggle id={bookingId} />
+          <Menus.List id={bookingId}>
             <Menus.Button
-              onClick={() => navigate(`/checkin/${bookingId}`)}
-              icon={<HiArrowDownOnSquare />}
+              onClick={() => navigate(`/bookings/${bookingId}`)}
+              icon={<HiEye />}
             >
-              Check in
+              See details
             </Menus.Button>
-          )}
 
-          {/* {status === 'checked-in' && (
-            <Menus.Button
-              onClick={() => checkout(bookingId)}
-              disabled={isCheckingOut}
-              icon={<HiArrowUpOnSquare />}
-            >
-              Check out
-            </Menus.Button>
-          )}
+            {status === 'unconfirmed' && (
+              <Menus.Button
+                onClick={() => navigate(`/checkin/${bookingId}`)}
+                icon={<HiArrowDownOnSquare />}
+              >
+                Check in
+              </Menus.Button>
+            )}
 
-          <Menus.Button icon={<HiPencil />}>Edit booking</Menus.Button> */}
+            {status === 'checked-in' && (
+              <Menus.Button
+                onClick={() => checkout(bookingId)}
+                disabled={isCheckingOut}
+                icon={<HiArrowUpOnSquare />}
+              >
+                Check out
+              </Menus.Button>
+            )}
 
-          {/* <Menus.Button>Delete</Menus.Button> */}
+            {/* <Menus.Button icon={<HiPencil />}>Edit booking</Menus.Button>  */}
 
-          {/* Now it gets a bit confusing... */}
+            {/* <Menus.Button>Delete</Menus.Button> */}
 
-          {/* <Modal.Toggle opens='delete'>
-            <Menus.Button icon={<HiTrash />}>Delete booking</Menus.Button>
-          </Modal.Toggle> */}
-        </Menus.List>
-      </Menus.Menu>
+            <Modal.Open opens='delete'>
+              <Menus.Button icon={<HiTrash />}>Delete booking</Menus.Button>
+            </Modal.Open>
+          </Menus.List>
+        </Menus.Menu>
 
-      {/* This needs to be OUTSIDE of the menu, which in no problem. The compound component gives us this flexibility */}
-
-      {/* <Modal.Window name='delete'>
+        <Modal.Window name='delete'>
           <ConfirmDelete
             resource='booking'
             // These options will be passed wherever the function gets called, and they determine what happens next
@@ -164,7 +160,7 @@ function BookingRow({
             disabled={isDeleting}
           />
         </Modal.Window>
-      </Modal> */}
+      </Modal>
 
       {/* <div>
         <ButtonWithConfirm
