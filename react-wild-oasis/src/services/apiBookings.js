@@ -3,7 +3,7 @@ import supabase from './supabase'
 import { PAGE_SIZE } from '../utils/constants'
 
 export async function getBookings({ filter, sortBy, page }) {
-  let query = await supabase
+  let query = supabase
     .from('bookings')
     .select(
       'id, created_at, startDate, endDate, numNights, numGuests, status, totalPrice, cabins(name), guests(fullName, email)',
@@ -12,11 +12,11 @@ export async function getBookings({ filter, sortBy, page }) {
 
   //FILTER
   if (filter !== null)
-    query = await query[filter.method || 'eq'](filter.field, filter.value)
+    query = query[filter.method || 'eq'](filter.field, filter.value)
 
   // SORT
   if (sortBy)
-    query = await query.order(sortBy.field, {
+    query = query.order(sortBy.field, {
       ascending: sortBy.direction === 'asc',
     })
 

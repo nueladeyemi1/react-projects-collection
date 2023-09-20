@@ -32,8 +32,8 @@ import Pagination from '../../ui/Pagination'
 function BookingTable() {
   const { bookings, count, isLoading } = useBookings()
 
-  if (isLoading) return <Spinner />
   if (!bookings) return <Empty resource={'bookings'} />
+  if (isLoading) return <Spinner />
 
   return (
     <Menus>

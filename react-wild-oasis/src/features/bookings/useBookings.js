@@ -24,7 +24,7 @@ export function useBookings() {
   const page = !searchParams.get('page') ? 1 : Number(searchParams.get('page'))
 
   const { isLoading, data: { data: bookings, count } = {}, error } = useQuery({
-    queryKey: ['bookings', filter, sortBy, page],
+    queryKey: ['bookings1', filter, sortBy, page],
     queryFn: () => getBookings({ filter, sortBy, page }),
   })
 
@@ -33,13 +33,13 @@ export function useBookings() {
 
   if (page < pageCount)
     queryClient.prefetchQuery({
-      queryKey: ['bookings', filter, sortBy, page + 1],
+      queryKey: ['bookings1', filter, sortBy, page + 1],
       queryFn: () => getBookings({ filter, sortBy, page: page + 1 }),
     })
 
   if (page > 1)
     queryClient.prefetchQuery({
-      queryKey: ['bookings', filter, sortBy, page - 1],
+      queryKey: ['bookings1', filter, sortBy, page - 1],
       queryFn: () => getBookings({ filter, sortBy, page: page - 1 }),
     })
 
