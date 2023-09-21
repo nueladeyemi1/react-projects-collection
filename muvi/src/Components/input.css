@@ -1,0 +1,96 @@
+.nav__input {
+  color: #ffffff;
+  width: 52.5rem;
+  height: 3.6rem;
+  border-radius: 0.6rem;
+  background: none;
+  border: 0.1rem solid #ffffff;
+}
+
+.nav__input:focus {
+  outline: none;
+  border: 0.1rem solid #be123c;
+  padding-left: 1rem;
+}
+
+.nav__input::placeholder {
+  padding-left: 1rem;
+  font-size: 1.6rem;
+  color: #ffffff;
+}
+
+.slider {
+  background-image: url('./Poster.jpg');
+  background-size: cover;
+  height: 60rem;
+  color: #ffffff;
+}
+
+.overall__slider {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider__text__container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  width: 40.4rem;
+  height: 28.5rem;
+  padding-left: 9.8rem;
+  padding-top: 7.8rem;
+}
+
+.slider__text__container h1 {
+  line-height: 1.1;
+  font-size: 4.8rem;
+  font-weight: 700;
+}
+
+.slider__text__container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  align-self: flex-start;
+  border-radius: 0.6rem;
+  padding: 1rem 2.2rem;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 500;
+  background-color: #be123c;
+  border: none;
+  color: #ffffff;
+}
+
+.slider__text__container button:hover {
+  background-color: #b01d42;
+}
+
+.slider__text__container .desc {
+  width: 30.2rem;
+  /* height: 7.2rem; */
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+.slider__icons,
+.slider__icon {
+  display: flex;
+  align-items: center;
+}
+
+.slider__icons {
+  font-size: 1.2rem;
+  gap: 5rem;
+}
+
+.slider__icon {
+  gap: 1rem;
+}
+
+.slider__number {
+  align-self: flex-end;
+  padding-right: 2.4rem;
+  font-size: 1.2rem;
+}
