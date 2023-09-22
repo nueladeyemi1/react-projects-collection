@@ -1,10 +1,10 @@
 import { useQuery } from 'react-query'
-import { ratedMoviesFetch } from './apiFectch'
+import { fetchSlider } from './apiFectch'
 
 export const useSliderMovies = () => {
   const { data: movies, isLoading, error } = useQuery({
     queryKey: ['slider-movies'],
-    queryFn: ratedMoviesFetch,
+    queryFn: fetchSlider,
   })
 
   return { movies, isLoading, error }

@@ -20,10 +20,15 @@
 }
 
 .slider {
-  background-image: url('./Poster.jpg');
+  /* background-image: url('./Poster.jpg'); */
   background-size: cover;
   height: 60rem;
   color: #ffffff;
+  /* filter: brightness(75%); */
+}
+
+.active__slide {
+  transition: all 2s ease-in;
 }
 
 .overall__slider {
