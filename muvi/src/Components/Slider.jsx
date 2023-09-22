@@ -1,5 +1,6 @@
 import Navbar from '../UI/Navbar'
 import { HiPlayCircle } from 'react-icons/hi2'
+import { useSliderMovies } from '../services/useSliderMovies'
 // import { BiLogoImdb } from 'react-icons/bi'
 // import { SiRottentomatoes } from 'react-icons/si'
 
@@ -47,6 +48,10 @@ const data = [
 ]
 
 const Slider = () => {
+  const { movies } = useSliderMovies()
+
+  console.log(movies)
+
   return (
     <div className='slider'>
       <Navbar />
