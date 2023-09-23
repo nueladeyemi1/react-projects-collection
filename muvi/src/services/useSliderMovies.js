@@ -7,5 +7,7 @@ export const useSliderMovies = () => {
     queryFn: fetchSlider,
   })
 
+  console.log(movies)
+
   return { movies, isLoading, error }
 }

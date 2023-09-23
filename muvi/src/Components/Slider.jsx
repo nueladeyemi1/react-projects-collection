@@ -3,6 +3,7 @@ import { HiPlayCircle } from 'react-icons/hi2'
 import { useSliderMovies } from '../services/useSliderMovies'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import Rating from './Rating'
 // import { BiLogoImdb } from 'react-icons/bi'
 // import { SiRottentomatoes } from 'react-icons/si'
 
@@ -28,7 +29,7 @@ const Slider = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(http://image.tmdb.org/t/p/w500/${popularMovies[count].poster_path})`,
+        backgroundImage: `url(http://image.tmdb.org/t/p/w500/${popularMovies[count].backdrop_path})`,
       }}
       className='slider'
     >
@@ -36,15 +37,7 @@ const Slider = () => {
       <section className={`overall__slider `}>
         <div className='slider__text__container'>
           <h1 className='slider__title'>{popularMovies[count].title}</h1>
-          <p className='slider__icons'>
-            <span className='slider__icon'>
-              <img src='./imdb.png' /> {popularMovies[count].vote_count}
-            </span>
-            <span className='slider__icon'>
-              <img src='./rt.png' />{' '}
-              {popularMovies[count].vote_average * 10 + '%'}
-            </span>
-          </p>
+          <Rating movie={popularMovies[count]} />
           <p className='desc'>{popularMovies[count].overview}</p>
           <button>
             {' '}

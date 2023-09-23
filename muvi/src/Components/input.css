@@ -99,3 +99,16 @@
   padding-right: 2.4rem;
   font-size: 1.2rem;
 }
+
+.card__container {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  row-gap: 2.4rem;
+  column-gap: 5rem;
+  margin-top: 9.6rem;
+  text-align: center;
+}
+
+.card__container img {
+  width: 25rem;
+}
