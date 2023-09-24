@@ -1,6 +1,6 @@
-const Rating = ({ movie }) => {
+const Rating = ({ movie, styles }) => {
   return (
-    <p className='slider__icons'>
+    <p className='slider__icons' style={styles}>
       <span className='slider__icon'>
         <img src='./imdb.png' /> {movie.vote_count}
       </span>
