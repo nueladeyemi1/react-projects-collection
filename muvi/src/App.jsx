@@ -1,6 +1,7 @@
 import { QueryClient, QueryClientProvider } from 'react-query'
 import './App.css'
 import Slider from './Components/Slider'
+import Footer from './UI/Footer'
 import MovieCard from './UI/MovieCard'
 import Navbar from './UI/Navbar'
 
@@ -12,6 +13,7 @@ function App() {
       {/* <Navbar /> */}
       <Slider />
       <MovieCard />
+      <Footer />
     </QueryClientProvider>
   )
 }
