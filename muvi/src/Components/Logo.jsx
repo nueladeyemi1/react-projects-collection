@@ -1,3 +1,5 @@
+import tv from '/tv.png'
+
 const Logo = () => {
   return (
     <div
@@ -8,11 +10,7 @@ const Logo = () => {
         gap: '2.4rem',
       }}
     >
-      <img
-        style={{ width: '50px', height: '50px' }}
-        src='./tv.png'
-        alt='logo'
-      />{' '}
+      <img style={{ width: '50px', height: '50px' }} src={tv} alt='logo' />{' '}
       <span style={{ fontSize: '2.4rem', fontWeight: 'bold' }}>Muvi</span>
     </div>
   )
