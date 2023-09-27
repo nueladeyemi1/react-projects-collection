@@ -31,3 +31,20 @@ export async function ratedMoviesFetch() {
 
   return data
 }
+
+const url = 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming'
+const options2 = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': '21f2980a3dmsh30d22fa3e234896p148bddjsnc4ca8761dd9f',
+    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
+  },
+}
+
+export async function newRatedMoviesFetch() {
+  const response = await fetch(url, options2)
+
+  const data = await response.json()
+
+  return data
+}
