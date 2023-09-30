@@ -1,4 +1,5 @@
-// const options = { method: 'GET', headers: { accept: 'application/json' } }
+import axios from 'axios'
+
 const options = {
   method: 'GET',
   headers: {
@@ -7,7 +8,7 @@ const options = {
       'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkNzE1NTg2NzY1ZmRiMDNkYTU5MzIzYmJmMDYzZmU1MiIsInN1YiI6IjY1MGMzNjAwMmM2YjdiMDBmZTQ2MDBkNyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.36z-3dK65J2XcdR8w964xWvBt61BJFFptikDa2njHnY',
   },
 }
-const KEY = 'd715586765fdb03da59323bbf063fe52'
+// const KEY = 'd715586765fdb03da59323bbf063fe52'
 
 export async function fetchSlider() {
   const response = await fetch(
@@ -32,17 +33,18 @@ export async function ratedMoviesFetch() {
   return data
 }
 
-const url = 'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming'
-const options2 = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '21f2980a3dmsh30d22fa3e234896p148bddjsnc4ca8761dd9f',
-    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-  },
-}
+// const options2 = {
+//   method: 'GET',
+//   body: JSON.stringify(''),
+//   headers: {
+//     'Content-type': 'application/json',
+//   },
+// }
 
-export async function newRatedMoviesFetch() {
-  const response = await fetch(url, options2)
+export async function getMovieVideo(id) {
+  const response = await axios.get(
+    `https://api.kinocheck.de/movies?tmdb_id=${id}`
+  )
 
   const data = await response.json()
 

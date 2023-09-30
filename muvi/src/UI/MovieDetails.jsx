@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { GoHome } from 'react-icons/go'
 import { BiCameraMovie } from 'react-icons/bi'
 import { RiSlideshow2Line } from 'react-icons/ri'
@@ -6,8 +6,13 @@ import { WiShowers } from 'react-icons/wi'
 
 import Logo from '../Components/Logo'
 import './moviedetails.css'
+import { useGetVideos } from '../services/useGetVideos'
 
 const MovieDetails = () => {
+  const { id } = useParams()
+  const { data, isLoading, error } = useGetVideos(id)
+  console.log(id, data, isLoading, error)
+
   return (
     <section className='detail__container'>
       <aside className='movie__menu'>
@@ -27,7 +32,12 @@ const MovieDetails = () => {
           </Link>
         </div>
       </aside>
-      <div className='movie__video__container'>Video</div>
+      <div className='movie__video__container'>
+        <img src='/Rectangle29.webp' alt='Movie Preview' />
+        <div>
+          <h2>Watch Trailer</h2>
+        </div>
+      </div>
       <div>Video 2</div>
       <div>Video 3</div>
     </section>
