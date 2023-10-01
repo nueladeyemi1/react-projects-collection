@@ -1,0 +1,54 @@
+.crew__container {
+  font-size: 1.5rem;
+}
+
+.crew__desc {
+  margin-bottom: 2rem;
+}
+
+.crew__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+}
+
+.crew__list {
+  display: flex;
+  gap: 4rem;
+}
+
+.crew__genre {
+  border: 0.2rem solid #f8e7eb;
+  padding: 0.5rem 1.2rem;
+  border-radius: 2.5rem;
+  color: #b91c1c;
+}
+
+.crew {
+  margin-bottom: 1rem;
+}
+
+.crew__director {
+  color: #be123c;
+}
+
+.crew__awards__label {
+  background-color: #be123c;
+  color: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem 2.5rem;
+  width: 30%;
+}
+
+.crew__awards {
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  border-left: 0;
+  width: 70%;
+}
+
+/* option {
+  padding: 1rem 2.5rem;
+  color: #000000;
+} */

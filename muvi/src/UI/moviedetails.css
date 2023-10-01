@@ -57,6 +57,41 @@ aside {
   border-right: 0.6rem solid #be123c;
 }
 
+.game__container {
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 17rem;
+  height: 21rem;
+  background-color: #f8e7eb;
+  border-radius: 2rem;
+  border: 0.1rem solid #be123c;
+  gap: 1.5rem;
+}
+
+.movie__game__button {
+  border: none;
+  background-color: rgba(190, 18, 61, 0.2);
+  color: #be123c;
+  padding: 0.6rem 1.2rem;
+  border-radius: 3rem;
+  cursor: pointer;
+}
+
+.movie__game__button:hover {
+  background-color: rgba(235, 105, 137, 0.2);
+  color: #ab2e4d;
+}
+
+.game__text {
+  padding: 0 1.6rem;
+}
+
+.small {
+  font-size: 1.2rem;
+}
 /* YOU IFRAME COMSTUME */
 
 .frame-container {
