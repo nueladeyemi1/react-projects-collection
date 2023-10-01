@@ -7,11 +7,16 @@ import { WiShowers } from 'react-icons/wi'
 import Logo from '../Components/Logo'
 import './moviedetails.css'
 import { useGetVideos } from '../services/useGetVideos'
+import { usePopularity, useSingleMovie } from '../services/useSingleMovie'
 
 const MovieDetails = () => {
   const { id } = useParams()
   const { data, isLoading, error } = useGetVideos(id)
-  console.log(id, data, isLoading, error)
+  const { singleMovie, isLoadingSingleMovie } = useSingleMovie(id)
+  const { popularity, isLoadingPopularity } = usePopularity(id)
+  console.log(popularity?.crew)
+
+  if (data === undefined || isLoading) return 'Loading'
 
   return (
     <section className='detail__container'>
@@ -19,7 +24,9 @@ const MovieDetails = () => {
         <Logo />
         <div className='menu__links'>
           <Link className='menu__link' to='/'>
-            <GoHome /> Home
+            <span>
+              <GoHome /> Home
+            </span>
           </Link>
           <Link className='menu__link' to='/'>
             <BiCameraMovie /> Movie
@@ -33,13 +40,57 @@ const MovieDetails = () => {
         </div>
       </aside>
       <div className='movie__video__container'>
-        <img src='/Rectangle29.webp' alt='Movie Preview' />
-        <div>
-          <h2>Watch Trailer</h2>
+        <div class='wrapper'>
+          <div class='frame-container'>
+            <iframe
+              width='420'
+              height='315'
+              //   src='//www.youtube.com/embed/1sIWez9HAbA'
+              src={`https://www.youtube.com/embed/${data.results[0]?.key}?modestbranding=1&autohide=1&showinfo=0&controls=0`}
+              frameborder='0'
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
-      <div>Video 2</div>
-      <div>Video 3</div>
+
+      <div style={{ background: 'red' }}>
+        <h2>{singleMovie?.title}</h2>
+        <ul style={{ display: 'flex', gap: '2rem' }}>
+          <li>{singleMovie?.release_date.split('-')[0]}</li>
+          <li>{singleMovie?.adult ? 'PG-18' : 'PG-13'}</li>
+          <li>{`${Math.floor(singleMovie?.runtime / 60)}h ${Math.floor(
+            singleMovie?.runtime % 60
+          )}m`}</li>
+        </ul>
+        <p>{singleMovie?.genres[0]?.name}</p>
+        <p>{singleMovie?.genres[1]?.name}</p>
+        <div>{singleMovie?.overview}</div>
+        <div>
+          Director:{' '}
+          {popularity?.crew.map((crew) => (
+            <span>{crew.job === 'Director' ? crew.name : ''}</span>
+          ))}
+        </div>
+        <div>
+          Writer:{' '}
+          {popularity?.crew.map((crew) => (
+            <span>{crew.job === 'Writer' ? ` ${crew.name} ` : ''}</span>
+          ))}
+        </div>
+        <div>
+          Stars:{' '}
+          {popularity?.crew.map((crew) => (
+            <span>
+              {crew.known_for_department === 'Acting' && crew.popularity >= 5
+                ? ` ${crew.name}, `
+                : ''}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div style={{ background: 'blue' }}>Video 3</div>
     </section>
   )
 }

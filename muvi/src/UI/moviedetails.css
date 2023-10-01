@@ -2,8 +2,8 @@
   display: grid;
   grid-template-columns: 22.6rem 77.4rem 36rem;
   height: 100vh;
-  row-gap: 2rem;
-  column-gap: 3rem;
+  row-gap: 1rem;
+  column-gap: 4rem;
 }
 
 aside {
@@ -21,7 +21,7 @@ aside {
 
 .movie__video__container {
   margin-top: 2rem;
-  background-color: red;
+  /* background-color: red; */
   grid-column: 2/-1;
   border-radius: 2rem;
   height: 44.9rem;
@@ -29,17 +29,58 @@ aside {
 
 .menu__links {
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  gap: 4rem;
+  text-align: center;
   font-size: 2rem;
   font-weight: 600;
+  gap: 1rem;
 }
 
 .menu__link {
+  display: inline-block;
   color: #666666;
   text-decoration: none;
+  width: 22.6rem;
+  height: auto;
+  padding: 2rem 0;
+  /* height: 8.6rem; */
 }
 
 .menu__link:hover {
   background-color: #f8e7eb;
+  width: 22.6rem;
+  height: auto;
+  padding: 2rem 0;
+  /* height: 8.6rem; */
+  border-right: 0.6rem solid #be123c;
+}
+
+/* YOU IFRAME COMSTUME */
+
+.frame-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  width: 1164px;
+  /* height: 100%; */
+  height: 449px;
+  border-radius: 2rem;
+}
+
+.frame-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  width: 1164px;
+  /* height: 100%; */
+  height: 449px;
+  border-radius: 2rem;
+}
+
+.wrapper {
+  overflow: hidden;
+  max-width: 100%;
 }

@@ -9,7 +9,7 @@ const MovieCard = () => {
 
   const rated = Array.from({ length: 12 }, (_, i) => ratedMovies?.results[i])
 
-  console.log(ratedMovies?.results)
+  // console.log(ratedMovies?.results)
 
   return (
     <section className='whole__card__container'>

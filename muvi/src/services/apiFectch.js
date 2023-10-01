@@ -42,8 +42,34 @@ export async function ratedMoviesFetch() {
 // }
 
 export async function getMovieVideo(id) {
+  // const response = await axios.get(
+  //   `https://api.kinocheck.de/movies?tmdb_id=${id}`
+  // )
+
   const response = await axios.get(
-    `https://api.kinocheck.de/movies?tmdb_id=${id}`
+    `https://api.themoviedb.org/3/movie/${id}/videos?api_key=d715586765fdb03da59323bbf063fe52&language=en-US`
+  )
+
+  const data = await response.data
+
+  return data
+}
+
+export async function getSingleMovie(id) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
+    options
+  )
+
+  const data = await response.json()
+
+  return data
+}
+
+export async function fetchPopularity(id) {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/movie/${id}/credits?language=en-US`,
+    options
   )
 
   const data = await response.json()

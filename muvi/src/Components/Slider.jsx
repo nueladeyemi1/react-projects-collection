@@ -4,12 +4,16 @@ import { useSliderMovies } from '../services/useSliderMovies'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import Rating from './Rating'
+import { useNavigate } from 'react-router'
+import { useSearchParams } from 'react-router-dom'
 // import { BiLogoImdb } from 'react-icons/bi'
 // import { SiRottentomatoes } from 'react-icons/si'
 
 const Slider = () => {
+  const navigate = useNavigate()
   const [count, setCount] = useState(0)
   const { movies } = useSliderMovies()
+  const [searchParams, setSearchParams] = useSearchParams()
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -26,6 +30,18 @@ const Slider = () => {
   const popularMovies = Array.from({ length: 5 }, (_, i) => movies.results[i])
   //   console.log(popularMovies)
 
+  function handleNavigate(id) {
+    console.log(id)
+    setSearchParams((params) => {
+      params.set('movieID', id)
+
+      return params
+    })
+
+    console.log(searchParams.get('movieID'))
+    navigate(`/details/${searchParams.get('movieID')}`)
+  }
+
   return (
     <div
       style={{
@@ -39,7 +55,11 @@ const Slider = () => {
           <h1 className='slider__title'>{popularMovies[count].title}</h1>
           <Rating movie={popularMovies[count]} />
           <p className='desc'>{popularMovies[count].overview}</p>
-          <button>
+          <button
+            onClick={() => {
+              handleNavigate(popularMovies[count].id)
+            }}
+          >
             {' '}
             <HiPlayCircle /> Watch Triller
           </button>
