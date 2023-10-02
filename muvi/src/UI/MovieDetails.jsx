@@ -1,48 +1,25 @@
-import { Link, useParams } from 'react-router-dom'
-import { GoHome } from 'react-icons/go'
-import { BiCameraMovie } from 'react-icons/bi'
-import { RiSlideshow2Line } from 'react-icons/ri'
-import { WiShowers } from 'react-icons/wi'
+import { useParams } from 'react-router-dom'
 
-import Logo from '../Components/Logo'
 import './moviedetails.css'
 import { useGetVideos } from '../services/useGetVideos'
 import { usePopularity } from '../services/useSingleMovie'
 import Crew from '../Components/Crew'
+import Aside from '../Components/Aside'
+import ButtonComing from '../Components/ButtonComing'
+import { useUpcomingMovies } from '../services/useUpcomingMovies'
 
 const MovieDetails = () => {
   const { id } = useParams()
   const { data, isLoading, error } = useGetVideos(id)
+  const { upcomingData } = useUpcomingMovies()
   const { popularity, isLoadingPopularity } = usePopularity(id)
+  console.log(upcomingData)
 
   if (data === undefined || isLoading) return 'Loading'
 
   return (
     <section className='detail__container'>
-      <aside className='movie__menu'>
-        <Logo />
-        <div className='menu__links'>
-          <Link className='menu__link' to='/'>
-            <span>
-              <GoHome /> Home
-            </span>
-          </Link>
-          <Link className='menu__link' to='/'>
-            <BiCameraMovie /> Movie
-          </Link>
-          <Link className='menu__link' to='/'>
-            <RiSlideshow2Line /> TV Series
-          </Link>
-          <Link className='menu__link' to='/'>
-            <WiShowers /> Upcoming
-          </Link>
-        </div>
-        <div className='game__container'>
-          <p className='game__text'>Play movie quizes and earn free tickets</p>
-          <p className='game__text small'>50k+ people are playing now</p>
-          <button className='movie__game__button'>Start Playing</button>
-        </div>
-      </aside>
+      <Aside />
       <div className='movie__video__container'>
         <div class='wrapper'>
           <div class='frame-container'>
@@ -60,7 +37,31 @@ const MovieDetails = () => {
 
       <Crew />
 
-      <div style={{ background: 'blue' }}>Video 3</div>
+      <div className='coming__movies'>
+        <ButtonComing bgColor='#be123c' color='#ffffff'>
+          See showtimes
+        </ButtonComing>
+        <ButtonComing bgColor='rgba(235, 105, 137, 0.2)'>
+          More watch options
+        </ButtonComing>
+        <div className='upcoming__poster__container'>
+          <img
+            className='upcoming__poster'
+            src={`http://image.tmdb.org/t/p/w500/${upcomingData?.results[0].poster_path}`}
+          />
+          <img
+            className='upcoming__poster'
+            src={`http://image.tmdb.org/t/p/w500/${upcomingData?.results[1].poster_path}`}
+          />
+          <img
+            className='upcoming__poster'
+            src={`http://image.tmdb.org/t/p/w500/${upcomingData?.results[2].poster_path}`}
+          />
+          <p className='upcoming_label'>
+            The Best Movies and Shows in September
+          </p>
+        </div>
+      </div>
     </section>
   )
 }

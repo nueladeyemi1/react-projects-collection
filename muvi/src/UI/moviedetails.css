@@ -92,15 +92,70 @@ aside {
 .small {
   font-size: 1.2rem;
 }
+
+.coming__movies {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.coming__movie__btn {
+  display: inline-block;
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.2rem 0;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.upcoming__poster {
+  width: 12rem;
+  height: 18rem;
+  cursor: pointer;
+}
+
+.upcoming__poster:hover {
+  opacity: 0.5;
+}
+
+.upcoming__poster__container {
+  position: relative;
+  display: flex;
+  gap: 0.2rem;
+}
+
+.upcoming_label {
+  position: absolute;
+  bottom: 0;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-size: 1.4rem;
+}
+
+.upcoming_label:hover {
+  display: none;
+}
+
+/* .upcoming__poster__container:hover {
+  cursor: pointer;
+  opacity: 0.5;
+} */
+
 /* YOU IFRAME COMSTUME */
 
 .frame-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 36.25%;
+  /* padding-bottom: 56.25%;  */
+  /* 16:9 */
   padding-top: 25px;
-  width: 1164px;
+  /* width: 1164px; */
   /* height: 100%; */
-  height: 449px;
+  /* height: 449px; */
   border-radius: 2rem;
 }
 
