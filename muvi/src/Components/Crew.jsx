@@ -3,8 +3,8 @@ import { usePopularity, useSingleMovie } from '../services/useSingleMovie'
 import './crew.css'
 import CrewPeople from './CrewPeople'
 
-const Crew = () => {
-  const { id } = useParams()
+const Crew = ({ id }) => {
+  // const { id } = useParams()
   const { singleMovie } = useSingleMovie(id)
   const { popularity } = usePopularity(id)
 

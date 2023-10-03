@@ -7,6 +7,7 @@ import Crew from '../Components/Crew'
 import Aside from '../Components/Aside'
 import ButtonComing from '../Components/ButtonComing'
 import { useUpcomingMovies } from '../services/useUpcomingMovies'
+import UpcomingMovie from './UpcomingMovie'
 
 const MovieDetails = () => {
   const { id } = useParams()
@@ -35,7 +36,7 @@ const MovieDetails = () => {
         </div>
       </div>
 
-      <Crew />
+      <Crew id={id} />
 
       <div className='coming__movies'>
         <ButtonComing bgColor='#be123c' color='#ffffff'>
@@ -45,6 +46,7 @@ const MovieDetails = () => {
           More watch options
         </ButtonComing>
         <div className='upcoming__poster__container'>
+          <UpcomingMovie upcomingData={upcomingData?.results[2]} />
           <img
             className='upcoming__poster'
             src={`http://image.tmdb.org/t/p/w500/${upcomingData?.results[0].poster_path}`}
