@@ -29,11 +29,6 @@ const UpcomingMovie = ({ upcomingData }) => {
         src={`http://image.tmdb.org/t/p/w500/${poster_path}`}
       />
     </Link>
-    // <img
-    //   onClick={() => handleNavigate(1234567)}
-    //   className='upcoming__poster'
-    //   src={`http://image.tmdb.org/t/p/w500/${poster_path}`}
-    // />
   )
 }
 

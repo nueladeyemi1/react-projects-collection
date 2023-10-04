@@ -47,10 +47,10 @@ const MovieDetails = () => {
         </ButtonComing>
         <div className='upcoming__poster__container'>
           <UpcomingMovie upcomingData={upcomingData?.results[2]} />
-          <img
+          {/* <img
             className='upcoming__poster'
             src={`http://image.tmdb.org/t/p/w500/${upcomingData?.results[0].poster_path}`}
-          />
+          /> */}
           <img
             className='upcoming__poster'
             src={`http://image.tmdb.org/t/p/w500/${upcomingData?.results[1].poster_path}`}
