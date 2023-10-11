@@ -2,10 +2,10 @@ import { useQuery } from 'react-query'
 import { ratedMoviesFetch } from './apiFectch'
 
 export const useRateMovies = () => {
-  const { data: ratedMovies, isLoading, error } = useQuery({
+  const { data: ratedMovies, isLoading: isLoadingRated, error } = useQuery({
     queryKey: ['rated-movies'],
     queryFn: ratedMoviesFetch,
   })
 
-  return { ratedMovies, isLoading, error }
+  return { ratedMovies, isLoadingRated, error }
 }

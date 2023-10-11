@@ -43,8 +43,9 @@ const Footer = () => {
       </div>
 
       <div className='footer__link__box'>
-        {links.map((link) => (
+        {links.map((link, index) => (
           <Link
+            key={index}
             className='footer__links footer__links__text'
             to={link.id}
             href={link.location}

@@ -5,7 +5,7 @@ import { FcLike, FcNext } from 'react-icons/fc'
 const MovieCard = () => {
   const { ratedMovies } = useRateMovies()
 
-  if (ratedMovies === undefined) return <>Loading...</>
+  if (ratedMovies === undefined) return
 
   const rated = Array.from({ length: 12 }, (_, i) => ratedMovies?.results[i])
 

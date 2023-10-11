@@ -31,14 +31,14 @@ const Slider = () => {
   //   console.log(popularMovies)
 
   function handleNavigate(id) {
-    console.log(id)
+    // console.log(id)
     setSearchParams((params) => {
       params.set('movieID', id)
 
       return params
     })
 
-    console.log(searchParams.get('movieID'))
+    // console.log(searchParams.get('movieID'))
     navigate(`/details/${searchParams.get('movieID')}`)
   }
 
