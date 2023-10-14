@@ -1,4 +1,5 @@
 import About from './components/About'
+import Booking from './components/Booking'
 import Features from './components/Features'
 import Header from './components/Header'
 import Stories from './components/Stories'
@@ -12,6 +13,7 @@ function App() {
       <Features />
       <Tours />
       <Stories />
+      <Booking />
     </>
   )
 }
