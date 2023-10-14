@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const Hero = () => {
+const Header = () => {
   return (
     <>
       <header className='header'>
@@ -51,4 +51,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Header
