@@ -1,9 +1,35 @@
+import { useRef } from 'react'
+import emailjs from '@emailjs/browser'
+
 const Booking = () => {
+  const form = useRef()
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+
+    console.log(form.current)
+    emailjs
+      .sendForm(
+        'service_1mhdzph',
+        'template_6952ogo',
+        form.current,
+        'GsOug08hfQqbgkERA'
+      )
+      .then(
+        (result) => {
+          console.log(result.text)
+        },
+        (error) => {
+          console.log(error.text)
+        }
+      )
+  }
+
   return (
     <section className='section-book'>
       <div className='row'>
         <div className='book'>
-          <form action='' className='book-form'>
+          <form ref={form} onSubmit={sendEmail} action='' className='book-form'>
             <div className='u-margin-bottom-medium'>
               <h2 className='heading-secondary'>Start booking now</h2>
             </div>
@@ -58,7 +84,9 @@ const Booking = () => {
               </div>
             </div>
             <div className='form-group'>
-              <button className='btn btn-green'>Next step &rarr;</button>
+              <button type='submit' className='btn btn-green'>
+                Next step &rarr;
+              </button>
             </div>
           </form>
         </div>

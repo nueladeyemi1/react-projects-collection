@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
+import Navbar from './Navbar'
 
 const Header = () => {
   return (
     <>
+      <Navbar />
       <header className='header'>
         <div className='header-logo-box'>
           <img className='header-logo' src='./logo-white.png' alt='Logo' />
