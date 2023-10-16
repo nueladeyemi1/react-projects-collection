@@ -33,17 +33,25 @@ const About = () => {
           <div className='col-1-of-2'>
             <div className='composition'>
               <img
+                srcSet='nat-1.jpg 300w, nat-1-large.jpg 1000w'
                 src='nat-1-large.jpg'
+                sizes='(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px'
                 alt='photo 1'
                 className='composition-photo composition-photo-p1'
               />
+
               <img
+                srcSet='nat-2.jpg 300w, nat-2-large.jpg 1000w'
                 src='nat-2-large.jpg'
+                sizes='(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px'
                 alt='photo 2'
                 className='composition-photo composition-photo-p2'
               />
+
               <img
+                srcSet='nat-3.jpg 300w, nat-3-large.jpg 1000w'
                 src='nat-3-large.jpg'
+                sizes='(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px'
                 alt='photo 3'
                 className='composition-photo composition-photo-p3'
               />

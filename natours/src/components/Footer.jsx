@@ -9,6 +9,7 @@ const Footer = () => {
           />
           <img
             srcSet='logo-green-1x.png 1x, logo-green-2x.png 2x'
+            src='logo-green-2x.png'
             alt='Full logo'
           />
         </picture>

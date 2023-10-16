@@ -18,9 +18,14 @@ body {
     letter-spacing: 3.5rem;
     animation: movesInLeft 1.5s ease-out;
 
-    @include response(phone) {
+    @include response(tab-port) {
       letter-spacing: 1rem;
-      font-size: 5rem;
+      font-size: 4.5rem;
+    }
+
+    @include response(phone) {
+      letter-spacing: 0.5rem;
+      font-size: 4rem;
     }
   }
 
