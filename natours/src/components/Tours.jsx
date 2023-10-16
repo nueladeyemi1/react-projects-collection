@@ -1,3 +1,5 @@
+import Popup from './Popup'
+
 const tourData = [
   {
     id: 1,
@@ -45,57 +47,60 @@ const tourData = [
 
 const Tours = () => {
   return (
-    <section className='section-tours'>
-      <div className='u-center-text u-margin-bottom-big'>
-        <h2 className='heading-secondary'>Most Popular tours</h2>
-      </div>
-      <div className='row'>
-        {tourData.map((tour) => (
-          <div key={tour.id} className='col-1-of-3'>
-            <div className='card'>
-              <div className='card-side card-side-front'>
-                <div className={`card-picture card-picture-${tour.id}`}>
-                  &nbsp;
-                </div>
-                <h4 className='card-heading'>
-                  <span
-                    className={`card-heading-span card-heading-span-${tour.id}`}
-                  >
-                    {tour.heading}
-                  </span>
-                </h4>
-
-                <div className='card-details'>
-                  <ul>
-                    {tour.detailsList.map((list, index) => (
-                      <li key={index}>{list}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div
-                className={`card-side card-side-back card-side-back-${tour.id}`}
-              >
-                <div className='card-cta'>
-                  <div className='card-price-box'>
-                    <p className='card-price-only'>{tour.priceOnly}</p>
-                    <p className='card-price-value'>{tour.priceValue}</p>
+    <>
+      <section className='section-tours'>
+        <div className='u-center-text u-margin-bottom-big'>
+          <h2 className='heading-secondary'>Most Popular tours</h2>
+        </div>
+        <div className='row'>
+          {tourData.map((tour) => (
+            <div key={tour.id} className='col-1-of-3'>
+              <div className='card'>
+                <div className='card-side card-side-front'>
+                  <div className={`card-picture card-picture-${tour.id}`}>
+                    &nbsp;
                   </div>
-                  <a href='#' className='btn btn-white'>
-                    {tour.btnText}
-                  </a>
+                  <h4 className='card-heading'>
+                    <span
+                      className={`card-heading-span card-heading-span-${tour.id}`}
+                    >
+                      {tour.heading}
+                    </span>
+                  </h4>
+
+                  <div className='card-details'>
+                    <ul>
+                      {tour.detailsList.map((list, index) => (
+                        <li key={index}>{list}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  className={`card-side card-side-back card-side-back-${tour.id}`}
+                >
+                  <div className='card-cta'>
+                    <div className='card-price-box'>
+                      <p className='card-price-only'>{tour.priceOnly}</p>
+                      <p className='card-price-value'>{tour.priceValue}</p>
+                    </div>
+                    <a href='#popup' className='btn btn-white'>
+                      {tour.btnText}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className='u-center-text u-margin-top-huge'>
-        <a href='#' className='btn btn-green'>
-          Discover all tours
-        </a>
-      </div>
-    </section>
+          ))}
+        </div>
+        <div className='u-center-text u-margin-top-huge'>
+          <a href='#popup' className='btn btn-green'>
+            Discover all tours
+          </a>
+        </div>
+      </section>
+      <Popup />
+    </>
   )
 }
 
