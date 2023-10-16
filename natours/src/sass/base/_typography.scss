@@ -50,6 +50,14 @@ body {
   letter-spacing: 0.2rem;
   transition: all 0.2s;
 
+  @include response(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include response(phone) {
+    font-size: 2.5rem;
+  }
+
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
