@@ -1,4 +1,6 @@
 import Header from './components/Header'
+import HotelView from './components/HotelView'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
@@ -7,8 +9,12 @@ function App() {
         <Header />
       </header>
       <div className='content'>
-        <nav className='sidebar'>Navigation</nav>
-        <main className='hotel-view'>Hotel view</main>
+        <nav className='sidebar'>
+          <Navbar />
+        </nav>
+        <main className='hotel-view'>
+          <HotelView />
+        </main>
       </div>
     </div>
   )
