@@ -1,0 +1,33 @@
+@font-face {
+  font-family: neue montreal;
+  src: url(/NeueMontreal-Light.otf);
+  font-weight: 300; }
+
+@font-face {
+  font-family: neue montreal;
+  src: url(/NeueMontreal-.otf); }
+
+@font-face {
+  font-family: neue montreal;
+  src: url(/NeueMontreal-Medium.otf);
+  font-weight: 500; }
+
+@font-face {
+  font-family: neue montreal;
+  src: url(/NeueMontreal-Bold.otf);
+  font-weight: 700; }
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'neue montreal', sans-serif; }
+
+.read-the-docs {
+  font-weight: 700; }
