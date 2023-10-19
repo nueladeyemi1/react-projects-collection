@@ -14,10 +14,15 @@
 //
 .hero {
   &-text-box {
-    flex: 0;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
   }
 
   &-title {
+    width: 80%;
     font-size: 6.8rem;
     font-weight: 500;
     display: inline-block;
@@ -25,6 +30,7 @@
   }
 
   &-text-content {
+    width: 68%;
     font-size: 2rem;
     letter-spacing: 0.02rem;
     margin-top: 1.6rem;
@@ -111,17 +117,23 @@
     }
   }
 
+  //   &-container {
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     gap: 8rem;
+  //   }
+
   &-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto;
   }
 
   &-img {
     &-container {
       display: flex;
-      width: 60%;
+      flex: 1 0 60%;
       gap: 2rem;
     }
 
@@ -170,12 +182,126 @@
         width: 58%;
       }
     }
+  }
+}
 
-    // &-1 {
-    //   flex: 1;
-    //   display: block;
-    //   width: 10%;
+//COMPANY SECTION
 
-    // }
+.companies {
+  &-section {
+    margin-top: -12rem;
+    max-width: 128rem;
+    padding: 0 2.5rem;
+  }
+
+  &-container {
+    // max-width: 128rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0;
+  }
+
+  &-logo-box {
+    width: 100%;
+    padding: 6rem 8rem 4rem;
+    background-color: var(--dark-color);
+    border-radius: 3.2rem;
+  }
+
+  &-heading {
+    color: #fff;
+    text-align: center;
+    font-size: 3.6rem;
+    font-weight: 500;
+  }
+
+  & {
+    &-logos-grid {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 4rem;
+      row-gap: 4rem;
+      margin-top: 4rem;
+      margin-bottom: 4rem;
+      justify-items: center;
+    }
+
+    &-logo {
+      max-width: 100%;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+}
+
+///FEATURES SECTION
+///
+///
+
+.feature {
+  margin-top: 12rem;
+  max-width: 128rem;
+  padding: 0 2.5rem;
+
+  &-grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 16.8rem;
+    column-gap: 16.8rem;
+  }
+
+  &-image-1,
+  &-image-3,
+  &-image-4 {
+    max-width: 100%;
+  }
+
+  &-image-2 {
+    width: 80%;
+    border-radius: 0.8rem;
+  }
+
+  &-content-1,
+  &-content-2,
+  &-content-3,
+  &-content-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &-image-2-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff9cc;
+    padding: 4rem;
+    border-radius: 2.8rem;
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+
+  &-image-4-box {
+    grid-row: 4/5;
+    grid-column: 2/3;
+  }
+
+  &-content {
+    &-heading {
+      font-size: 4rem;
+      font-weight: 500;
+      margin-bottom: 2.4rem;
+      margin-top: 2rem;
+      line-height: 110%;
+    }
+
+    &-text {
+      font-size: 1.8rem;
+      line-height: 140%;
+      letter-spacing: 0.04rem;
+    }
   }
 }

@@ -1,7 +1,11 @@
+// .format-hero-bg-color {
+//   background-color: var(--bg-hero);
+// }
+
 .hero-section {
   background-color: var(--bg-hero);
   min-height: 90rem;
-  min-width: 128rem;
+  max-width: 128rem;
   padding: 0 2.4rem;
 }
 
