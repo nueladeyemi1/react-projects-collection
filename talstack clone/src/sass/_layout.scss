@@ -1,0 +1,52 @@
+.hero-section {
+  background-color: var(--bg-hero);
+  min-height: 90rem;
+  min-width: 128rem;
+  padding: 0 2.4rem;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.2rem 0;
+
+  &-logo-svg {
+    height: 2.5rem;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &-btn-container {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+//NAV BTNS
+
+.btn-sign-in {
+  border: 0.1rem solid #000;
+  border-radius: 10rem;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.btn-get-started {
+  border: 0.1rem solid #000;
+  background-color: #000;
+  color: #fff;
+  border-radius: 10rem;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: var(--bg-hero);
+    color: #000;
+  }
+}

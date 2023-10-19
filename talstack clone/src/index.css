@@ -17,6 +17,12 @@
   src: url(/NeueMontreal-Bold.otf);
   font-weight: 700; }
 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --text-color-light: #403d3d;
+  --bg-hero: #e5ffdc80; }
+
 *,
 *::after,
 *::before {
@@ -27,7 +33,155 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'neue montreal', sans-serif; }
+  background-color: var(--bg-color);
+  font-family: 'neue montreal', sans-serif;
+  font-size: 1.6rem;
+  color: var(--text-color); }
 
-.read-the-docs {
-  font-weight: 700; }
+.btn-format {
+  background-color: transparent;
+  border: none;
+  padding: 1rem 2.4rem;
+  font-size: inherit;
+  font-weight: 500; }
+  .btn-format:focus {
+    outline: none; }
+
+.hero-text-box {
+  flex: 0; }
+
+.hero-title {
+  font-size: 6.8rem;
+  font-weight: 500;
+  display: inline-block;
+  line-height: 6.8rem; }
+
+.hero-text-content {
+  font-size: 2rem;
+  letter-spacing: 0.02rem;
+  margin-top: 1.6rem;
+  margin-bottom: 4rem;
+  line-height: 150%; }
+
+.hero-img-1-text, .hero-img-2-text, .hero-img-3-text, .hero-img-1-text, .hero-img-2-text, .hero-img-3-text, .hero-img-1-text, .hero-img-2-text, .hero-img-3-text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.hero-img-1-text-title, .hero-img-1-text-number, .hero-img-2-hover-text-title, .hero-img-2-hover-text-number, .hero-img-3-hover-text-title, .hero-img-3-hover-text-number, .hero-img-1-text-title, .hero-img-1-text-number, .hero-img-2-hover-text-title, .hero-img-2-hover-text-number, .hero-img-3-hover-text-title, .hero-img-3-hover-text-number, .hero-img-1-text-title, .hero-img-1-text-number, .hero-img-2-hover-text-title, .hero-img-2-hover-text-number, .hero-img-3-hover-text-title, .hero-img-3-hover-text-number {
+  opacity: 1;
+  position: absolute;
+  bottom: 7.8rem;
+  color: #fff; }
+
+.hero-img-1-text-title, .hero-img-2-hover-text-title, .hero-img-3-hover-text-title, .hero-img-1-text-title, .hero-img-2-hover-text-title, .hero-img-3-hover-text-title, .hero-img-1-text-title, .hero-img-2-hover-text-title, .hero-img-3-hover-text-title {
+  left: 0;
+  padding-left: 4rem;
+  font-size: 2.8rem;
+  font-weight: 500;
+  letter-spacing: 0.02rem;
+  line-height: 3.2rem; }
+
+.hero-img-1-text-number, .hero-img-2-hover-text-number, .hero-img-3-hover-text-number, .hero-img-1-text-number, .hero-img-2-hover-text-number, .hero-img-3-hover-text-number, .hero-img-1-text-number, .hero-img-2-hover-text-number, .hero-img-3-hover-text-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  padding-right: 4rem; }
+  .hero-img-1-text-number:first-of-type, .hero-img-2-hover-text-number:first-of-type, .hero-img-3-hover-text-number:first-of-type, .hero-img-1-text-number:first-of-type, .hero-img-2-hover-text-number:first-of-type, .hero-img-3-hover-text-number:first-of-type, .hero-img-1-text-number:first-of-type, .hero-img-2-hover-text-number:first-of-type, .hero-img-3-hover-text-number:first-of-type {
+    font-size: 2rem; }
+
+.hero-img-1-not-hover-text-title, .hero-img-2-text-title, .hero-img-3-text-title, .hero-img-1-not-hover-text-title, .hero-img-2-text-title, .hero-img-3-text-title, .hero-img-1-not-hover-text-title, .hero-img-2-text-title, .hero-img-3-text-title {
+  opacity: 1;
+  position: absolute;
+  bottom: 15rem;
+  right: -2.5rem;
+  color: #fff;
+  transform: rotate(-90deg);
+  font-size: 2.8rem;
+  font-weight: 500; }
+
+.hero-img-1-not-hover-text-number, .hero-img-2-text-number, .hero-img-3-text-number, .hero-img-1-not-hover-text-number, .hero-img-2-text-number, .hero-img-3-text-number, .hero-img-1-not-hover-text-number, .hero-img-2-text-number, .hero-img-3-text-number {
+  opacity: 0;
+  visibility: hidden; }
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8rem; }
+
+.hero-img-container {
+  display: flex;
+  width: 60%;
+  gap: 2rem; }
+
+.hero-img-1, .hero-img-2, .hero-img-3, .hero-img-1-not-hover {
+  height: 59rem;
+  background-size: cover;
+  background-position: top;
+  border-radius: 2rem;
+  transition: all 0.5s;
+  backface-visibility: hidden;
+  cursor: pointer; }
+
+.hero-img-1 {
+  width: 58%;
+  background-image: url(/bolaji.png);
+  position: relative; }
+  .hero-img-1-not-hover {
+    width: 21%;
+    background-image: url(/bolaji.png);
+    position: relative; }
+
+.hero-img-2 {
+  width: 21%;
+  background-image: url(/ezinne.png);
+  position: relative; }
+  .hero-img-2:hover {
+    width: 58%; }
+
+.hero-img-3 {
+  width: 21%;
+  background-image: url(/coo.png);
+  position: relative; }
+  .hero-img-3:hover {
+    width: 58%; }
+
+.hero-section {
+  background-color: var(--bg-hero);
+  min-height: 90rem;
+  min-width: 128rem;
+  padding: 0 2.4rem; }
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.2rem 0; }
+  .navbar-logo-svg {
+    height: 2.5rem; }
+    .navbar-logo-svg:hover {
+      color: #fff; }
+  .navbar-btn-container {
+    display: flex;
+    gap: 2rem; }
+
+.btn-sign-in {
+  border: 0.1rem solid #000;
+  border-radius: 10rem;
+  transition: all 0.3s; }
+  .btn-sign-in:hover {
+    background-color: #000;
+    color: #fff; }
+
+.btn-get-started {
+  border: 0.1rem solid #000;
+  background-color: #000;
+  color: #fff;
+  border-radius: 10rem;
+  transition: all 0.3s; }
+  .btn-get-started:hover {
+    background-color: var(--bg-hero);
+    color: #000; }

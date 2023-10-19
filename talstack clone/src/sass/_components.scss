@@ -1,3 +1,181 @@
-.read-the-docs {
-  font-weight: 700;
+.btn-format {
+  background-color: transparent;
+  border: none;
+  padding: 1rem 2.4rem;
+  font-size: inherit;
+  font-weight: 500;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+//TEXT CONTENT
+//
+.hero {
+  &-text-box {
+    flex: 0;
+  }
+
+  &-title {
+    font-size: 6.8rem;
+    font-weight: 500;
+    display: inline-block;
+    line-height: 6.8rem;
+  }
+
+  &-text-content {
+    font-size: 2rem;
+    letter-spacing: 0.02rem;
+    margin-top: 1.6rem;
+    margin-bottom: 4rem;
+    line-height: 150%;
+  }
+
+  ////
+  /// //
+  ///
+  ///
+  ///
+  ///
+
+  &-img,
+  &-img,
+  &-img {
+    &-1-text,
+    &-2-text,
+    &-3-text {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    //UNHOVER STATE LARGE IMAGE
+    &-1-text,
+    &-2-hover-text,
+    &-3-hover-text {
+      &-title,
+      &-number {
+        opacity: 1;
+        position: absolute;
+
+        bottom: 7.8rem;
+        color: #fff;
+      }
+
+      &-title {
+        left: 0;
+        padding-left: 4rem;
+        font-size: 2.8rem;
+        font-weight: 500;
+        letter-spacing: 0.02rem;
+        line-height: 3.2rem;
+      }
+
+      &-number {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        right: 0;
+        padding-right: 4rem;
+
+        &:first-of-type {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    ////
+    ////
+
+    //TEXT ON PICTURES FOR SMALL IMAGE
+    &-1-not-hover-text-title,
+    &-2-text-title,
+    &-3-text-title {
+      opacity: 1;
+      position: absolute;
+      bottom: 15rem;
+      right: -2.5rem;
+      color: #fff;
+      transform: rotate(-90deg);
+      font-size: 2.8rem;
+      font-weight: 500;
+    }
+
+    &-1-not-hover-text-number,
+    &-2-text-number,
+    &-3-text-number {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8rem;
+  }
+
+  &-img {
+    &-container {
+      display: flex;
+      width: 60%;
+      gap: 2rem;
+    }
+
+    &-1,
+    &-2,
+    &-3,
+    &-1-not-hover {
+      height: 59rem;
+      background-size: cover;
+      background-position: top;
+      border-radius: 2rem;
+      transition: all 0.5s;
+      backface-visibility: hidden;
+      cursor: pointer;
+    }
+
+    &-1 {
+      width: 58%;
+      background-image: url(/bolaji.png);
+      position: relative;
+
+      //NOT HOVER STATE FOR 1 (LARGE IMAGE)
+      &-not-hover {
+        width: 21%;
+        background-image: url(/bolaji.png);
+        position: relative;
+      }
+    }
+
+    &-2 {
+      width: 21%;
+      background-image: url(/ezinne.png);
+      position: relative;
+
+      &:hover {
+        width: 58%;
+      }
+    }
+
+    &-3 {
+      width: 21%;
+      background-image: url(/coo.png);
+      position: relative;
+
+      &:hover {
+        width: 58%;
+      }
+    }
+
+    // &-1 {
+    //   flex: 1;
+    //   display: block;
+    //   width: 10%;
+
+    // }
+  }
 }

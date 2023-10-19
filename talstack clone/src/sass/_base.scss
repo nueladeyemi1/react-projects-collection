@@ -21,6 +21,13 @@
   font-weight: 700;
 }
 
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --text-color-light: #403d3d;
+  --bg-hero: #e5ffdc80;
+}
+
 *,
 *::after,
 *::before {
@@ -33,5 +40,8 @@ html {
 }
 
 body {
+  background-color: var(--bg-color);
   font-family: 'neue montreal', sans-serif;
+  font-size: 1.6rem;
+  color: var(--text-color);
 }
