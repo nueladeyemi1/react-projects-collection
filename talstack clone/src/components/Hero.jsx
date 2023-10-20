@@ -12,14 +12,15 @@ const Hero = () => {
 
         <div className='hero-container'>
           <div className='hero-text-box'>
-            <h1 className='hero-title'>
-              Build competent teams that drive growth
-            </h1>
-
-            <p className='hero-text-content'>
-              Boost employee performance with courses, tools and mentorship from
-              Africa’s best professionals and entrepreneurs.
-            </p>
+            <div>
+              <h1 className='hero-title'>
+                Build competent teams that drive growth
+              </h1>
+              <p className='hero-text-content'>
+                Boost employee performance with courses, tools and mentorship
+                from Africa’s best professionals and entrepreneurs.
+              </p>
+            </div>
             <button className='btn-format btn-get-started hero-btn'>
               Get Started
             </button>

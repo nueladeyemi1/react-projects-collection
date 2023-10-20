@@ -20,6 +20,27 @@
     flex: 1;
     align-items: flex-start;
     justify-content: center;
+
+    @media only screen and (max-width: 61.88em) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      div {
+        flex: 1;
+      }
+    }
+
+    @media only screen and (max-width: 47.82em) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+
+      div {
+        flex: 1;
+      }
+    }
   }
 
   &-title {
@@ -28,6 +49,15 @@
     font-weight: 500;
     display: inline-block;
     line-height: 6.8rem;
+
+    @media only screen and (max-width: 61.88em) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: 39rem) {
+      width: 100%;
+      font-size: 5.2rem;
+    }
   }
 
   &-text-content {
@@ -37,6 +67,11 @@
     margin-top: 1.6rem;
     margin-bottom: 4rem;
     line-height: 150%;
+
+    @media only screen and (max-width: 39rem) {
+      width: 100%;
+      font-size: 1.8rem;
+    }
   }
 
   &-btn {
@@ -61,6 +96,18 @@
     }
 
     //UNHOVER STATE LARGE IMAGE
+    // &-2-text,
+    // &-3-text {
+    //   &-title {
+    //     @media only screen and (max-width: 61.88em) {
+    //       font-size: 2rem;
+    //       padding-left: 1.5rem;
+    //       bottom: 1.5rem;
+    //       transform: rotate(0) !important;
+    //     }
+    //   }
+    // }
+
     &-1-text,
     &-2-hover-text,
     &-3-hover-text {
@@ -80,6 +127,12 @@
         letter-spacing: 0.02rem;
         line-height: 3.2rem;
         width: 10%;
+
+        @media only screen and (max-width: 61.88em) {
+          font-size: 2rem;
+          padding-left: 1.5rem;
+          bottom: 1.5rem;
+        }
       }
 
       &-number {
@@ -89,6 +142,12 @@
         justify-content: center;
         right: 0;
         padding-right: 4rem;
+
+        @media only screen and (max-width: 61.88em) {
+          font-size: 1.2rem !important;
+          right: -3rem;
+          bottom: 2.5rem;
+        }
 
         &:first-of-type {
           font-size: 2rem;
@@ -100,6 +159,14 @@
     ////
 
     //TEXT ON PICTURES FOR SMALL IMAGE
+
+    &-2-text-title,
+    &-3-text-title {
+      @media only screen and (max-width: 61.88em) {
+        opacity: 0 !important;
+      }
+    }
+
     &-1-not-hover-text-title,
     &-2-text-title,
     &-3-text-title {
@@ -133,6 +200,10 @@
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     grid-template-rows: auto;
+
+    @media only screen and (max-width: 61.88em) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &-img {
@@ -140,6 +211,10 @@
       display: flex;
       flex: 1 0 60%;
       gap: 2rem;
+
+      @media only screen and (max-width: 47.82em) {
+        overflow-x: scroll;
+      }
     }
 
     &-1,
@@ -153,12 +228,24 @@
       transition: all 0.5s;
       backface-visibility: hidden;
       cursor: pointer;
+
+      @media only screen and (max-width: 61.88em) {
+        width: 24rem;
+        height: 37.6rem;
+        min-width: 24rem;
+      }
     }
 
     &-1 {
       width: 58%;
       background-image: url(/bolaji.png);
       position: relative;
+
+      @media only screen and (max-width: 61.88em) {
+        width: 24rem;
+        height: 37.6rem;
+        min-width: 24rem;
+      }
 
       //NOT HOVER STATE FOR 1 (LARGE IMAGE)
       &-not-hover {
@@ -173,8 +260,19 @@
       background-image: url(/ezinne.png);
       position: relative;
 
+      @media only screen and (max-width: 61.88em) {
+        width: 24rem;
+        height: 37.6rem;
+        min-width: 24rem;
+      }
       &:hover {
         width: 58%;
+
+        @media only screen and (max-width: 61.88em) {
+          width: 24rem;
+          height: 37.6rem;
+          min-width: 24rem;
+        }
       }
     }
 
@@ -183,8 +281,20 @@
       background-image: url(/coo.png);
       position: relative;
 
+      @media only screen and (max-width: 61.88em) {
+        width: 24rem;
+        height: 37.6rem;
+        min-width: 24rem;
+      }
+
       &:hover {
         width: 58%;
+
+        @media only screen and (max-width: 61.88em) {
+          width: 24rem;
+          height: 37.6rem;
+          min-width: 24rem;
+        }
       }
     }
   }
@@ -194,9 +304,18 @@
 
 .companies {
   &-section {
+    width: 100%;
     margin-top: -12rem;
     max-width: 128rem;
     padding: 0 2.5rem;
+
+    @media only screen and (max-width: 61.88em) {
+      margin-top: 0;
+    }
+
+    @media only screen and (max-width: 26.25em) {
+      margin-top: 12rem !important;
+    }
   }
 
   &-container {
@@ -231,6 +350,10 @@
       margin-top: 4rem;
       margin-bottom: 4rem;
       justify-items: center;
+
+      @media only screen and (max-width: 47.82em) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     &-logo {
@@ -256,6 +379,10 @@
     grid-template-columns: repeat(2, 1fr);
     row-gap: 16.8rem;
     column-gap: 16.8rem;
+
+    @media only screen and (max-width: 47.82em) {
+      display: block;
+    }
   }
 
   &-image-1,
@@ -276,6 +403,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    @media only screen and (max-width: 47.82em) {
+      margin-top: 2rem;
+      margin-bottom: 8rem;
+    }
   }
 
   &-image-2-box {
@@ -301,6 +433,11 @@
       margin-bottom: 2.4rem;
       margin-top: 2rem;
       line-height: 110%;
+
+      @media only screen and (max-width: 47.82em) {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+      }
     }
 
     &-text {
@@ -322,6 +459,15 @@
   //   display: flex;
   //   gap: 2rem;
   margin-top: 3.2rem;
+
+  @media only screen and (max-width: 61.88em) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 2rem;
+  }
+
+  @media only screen and (max-width: 47.82em) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .testimonies {
@@ -411,6 +557,10 @@
     padding-top: 6rem;
     align-items: center;
     justify-content: space-between;
+
+    @media only screen and (max-width: 47.82em) {
+      display: block;
+    }
   }
 
   &-heading {
@@ -419,6 +569,11 @@
     line-height: 120%;
     text-align: left;
     flex: 0 0 50%;
+
+    @media only screen and (max-width: 47.82em) {
+      font-size: 2.8rem;
+      margin-bottom: 2rem;
+    }
   }
 
   &-btn {
@@ -438,6 +593,12 @@
   align-items: flex-start;
   flex: 0 0 50%;
 
+  @media only screen and (max-width: 47.82em) {
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4rem;
+  }
+
   &-section {
     margin-top: 12rem;
     margin-bottom: 6rem;
@@ -449,12 +610,30 @@
     background-image: linear-gradient(#a9e0dc, #a9e0dc);
     border-radius: 3.2rem;
     padding: 5rem 8rem 0 8rem;
+
+    @media only screen and (max-width: 61.88em) {
+      padding: 3rem 6rem 0 4rem;
+    }
+
+    @media only screen and (max-width: 31.25rem) {
+      padding: 0;
+    }
   }
 
   &-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media only screen and (max-width: 47.82em) {
+      display: grid;
+      justify-items: center;
+
+      img {
+        grid-row: 1/2;
+        width: 50%;
+      }
+    }
   }
 
   &-heading {
@@ -463,6 +642,16 @@
     line-height: 120%;
     text-align: left;
     margin-bottom: 1.6rem;
+
+    @media only screen and (max-width: 61.88em) {
+      font-size: 3.2rem;
+      margin-bottom: 1rem;
+    }
+
+    @media only screen and (max-width: 47.82em) {
+      font-size: 2rem;
+      padding: 1.5rem;
+    }
   }
 
   &-btn {
@@ -484,29 +673,69 @@
 }
 
 .footer {
-  margin-top: 0 !important;
+  margin-top: 1rem !important;
   color: #fff;
-  z-index: -1;
+
+  &-holder {
+    max-width: 120rem;
+  }
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 47.82em) {
+      display: block;
+    }
+  }
 
   &-logo-svg {
+    display: inline-block;
     filter: brightness(1);
     position: relative;
-    z-index: 200;
   }
 
   &-box {
+    width: 100%;
     max-width: 128rem;
-    // width: 100%;
-    background-image: linear-gradient(
-      to bottom,
-      var(--dark-color),
-      var(--dark-color)
-    );
-    // margin-top: 12rem;
     padding: 4rem 2.5rem;
   }
 
   &-btn {
     color: #fff;
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.8rem;
+
+    @media only screen and (max-width: 47.82em) {
+      margin-top: 6rem;
+      display: block;
+
+      button {
+        padding-left: 0 !important;
+      }
+    }
+  }
+
+  &-copyright {
+    margin-right: 2.4rem;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+
+  &-social-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &-social {
+    display: flex;
   }
 }

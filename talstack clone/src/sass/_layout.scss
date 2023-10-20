@@ -33,15 +33,53 @@
 
   &-logo-svg {
     height: 2.5rem;
+    position: relative;
+    z-index: 5500;
 
     &:hover {
       color: #fff;
     }
   }
 
+  &-mobile-btn {
+    opacity: 0;
+    visibility: hidden;
+
+    @media only screen and (max-width: 61.88em) {
+      display: inline-block;
+      opacity: 1;
+      visibility: visible;
+      cursor: pointer;
+      border: none;
+      background-color: var(--dark-color);
+      height: 3.2rem;
+      width: 3.2rem;
+    }
+  }
+
+  &-mobile-menu {
+    display: none;
+
+    @media only screen and (max-width: 61.88em) {
+      display: block;
+      background-color: #fff;
+      position: relative;
+      z-index: 5000;
+
+      &-container {
+        position: absolute;
+        background-color: #fff;
+      }
+    }
+  }
+
   &-btn-container {
     display: flex;
     gap: 2rem;
+
+    @media only screen and (max-width: 61.88em) {
+      display: none;
+    }
   }
 }
 
