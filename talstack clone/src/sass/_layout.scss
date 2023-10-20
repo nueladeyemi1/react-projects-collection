@@ -1,9 +1,25 @@
-// .format-hero-bg-color {
-//   background-color: var(--bg-hero);
-// }
+.format-hero-bg-color,
+.format-bg-color {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.format-hero-bg-color {
+  background-color: var(--bg-hero);
+}
+
+.format-bg-color {
+  margin-top: 12rem;
+  background-image: linear-gradient(
+    to bottom,
+    var(--dark-color),
+    var(--dark-color)
+  );
+}
 
 .hero-section {
-  background-color: var(--bg-hero);
+  // background-color: var(--bg-hero);
   min-height: 90rem;
   max-width: 128rem;
   padding: 0 2.4rem;
@@ -50,7 +66,7 @@
   transition: all 0.3s;
 
   &:hover {
-    background-color: var(--bg-hero);
+    background-color: inherit;
     color: #000;
   }
 }

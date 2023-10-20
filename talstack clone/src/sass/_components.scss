@@ -4,6 +4,7 @@
   padding: 1rem 2.4rem;
   font-size: inherit;
   font-weight: 500;
+  cursor: pointer;
 
   &:focus {
     outline: none;
@@ -38,6 +39,9 @@
     line-height: 150%;
   }
 
+  &-btn {
+    font-size: 2rem;
+  }
   ////
   /// //
   ///
@@ -64,7 +68,6 @@
       &-number {
         opacity: 1;
         position: absolute;
-
         bottom: 7.8rem;
         color: #fff;
       }
@@ -76,6 +79,7 @@
         font-weight: 500;
         letter-spacing: 0.02rem;
         line-height: 3.2rem;
+        width: 10%;
       }
 
       &-number {
@@ -99,10 +103,11 @@
     &-1-not-hover-text-title,
     &-2-text-title,
     &-3-text-title {
+      min-width: 25rem;
       opacity: 1;
       position: absolute;
       bottom: 15rem;
-      right: -2.5rem;
+      right: -8.5rem;
       color: #fff;
       transform: rotate(-90deg);
       font-size: 2.8rem;
@@ -303,5 +308,205 @@
       line-height: 140%;
       letter-spacing: 0.04rem;
     }
+  }
+}
+
+//////TESTIMONIES SECTION
+///
+///
+
+.section-testimonies {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2rem;
+  //   display: flex;
+  //   gap: 2rem;
+  margin-top: 3.2rem;
+}
+
+.testimonies {
+  &-box {
+    max-width: 128rem;
+    // width: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      var(--dark-color),
+      var(--dark-color)
+    );
+    // margin-top: 12rem;
+    padding: 4rem 2.5rem;
+  }
+
+  &-heading {
+    font-size: 3.6rem;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    line-height: 3.6rem;
+  }
+}
+
+.testimony {
+  &-card {
+    // width: 100%;
+    background-image: linear-gradient(to bottom, #fff, #fff);
+    padding: 2.8rem;
+    border-radius: 3.2rem;
+  }
+
+  &-img {
+    height: 3.2rem;
+    max-width: 100%;
+  }
+
+  &-paragraph {
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.02rem;
+    line-height: 140%;
+    margin-top: 4rem;
+  }
+
+  &-name-box {
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.02rem;
+    font-weight: 500;
+    line-height: 140%;
+  }
+
+  &-role {
+    font-weight: 400;
+  }
+}
+
+//ADDRESS SECTION
+
+.address {
+  &-section {
+    margin-top: 12rem;
+    max-width: 128rem;
+    padding: 0 2.5rem;
+  }
+
+  &-container {
+    // width: 100%;
+    background-image: linear-gradient(#eaeaea, #eaeaea);
+    // max-width: 128rem;
+    // padding: 0 2.5rem;
+    border-radius: 3.2rem;
+    padding: 4rem;
+  }
+
+  &-video {
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &-content {
+    // display: grid;
+    // grid-template-rows: auto;
+    // grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    padding-top: 6rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-heading {
+    font-size: 3.6rem;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: left;
+    flex: 0 0 50%;
+  }
+
+  &-btn {
+    font-size: 2rem;
+  }
+}
+
+//PRICING SECTION
+///
+///
+///
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start;
+  flex: 0 0 50%;
+
+  &-section {
+    margin-top: 12rem;
+    margin-bottom: 6rem;
+    max-width: 128rem;
+    padding: 0 2.5rem;
+  }
+
+  &-container {
+    background-image: linear-gradient(#a9e0dc, #a9e0dc);
+    border-radius: 3.2rem;
+    padding: 5rem 8rem 0 8rem;
+  }
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-heading {
+    font-size: 3.6rem;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: left;
+    margin-bottom: 1.6rem;
+  }
+
+  &-btn {
+    font-size: 2rem;
+  }
+}
+
+//////FOOTER SECTION
+///
+///
+
+.section-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 2rem;
+  //   display: flex;
+  //   gap: 2rem;
+  margin-top: 3.2rem;
+}
+
+.footer {
+  margin-top: 0 !important;
+  color: #fff;
+  z-index: -1;
+
+  &-logo-svg {
+    filter: brightness(1);
+    position: relative;
+    z-index: 200;
+  }
+
+  &-box {
+    max-width: 128rem;
+    // width: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      var(--dark-color),
+      var(--dark-color)
+    );
+    // margin-top: 12rem;
+    padding: 4rem 2.5rem;
+  }
+
+  &-btn {
+    color: #fff;
   }
 }

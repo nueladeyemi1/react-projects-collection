@@ -81,3 +81,33 @@ export const featureDetails = [
       'Your employees and leaders can tap into the collective experience of Talstack learners at various leading companies in Africa, as well as engage with Instructors.',
   },
 ]
+
+export const testimonies = [
+  {
+    id: 1,
+    companyName: 'passone',
+    testimony:
+      'I will definitely be adding more employees to the Talstack platform. I can see obvious improvement on the general performance of my employees on Talstack specifically around areas where there were previously gaps.',
+    logoPath: '/passone.png',
+    name: 'Mayowa Okengbenle',
+    position: 'CEO, PressOne',
+  },
+  {
+    id: 2,
+    companyName: 'thriving',
+    testimony:
+      'I can see the impact of the training on the attitude of some members of my team. This reflects on the quality of their work output. I would consider the training as value for money in terms of cost, convenience and impact.',
+    logoPath: '/thriving.png',
+    name: 'Yemi Ogunlade',
+    position: 'Executive Vice President, Thriving Engineering',
+  },
+  {
+    id: 1,
+    companyName: 'sendpass',
+    testimony:
+      "Emails are better structured, and there's an increased level of proactiveness with members of the team. Doing the exercises as a team has created some healthy competition and they're holding each other accountable as well.",
+    logoPath: 'sendpass.png',
+    name: 'Maureen Okojie',
+    position: 'Co-Founder & Head, Commercial Ops, SEND',
+  },
+]
