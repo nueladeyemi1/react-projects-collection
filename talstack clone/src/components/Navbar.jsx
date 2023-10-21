@@ -1,40 +1,37 @@
 import { HiOutlineMenuAlt4 } from 'react-icons/hi'
+import { RxCross2 } from 'react-icons/rx'
 
-const Navbar = () => {
+const Navbar = ({ handleToggle, mobileToogle }) => {
   return (
-    <>
-      <div className='navbar-mobile-menu'>
-        <div className='navbar-mobile-menu-container'>
-          <button className='btn-format'>Pricing</button>
-          <div className='navbar-mobile-menu-btns'>
-            <button className='btn-format btn-sign-in'>Sign in</button>
-            <button className='btn-format btn-get-started'>Get started</button>
-          </div>
-        </div>
-      </div>
-      <nav className='navbar'>
-        <div className='navbar-logo'>
-          <img
-            src='/logo.svg'
-            alt='Talstack Logo'
-            className='navbar-logo-svg'
-          />
-          {/* <svg className='navbar-logo-svg'>
+    <nav className='navbar'>
+      <div className='navbar-logo'>
+        <img src='/logo.svg' alt='Talstack Logo' className='navbar-logo-svg' />
+        {/* <svg className='navbar-logo-svg'>
           <use xlinkHref='/logo.svg#logo'></use>
         </svg> */}
-        </div>
+      </div>
 
-        <button className='navbar-mobile-btn'>
+      <button
+        onClick={handleToggle}
+        className={`${
+          mobileToogle
+            ? 'navbar-mobile-btn-hidden-on-large'
+            : 'navbar-mobile-btn'
+        }`}
+      >
+        {mobileToogle ? (
+          <RxCross2 color='#fff' size={25} />
+        ) : (
           <HiOutlineMenuAlt4 color='#fff' size={25} />
-        </button>
+        )}
+      </button>
 
-        <div className='navbar-btn-container'>
-          <button className='btn-format btn-pricing'>Pricing</button>
-          <button className='btn-format btn-sign-in'>Sign in</button>
-          <button className='btn-format btn-get-started'>Get started</button>
-        </div>
-      </nav>
-    </>
+      <div className='navbar-btn-container'>
+        <button className='btn-format btn-pricing'>Pricing</button>
+        <button className='btn-format btn-sign-in'>Sign in</button>
+        <button className='btn-format btn-get-started'>Get started</button>
+      </div>
+    </nav>
   )
 }
 
