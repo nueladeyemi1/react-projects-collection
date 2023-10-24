@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useState } from 'react'
 import {
   BiLogoGithub,
   BiLogoLinkedinSquare,
@@ -7,25 +9,37 @@ import {
 import { Link } from 'react-router-dom'
 
 const Body = () => {
-  function gotoGit() {
-    window.location.href = 'https://github.com/nueladeyemi1'
-  }
+  const [state, setState] = useState(0)
+  const [transit, setTransit] = useState(false)
+  const roles = ['Frontend', 'Software', 'Mechanical']
 
-  function gotoLinkedIn() {
-    window.location.href =
-      'https://www.linkedin.com/in/emmanuel-adeyemi-289a1883/'
-  }
+  useEffect(() => {
+    const changer = setTimeout(() => {
+      setState((state) => state + 1)
+      setTransit((bol) => !bol)
 
-  function gotoTwitter() {
-    window.location.href = 'https://github.com/nueladeyemi1'
-  }
+      if (state > 1) {
+        setState(0)
+      }
+    }, 1000)
 
+    return () => clearTimeout(changer)
+  }, [state])
+
+  console.log(state)
   return (
     <section className='body'>
       <div className='body-details'>
         <img src='/emmanuel.jpg' alt='Emmanuel' className='body-img' />
         <h3 className='body-name'>Emmanuel Adeyemi</h3>
-        <h1 className='body-role'>Frontend Engineer</h1>
+        <h1 className='body-role'>
+          <span
+            className={transit ? 'body-role-active' : 'body-role-notactive'}
+          >
+            {roles[state]}{' '}
+          </span>
+          <span>Engineer</span>
+        </h1>
       </div>
 
       <p className='body-description'>
@@ -47,13 +61,16 @@ const Body = () => {
           <Link to='mailto:emmanuel.adeyemi40@gmail.com' className=''>
             <BiMailSend size={20} />
           </Link>
-          <Link to={() => gotoGit()} className=''>
+          <Link to={'https://github.com/nueladeyemi1'} className=''>
             <BiLogoGithub size={20} />
           </Link>
-          <Link to={() => gotoLinkedIn()} className=''>
+          <Link
+            to={'https://www.linkedin.com/in/emmanuel-adeyemi-289a1883/'}
+            className=''
+          >
             <BiLogoLinkedinSquare size={20} />
           </Link>
-          <Link className=''>
+          <Link to={'https://www.twitter.com/nueladeyemi'} className=''>
             <BiLogoTwitter size={20} />
           </Link>
         </div>

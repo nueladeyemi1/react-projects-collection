@@ -7,11 +7,11 @@ const Footer = () => {
         const { id, name, icon: Icon } = singleIcon
         return (
           <div
-            onMouseEnter={() => {
-              console.log(id)
-              setHover(true)
-            }}
-            onMouseLeave={() => setHover(false)}
+            // onMouseEnter={() => {
+            //   console.log(id)
+            //   setHover(true)
+            // }}
+            // onMouseLeave={() => setHover(false)}
             key={id}
             className='footer-icon'
           >

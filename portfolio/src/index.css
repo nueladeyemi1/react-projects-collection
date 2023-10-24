@@ -69,11 +69,17 @@ html {
       position: absolute;
       top: 0;
       left: 0;
+      right: 0;
       display: flex;
       flex-direction: column;
-      height: 100%;
-      width: 100%;
-      background-color: #dbdee2; } }
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      box-shadow: 0 0 0.1rem #000;
+      margin-top: 6.5rem !important;
+      margin: 2.5rem;
+      background-color: #fff;
+      transition: all 0.5s; } }
   .navbar-menu {
     opacity: 0;
     visibility: hidden;
@@ -87,6 +93,11 @@ html {
     text-decoration: none;
     color: #000;
     transition: all 0.4s; }
+    @media only screen and (max-width: 37.5em) {
+      .navbar-link {
+        flex: 0;
+        margin: 0.5rem;
+        padding: 1rem; } }
     .navbar-link:link, .navbar-link:visited {
       color: #000; }
     .navbar-link:hover, .navbar-link:active {
@@ -131,7 +142,21 @@ html {
     font-weight: 600;
     margin-bottom: 1.2rem; }
   .body-role {
-    font-weight: 700; }
+    font-weight: 700;
+    position: relative;
+    transition: all 0.5s; }
+    .body-role-active {
+      position: absolute;
+      top: 0;
+      left: -12.5rem;
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.5s; }
+    .body-role-notactive {
+      position: absolute;
+      top: -2rem;
+      opacity: 0;
+      visibility: hidden; }
   .body-socials-links {
     display: flex;
     align-items: center;
@@ -146,3 +171,8 @@ html {
     .body-socials-box p {
       width: 70%;
       text-align: center; }
+
+@media only screen and (max-width: 37.5em) {
+  .active {
+    opacity: 0;
+    visibility: hidden; } }
