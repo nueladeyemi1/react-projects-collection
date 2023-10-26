@@ -3,7 +3,7 @@ import { featureContent } from '../data/featuresData'
 const Features = () => {
   return (
     <section className='features'>
-      {featureContent.map((content, index) => {
+      {featureContent.map((content) => {
         const { id, iconName, title, textContent } = content
 
         return (
