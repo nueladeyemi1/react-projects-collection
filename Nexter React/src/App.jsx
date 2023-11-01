@@ -1,3 +1,4 @@
+import { BrowserRouter } from 'react-router-dom'
 import Features from './components/Features'
 import Footer from './components/Footer'
 import Gallery from './components/Gallery'
@@ -9,16 +10,18 @@ import Story from './components/Story'
 
 function App() {
   return (
-    <div className='container'>
-      <Sidebar />
-      <Header />
-      <Realtors />
-      <Features />
-      <Story />
-      <Homes />
-      <Gallery />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div id='home' className='container'>
+        <Sidebar />
+        <Header />
+        <Realtors />
+        <Features />
+        <Story />
+        <Homes />
+        <Gallery />
+        <Footer />
+      </div>
+    </BrowserRouter>
   )
 }
 

@@ -2,7 +2,7 @@ import { galleryData } from '../data/galleryData'
 
 const Gallery = () => {
   return (
-    <div className='gallery'>
+    <div id='gallery' className='gallery'>
       {galleryData.map((data) => {
         const { id, image } = data
 

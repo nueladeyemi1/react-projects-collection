@@ -86,7 +86,31 @@ body {
   grid-column: sidebar-start/ sidebar-end;
   grid-row: 1/-1;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1.5rem;
+  position: relative; }
+  .sidebar-link-container {
+    transition: all 0.5s;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c69963;
+    z-index: 1500; }
+    .sidebar-link-container-links {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+  .sidebar-btn {
+    position: fixed;
+    z-index: 2000;
+    background-color: transparent; }
+    .sidebar-btn:hover {
+      background-color: transparent; }
   @media only screen and (max-width: 62.5em) {
     .sidebar {
       grid-column: 1/-1;
@@ -119,6 +143,10 @@ body {
         transform: translateY(-1.2rem); }
       .nav-btn::after {
         transform: translateY(1rem); } }
+
+.links-sidebar {
+  text-decoration: none;
+  color: #fff; }
 
 .header {
   background-color: #54483a;

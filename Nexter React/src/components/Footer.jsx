@@ -17,7 +17,8 @@ const Footer = () => {
         })}
       </ul>
       <p className='copyright'>
-        &copy; Copyright {new Date().getFullYear()} Emmanuel Adeyemi
+        &copy; Copyright {new Date().getFullYear()} Emmanuel Adeyemi | UI from
+        Jonas Schmedtmann
       </p>
     </footer>
   )
