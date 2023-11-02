@@ -44,6 +44,7 @@ body {
 }
 
 .container {
+  transition: all 0.5s;
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns:

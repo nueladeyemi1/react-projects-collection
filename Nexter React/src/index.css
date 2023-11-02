@@ -19,6 +19,7 @@ body {
   line-height: 1.6; }
 
 .container {
+  transition: all 0.5s;
   display: grid;
   grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
   grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]; }
@@ -89,7 +90,8 @@ body {
   justify-content: center;
   align-items: flex-start;
   padding-top: 1.5rem;
-  position: relative; }
+  position: relative;
+  transition: all 0.5s; }
   .sidebar-link-container {
     transition: all 0.5s;
     position: fixed;
@@ -109,7 +111,16 @@ body {
     position: fixed;
     z-index: 2000;
     background-color: transparent; }
+    @media only screen and (max-width: 62.5em) {
+      .sidebar-btn {
+        position: absolute; } }
     .sidebar-btn:hover {
+      background-color: transparent; }
+  .sidebar-btn-active {
+    position: fixed;
+    z-index: 2000;
+    background-color: transparent; }
+    .sidebar-btn-active:hover {
       background-color: transparent; }
   @media only screen and (max-width: 62.5em) {
     .sidebar {

@@ -7,6 +7,7 @@
   align-items: flex-start;
   padding-top: 1.5rem;
   position: relative;
+  transition: all 0.5s;
 
   // &-active {
   //   position: ;
@@ -32,6 +33,20 @@
   }
 
   &-btn {
+    position: fixed;
+    z-index: 2000;
+    background-color: transparent;
+
+    @media only screen and (max-width: $bp-large) {
+      position: absolute;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  &-btn-active {
     position: fixed;
     z-index: 2000;
     background-color: transparent;

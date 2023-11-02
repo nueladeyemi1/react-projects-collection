@@ -2,9 +2,19 @@ import { useState } from 'react'
 
 import { HiMenuAlt1 } from 'react-icons/hi'
 import { RxCross2 } from 'react-icons/rx'
-import { Link } from 'react-router-dom'
+
+const home = document.querySelector('.container')
+const story = document.querySelector('.story-content')
+const properties = document.querySelector('.homes')
+const gallery = document.querySelector('.gallery')
+const features = document.querySelector('.features')
 
 const Sidebar = () => {
+  function handleClick(element) {
+    setOpenNav(false)
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+
   const [openNav, setOpenNav] = useState(false)
 
   return (
@@ -12,7 +22,7 @@ const Sidebar = () => {
       <div className='sidebar sidebar-active'>
         <button
           onClick={() => setOpenNav((toggle) => !toggle)}
-          className='btn sidebar-btn'
+          className={openNav ? 'btn sidebar-btn-active' : 'btn sidebar-btn'}
         >
           {openNav ? <RxCross2 size={45} /> : <HiMenuAlt1 size={45} />}
         </button>
@@ -28,30 +38,39 @@ const Sidebar = () => {
               alignItems: 'center',
             }}
           >
-            <button onClick={() => setOpenNav(false)} className='btn'>
-              <Link className='links-sidebar' to='#home'>
-                HOME
-              </Link>
+            <button
+              onClick={() => handleClick(home)}
+              className='btn links-sidebar'
+            >
+              HOME
             </button>
-            <button onClick={() => setOpenNav(false)} className='btn'>
-              <Link className='links-sidebar' to='#home'>
-                FEATURES
-              </Link>
+
+            <button
+              onClick={() => handleClick(features)}
+              className='btn links-sidebar'
+            >
+              FEATURES
             </button>
-            <button onClick={() => setOpenNav(false)} className='btn'>
-              <Link className='links-sidebar' to='#home'>
-                REVIEWS
-              </Link>
+
+            <button
+              onClick={() => handleClick(story)}
+              className='btn links-sidebar'
+            >
+              STORY
             </button>
-            <button onClick={() => setOpenNav(false)} className='btn'>
-              <Link className='links-sidebar' to='#home'>
-                PROPERTIES
-              </Link>
+
+            <button
+              onClick={() => handleClick(properties)}
+              className='btn links-sidebar'
+            >
+              PROPERTIES
             </button>
-            <button onClick={() => setOpenNav(false)} className='btn'>
-              <Link className='links-sidebar' to='#gallery'>
-                GALLERY
-              </Link>
+
+            <button
+              onClick={() => handleClick(gallery)}
+              className='btn links-sidebar'
+            >
+              GALLERY
             </button>
           </div>
         </div>
