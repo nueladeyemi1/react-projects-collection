@@ -3,16 +3,16 @@ import { useState } from 'react'
 import { HiMenuAlt1 } from 'react-icons/hi'
 import { RxCross2 } from 'react-icons/rx'
 
-const home = document.querySelector('.container')
-const story = document.querySelector('.story-content')
-const properties = document.querySelector('.homes')
-const gallery = document.querySelector('.gallery')
-const features = document.querySelector('.features')
-
 const Sidebar = () => {
+  const home = document.querySelector('.container')
+  const story = document.querySelector('.story-content')
+  const properties = document.querySelector('.homes')
+  const gallery = document.querySelector('.gallery')
+  const features = document.querySelector('.features')
+
   function handleClick(element) {
     setOpenNav(false)
-    element.scrollIntoView({ behavior: 'smooth' })
+    element?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const [openNav, setOpenNav] = useState(false)

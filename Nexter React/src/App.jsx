@@ -11,7 +11,7 @@ import Story from './components/Story'
 function App() {
   return (
     <BrowserRouter>
-      <div id='home' className='container'>
+      <div className='container'>
         <Sidebar />
         <Header />
         <Realtors />
