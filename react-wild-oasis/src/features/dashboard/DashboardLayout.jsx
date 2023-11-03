@@ -10,9 +10,17 @@ import { useRecentStays } from './useRecentStays'
 
 const StyledDashboardLayout = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto 34rem auto;
+  /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
+  /* grid-template-columns: repeat(4, 1fr)); */
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: auto 34rem auto; */
   gap: 2.4rem;
+
+  @media only screen and (max-width: 53.125em) {
+    /* grid-template-columns: repeat(2, 1fr) !important; */
+    display: flex;
+    flex-direction: column;
+  }
 `
 
 const DashboardLayout = () => {

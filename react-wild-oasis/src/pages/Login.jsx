@@ -6,7 +6,7 @@ import Logo from '../ui/Logo'
 const LoginLayout = styled.main`
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 48rem;
+  /* grid-template-columns: 48rem; */
   align-content: center;
   justify-content: center;
   gap: 3.2rem;
@@ -17,7 +17,8 @@ function Login() {
   return (
     <LoginLayout>
       <Logo />
-      <Heading as='h4'>Login to your account</Heading>
+      <Heading as='h4'>Just click login to access</Heading>
+      {/* <h3>Please click Login to access the </h3> */}
       <LoginForm />
     </LoginLayout>
   )

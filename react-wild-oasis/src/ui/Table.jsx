@@ -32,6 +32,7 @@ const StyledHeader = styled(CommonRow)`
 
 const StyledBody = styled.section`
   margin: 0.4rem 0;
+  overflow: scroll;
 `
 
 const StyledRow = styled(CommonRow)`

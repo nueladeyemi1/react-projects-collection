@@ -11,6 +11,14 @@ const Heading = styled.h1`
     css`
       font-size: 3rem;
       font-weight: 600;
+
+      @media only screen and (max-width: 68.75em) {
+        font-size: 2rem;
+      }
+
+      @media only screen and (max-width: 53.125em) {
+        font-size: 1.5rem;
+      }
     `}
 
   ${(props) =>
@@ -18,6 +26,10 @@ const Heading = styled.h1`
     css`
       font-size: 2rem;
       font-weight: 600;
+
+      @media only screen and (max-width: 68.75em) {
+        font-size: 1.5rem;
+      }
     `}
     
     ${(props) =>
@@ -25,6 +37,10 @@ const Heading = styled.h1`
       css`
         font-size: 2rem;
         font-weight: 500;
+
+        @media only screen and (max-width: 68.75em) {
+          font-size: 1.5rem;
+        }
       `}
     
  ${(props) =>
@@ -33,6 +49,14 @@ const Heading = styled.h1`
      font-size: 3rem;
      font-weight: 600;
      text-align: center;
+
+     @media only screen and (max-width: 68.75em) {
+       font-size: 2rem;
+     }
+
+     @media only screen and (max-width: 53.125em) {
+       font-size: 1.5rem;
+     }
    `}
 
   line-height: 1.4;
