@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <>
-      {isLoadingSlider && isLoadingRated ? (
+      {isLoadingSlider === true && isLoadingRated === true ? (
         <Spinner />
       ) : (
         <>
