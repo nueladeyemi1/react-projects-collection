@@ -1,3 +1,5 @@
+const about = document.querySelector('.about')
+
 const links = [
   {
     id: 1,
@@ -6,6 +8,7 @@ const links = [
   {
     id: 2,
     name: 'About Us',
+    lnk: about,
   },
   {
     id: 3,
@@ -17,14 +20,22 @@ const links = [
   },
 ]
 
-const NavLinks = () => {
+// console.log(about)
+const NavLinks = ({ toggle }) => {
   return (
-    <ul className='header-nav'>
+    <ul className={toggle ? 'show-mobile-links' : 'header-nav'}>
       {links.map((link) => {
-        const { id, name } = link
+        const { id, name, lnk } = link
 
         return (
-          <li className='header-nav-link' key={id}>
+          <li
+            // onClick={() => {
+            //   console.log(lnk)
+            //   lnk?.scrollIntoView({ behavior: 'smooth' })
+            // }}
+            className='header-nav-link'
+            key={id}
+          >
             {name}
           </li>
         )

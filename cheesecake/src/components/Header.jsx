@@ -20,8 +20,10 @@ const Header = () => {
           <CiMenuFries size={35} color='#6A4028' />
         )}
       </div>
-      <NavLinks />
-      <button className='header-signup'>Sign up</button>
+      <NavLinks toggle={toggle} />
+      <button className={toggle ? 'show-mobile' : 'header-signup'}>
+        Sign up
+      </button>
     </section>
   )
 }

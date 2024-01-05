@@ -16,7 +16,7 @@ const items = [
     price: '11.00',
   },
   {
-    id: 1,
+    id: 3,
     image: 'chocolate.png',
     name: 'Chocolate Cheesecake',
     desc: 'Cherish Chocolate, relish cheesecake magic!',
@@ -40,12 +40,18 @@ const Menu = () => {
               <p className='menu-card-title'>{name}</p>
               <p className='menu-card-desc'>{desc}</p>
               <div className='menu-card-details'>
-                <p>
+                <div>
                   <span>$</span> {price}
-                </p>
+                </div>
                 <p>
-                  {Array.from({ length: 5 }, () => {
-                    return <TiStarFullOutline color='#6A4028' />
+                  {Array.from({ length: 5 }, (_, index) => {
+                    return (
+                      <TiStarFullOutline
+                        key={index}
+                        size={18}
+                        color='#6A4028'
+                      />
+                    )
                   })}
                 </p>
               </div>

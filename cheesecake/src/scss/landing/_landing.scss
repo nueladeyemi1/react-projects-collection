@@ -1,14 +1,11 @@
-$mxs: 75em;
-$ms: 62.5em;
-$sm: 56.25em;
+$mxs: 81.25em;
+$ms: 68.75em;
+
+$sm: 61.25rem;
 $ss: 46.875em;
 
-// .main {
-//   @media only screen and (max-width: $ss) {
-//     padding-left: 1.5rem;
-//     padding-right: 1.5rem;
-//   }
-// }
+$fix: 58.5em;
+$ls: 22.5em;
 
 .mobile-nav {
   display: none;
@@ -16,6 +13,21 @@ $ss: 46.875em;
   @media only screen and (max-width: $ss) {
     display: block;
   }
+}
+
+.show-mobile,
+.show-mobile-links {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  color: #fff8e1;
+  list-style: none;
+  background-color: #6a4028;
+}
+
+.show-mobile-links {
+  position: fixed;
 }
 
 .header {
@@ -48,16 +60,16 @@ $ss: 46.875em;
     list-style: none;
     background-color: rgba(111, 68, 54, 0.8);
     width: 44.6rem;
-    // height: 4.3rem;
     border-radius: 1rem;
-    // padding: 1.1rem 4rem;
-
+    z-index: 11;
+    transition: all 0.5s ease;
     @media only screen and (max-width: $ss) {
       display: none;
     }
 
     &-link {
       padding: 1.1rem 2rem;
+      transition: all 0.5s ease;
     }
 
     &-link:hover,
@@ -66,7 +78,8 @@ $ss: 46.875em;
       padding: 1.1rem 2rem;
       border-radius: 1rem;
       color: rgba(111, 68, 54, 0.8);
-      transition: all 1s ease;
+      z-index: 11;
+      transition: all 0.5s ease;
     }
 
     &-link {
@@ -84,6 +97,13 @@ $ss: 46.875em;
     background: none;
     cursor: pointer;
     font-size: inherit;
+    z-index: 10;
+
+    &:hover {
+      background: #6a4028;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
 
     @media only screen and (max-width: $ss) {
       display: none;
@@ -94,7 +114,6 @@ $ss: 46.875em;
 .hero {
   &-section {
     width: 100%;
-    // height: 60.6rem;
     background-image: url('Background.jpg');
     background-size: cover;
     padding-bottom: 2rem;
@@ -140,12 +159,13 @@ $ss: 46.875em;
         }
 
         @media only screen and (max-width: $ss) {
-          font-size: 4.9rem;
+          font-size: 3.6rem;
           width: fit-content;
-          //   width: max-content;
+          width: -moz-fit-content;
         }
 
         @media only screen and (max-width: $ss) {
+          font-size: 3.4rem;
           text-align: center;
         }
       }
@@ -156,10 +176,6 @@ $ss: 46.875em;
         line-height: 1.6;
         width: 42rem;
         margin-top: 1rem;
-
-        @media only screen and (max-width: $ms) {
-          width: fit-content;
-        }
 
         @media only screen and (max-width: $ss) {
           text-align: center;
@@ -184,10 +200,14 @@ $ss: 46.875em;
           font-size: 1.5rem;
           font-weight: 600;
           line-height: 1.2;
+          transition: all 0.5s ease;
         }
 
         &-watchdemo,
         &-getstarted:hover {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           width: 14.7rem;
           height: 5.6rem;
           border: #3d2619 solid 0.1rem;
@@ -198,6 +218,7 @@ $ss: 46.875em;
           font-size: 1.5rem;
           font-weight: 600;
           line-height: 1.2;
+          transition: all 0.5s ease;
         }
       }
     }
@@ -273,13 +294,16 @@ $ss: 46.875em;
     margin-top: 15rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    @media only screen and (max-width: $ss) {
+      align-items: center;
+    }
 
     button {
       display: inline-block;
     }
 
-    @media only screen and (max-width: $sm) {
+    @media only screen and (max-width: $fix) {
       margin-top: 0;
     }
 
@@ -293,7 +317,7 @@ $ss: 46.875em;
       }
 
       @media only screen and (max-width: $ss) {
-        font-size: 4rem;
+        font-size: 3.2rem;
         text-align: center;
       }
     }
@@ -301,10 +325,11 @@ $ss: 46.875em;
     &-subtitle {
       margin-top: 0.25rem;
       font-size: 2.4rem;
+      font-weight: 300;
       font-family: poppins;
 
       @media only screen and (max-width: $ss) {
-        font-size: 2rem;
+        font-size: 1.8rem;
         text-align: center;
       }
     }
@@ -331,7 +356,6 @@ $ss: 46.875em;
 .menu {
   background-image: url('Background.jpg');
   background-size: cover;
-  //   height: 54rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -349,7 +373,6 @@ $ss: 46.875em;
   }
 
   &-card {
-    display: flex;
     flex-direction: column;
     align-items: center;
     height: 35.1rem;
@@ -358,6 +381,18 @@ $ss: 46.875em;
     border-radius: 4rem;
     background-color: #fff8e1;
     padding-top: 4rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+
+    @media only screen and (max-width: $ls) {
+      width: 26rem;
+    }
+
+    &:hover {
+      transform: translateY(-1rem);
+      transition: all 0.5s ease;
+      background-color: #fff8e1be;
+    }
 
     &-container {
       display: flex;
@@ -367,12 +402,13 @@ $ss: 46.875em;
       flex-wrap: wrap;
     }
 
-    // &-icon {
-    //   img {
-    //     display: inline-block;
-    //     margin: 0 auto;
-    //   }
-    // }
+    &-icon {
+      img {
+        height: 16rem;
+        display: block;
+        margin: 0 auto;
+      }
+    }
 
     &-title {
       align-self: flex-start;
@@ -391,6 +427,22 @@ $ss: 46.875em;
 
     &-details {
       display: flex;
+      margin-left: 1.5rem;
+      margin-right: 2rem;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4rem;
+
+      div {
+        font-size: 2.1rem;
+        font-weight: 600;
+        font-family: inter;
+
+        span {
+          font-size: 1.8rem;
+          color: #53a623;
+        }
+      }
     }
   }
 }

@@ -1,3 +1,4 @@
+import { FaPlayCircle } from 'react-icons/fa'
 import Header from './Header'
 
 const Hero = () => {
@@ -18,7 +19,8 @@ const Hero = () => {
               Get Started
             </button>
             <button className='hero-container-text-content-button-box-watchdemo'>
-              Watch Demo
+              <FaPlayCircle style={{ marginRight: '5px' }} size={18} /> Watch
+              Demo
             </button>
           </div>
         </div>
