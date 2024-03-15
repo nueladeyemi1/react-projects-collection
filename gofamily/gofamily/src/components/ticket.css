@@ -1,0 +1,53 @@
+.ticket-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5rem 15rem;
+  gap: 5rem;
+}
+
+.ticket {
+  position: relative;
+}
+
+.ticket-spine {
+  position: relative;
+  margin-top: -20rem;
+  z-index: 2000;
+}
+
+.ticket-baggage {
+  position: relative;
+  width: 100%;
+}
+
+.ticket-app {
+  position: absolute;
+  left: 23.5%;
+  /* bottom: -15%; */
+  /* bottom: 2%; */
+  top: 15%;
+  z-index: 10;
+  width: 10%;
+}
+
+.ticket-text-container {
+  padding: 2.5rem 1rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-secondary {
+  color: #0d6efd;
+}
+
+.spine-content {
+  position: absolute;
+  bottom: -5%;
+  display: flex;
+  margin: 0 15rem;
+  z-index: 3000;
+}
+
+.spine-content img {
+  width: 50%;
+}

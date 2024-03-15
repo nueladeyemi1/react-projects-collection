@@ -1,0 +1,153 @@
+.hero {
+  display: flex;
+  margin-left: 15rem;
+  margin-right: 15rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+  gap: 10rem;
+}
+
+.primary-title {
+  color: #0d6efd;
+  font-weight: 700;
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.secondary-title {
+  color: #383737;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text {
+  color: #5e5e5e;
+  line-height: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn {
+  border: none;
+  cursor: pointer;
+  background-color: #0d6efd;
+  color: #ffffff;
+  padding: 1.5rem 4rem;
+  border-radius: 2rem;
+  font-size: 1.6rem;
+}
+
+.btn:hover {
+  background-color: #0d6dfddc;
+}
+
+.new-hero-image {
+  width: 50%;
+}
+
+.outter-circle {
+  position: relative;
+  background-color: rgba(44, 44, 44, 0.017);
+  height: 66rem;
+  width: 62rem;
+  border-radius: 50%;
+}
+
+.inner-circle {
+  position: absolute;
+  background-color: rgba(40, 40, 40, 0.017);
+  height: 46rem;
+  width: 42rem;
+  border-radius: 50%;
+  top: 15%;
+  right: 10%;
+}
+
+.inner-circle-image {
+  position: absolute;
+  background-image: url('/Ellipse.png');
+  background-size: cover;
+  height: 50%;
+  width: 50%;
+  border-radius: 50%;
+  top: 25%;
+  right: 20%;
+}
+
+.hero-location-image,
+.hero-location-image1,
+.hero-location-image2 {
+  background-color: #ffffff;
+  box-shadow: 2px 2px 2px 5px rgba(0, 0, 0, 0.03);
+  height: 20rem;
+  width: 24rem;
+  border-radius: 2rem;
+  transform: rotate(0);
+  position: absolute;
+  left: 70%;
+  top: 4%;
+}
+
+.hero-location-image img {
+  position: absolute;
+  width: 85%;
+  top: 5%;
+  left: 10%;
+}
+
+.hero-location-image1 {
+  transform: scale(0.85);
+  left: 70%;
+  top: -1%;
+  z-index: -10;
+}
+
+.hero-location-image2 {
+  transform: scale(0.75);
+  left: 70%;
+  top: -5%;
+  z-index: -15;
+}
+
+.top-ellipse {
+  position: absolute;
+  left: 12%;
+  top: -5%;
+}
+
+.bottom-ellipse {
+  position: absolute;
+  left: 60%;
+  top: 75%;
+}
+
+.gofamily {
+  position: relative;
+}
+
+.gofamily-1,
+.gofamily-2,
+.gofamily-3 {
+  position: absolute;
+  display: block;
+  height: 2.9rem;
+  width: 0.25rem;
+  background-color: #0d6efd;
+}
+
+.gofamily-1 {
+  top: -22%;
+  right: 51.5%;
+  transform: rotate(30deg);
+}
+
+.gofamily-2 {
+  top: -3%;
+  right: 49%;
+  transform: rotate(60deg);
+}
+
+.gofamily-3 {
+  top: 20%;
+  right: 48%;
+  transform: rotate(80deg);
+}
