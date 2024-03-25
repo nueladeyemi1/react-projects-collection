@@ -1,7 +1,7 @@
-import './index.css'
+import FeedbackCard from './ui/FeedbackCard'
 
 function App() {
-  return <div className='text-3xl font-bold underline'>Testing yeahh</div>
+  return <FeedbackCard />
 }
 
 export default App

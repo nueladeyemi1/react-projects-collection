@@ -9,9 +9,10 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem === 10px */
 }
 
 body {
   background-color: #f0f2f5;
+  color: #1d2433;
 }
