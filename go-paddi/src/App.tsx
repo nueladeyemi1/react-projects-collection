@@ -1,16 +1,12 @@
-import { Route, Routes } from 'react-router'
+// import { Route, Routes } from 'react-router'
 import { BrowserRouter } from 'react-router-dom'
-import FeedbackCard from './ui/FeedbackCard'
+import Settings from './ui/Settings'
+BrowserRouter
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<FeedbackCard />} />
-        <Route path='feedback'>
-          <Route path=':comments' element={<FeedbackCard />} />
-        </Route>
-      </Routes>
+      <Settings />
     </BrowserRouter>
   )
 }

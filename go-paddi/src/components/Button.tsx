@@ -1,12 +1,19 @@
+import { MouseEventHandler } from 'react'
+
 interface ButtonProps {
   text: String
   className?: String
   disabled?: boolean
+  onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
-function Button({ text, className, disabled }: ButtonProps) {
+function Button({ text, className, disabled, onClick }: ButtonProps) {
   return (
-    <button disabled={disabled} className={`${className} border-0`}>
+    <button
+      onClick={onClick}
+      disabled={disabled}
+      className={`${className} bg-transparent border-0`}
+    >
       {text}
     </button>
   )
