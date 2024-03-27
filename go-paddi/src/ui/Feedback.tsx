@@ -34,7 +34,7 @@ const radioContents = [
 
 function Feedback() {
   const [disable, setDisable] = useState<boolean>(true)
-  const [active, setActive] = useState<boolean>(false)
+  const [active, setActive] = useState<string>('')
 
   return (
     <>
@@ -50,9 +50,7 @@ function Feedback() {
               <Radio
                 onClick={(e: MouseEvent) => {
                   const target = e.target as HTMLButtonElement
-                  setActive(() => (text === target.name ? true : false))
-                  console.log(target.name, text)
-                  console.log(active)
+                  setActive(target.name)
                   setDisable((disable) =>
                     text === target.name || disable === true
                       ? false
@@ -64,13 +62,17 @@ function Feedback() {
                 key={id}
                 icon={icon}
                 text={text}
-                // active={disable}
+                className={
+                  active === text
+                    ? 'bg-[#E7F0FF] border-[#0D6EFD] border-[1px]'
+                    : 'bg-[#F9FAFB] border-[#D0D5DD] border-[1px]'
+                }
               />
             )
           })}
         </div>
         <TextArea
-          className='h-[295px] border-[#98A2B3] border-[1px] w-[100%] placeholder:p-[12px] placeholder:font-[500] placeholder:text-[16px] focus:border-[#98A2B3] focus:border-[1px] mb-[56px]'
+          className='h-[295px] rounded-[4px] border-[#98A2B3] border-[1px] w-[100%] placeholder:p-[12px] placeholder:font-[500] placeholder:text-[16px] focus:border-[#98A2B3] focus:border-[1px] mb-[56px]'
           label='Comments'
           id='comments'
           name='comments'

@@ -1,26 +1,26 @@
 interface SelectProps {
   value?: string
-  text: string[]
+  content: string[]
   className?: string
   label: string
 }
 
-function Select({ value, className, text, label }: SelectProps) {
+function Select({ value, className, content, label }: SelectProps) {
   return (
-    <>
+    <section className='flex flex-col w-[100%] gap-[4px]'>
       <label className='font-[400] text-[16px] leading-[24px]' htmlFor={label}>
         {label}
       </label>
-      <select>
-        {text.map((content: string) => {
+      <select className={className}>
+        {content.map((text: string) => {
           return (
-            <option className={className} value={value}>
-              {content}
+            <option className='' value={value}>
+              {text}
             </option>
           )
         })}
       </select>
-    </>
+    </section>
   )
 }
 

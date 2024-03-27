@@ -12,7 +12,7 @@ function Button({ text, className, disabled, onClick }: ButtonProps) {
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`${className} bg-transparent border-0`}
+      className={`${className} border-0`}
     >
       {text}
     </button>

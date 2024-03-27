@@ -35,43 +35,68 @@ function Settings() {
   return (
     //The DIV below is placeholder to centralize the component
     <div className='flex justify-center items-center my-[50px] '>
-      <section className='bg-[#FFFFFF] w-[1300px] mb-[24px] rounded-[4px] '>
+      <section className='bg-[#FFFFFF] w-[1400px] mb-[24px] rounded-[4px] '>
         <p className='p-[32px]'>
           <span className='font-[400] text-[16px] text-[#676E7E] leading-[24px]'>
             Settings
           </span>
           <h3 className='font-[600] text-[28px] leading-[36px]'>Feedback</h3>
         </p>
-        <div className='pl-[32px] py-[12px] border-y-[1px] border-[#E4E7EC] flex gap-[32px]'>
-          <Button
-            text='Feedback'
-            className={
-              activeTab === 'feedback'
-                ? 'active text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px] '
-                : 'text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
-            }
-            onClick={() => handleTabClick('feedback')}
-          />
+        <div className='pl-[32px] pt-[12px] border-y-[1px] border-[#E4E7EC] flex gap-[32px]'>
+          <div className='flex flex-col'>
+            <Button
+              text='Feedback'
+              className={
+                activeTab === 'feedback'
+                  ? 'active text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px] '
+                  : 'text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
+              }
+              onClick={() => handleTabClick('feedback')}
+            />
+            <p
+              className={
+                activeTab === 'feedback'
+                  ? 'bg-[#0D6EFD] h-[6px] rounded-[4px]'
+                  : ''
+              }
+            ></p>
+          </div>
 
-          <Button
-            text='Recommend Features'
-            className={
-              activeTab === 'recommend'
-                ? 'active text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
-                : 'text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
-            }
-            onClick={() => handleTabClick('recommend')}
-          />
+          <div className='flex flex-col'>
+            <Button
+              text='Recommend Features'
+              className={
+                activeTab === 'recommend'
+                  ? 'active text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
+                  : 'text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
+              }
+              onClick={() => handleTabClick('recommend')}
+            />
+            <p
+              className={
+                activeTab === 'recommend'
+                  ? 'bg-[#0D6EFD] h-[6px] rounded-[4px]'
+                  : ''
+              }
+            ></p>
+          </div>
 
-          <Button
-            text='Report bugs'
-            className={
-              activeTab === 'bug'
-                ? 'active text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
-                : 'text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
-            }
-            onClick={() => handleTabClick('bug')}
-          />
+          <div className='flex flex-col'>
+            <Button
+              text='Report bugs'
+              className={
+                activeTab === 'bug'
+                  ? 'active text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
+                  : 'text-[#676E7E]  font-[500] text-[16px] leading-[24px] pb-[15px]'
+              }
+              onClick={() => handleTabClick('bug')}
+            />
+            <p
+              className={
+                activeTab === 'bug' ? 'bg-[#0D6EFD] h-[6px] rounded-[4px]' : ''
+              }
+            ></p>
+          </div>
         </div>
 
         <div className='flex gap-[64px]'>
