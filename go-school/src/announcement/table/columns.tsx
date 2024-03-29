@@ -85,8 +85,10 @@ export const columns: ColumnDef<AnouncementData>[] = [
 
       return (
         <div className='flex text-[#1D2433]'>
-          {announcementAddress.map((val: string) => (
-            <div className=''>{val}, </div>
+          {announcementAddress.map((val: string, index) => (
+            <div key={index} className=''>
+              {val},{' '}
+            </div>
           ))}
         </div>
       )
