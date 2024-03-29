@@ -1,19 +1,17 @@
 'use client'
 
 import * as React from 'react'
+
 import { ColumnDef } from '@tanstack/react-table'
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from 'lucide-react'
+
+import { RiDeleteBinLine, RiEdit2Line } from 'react-icons/ri'
+
+import { PiCaretUpDownBold } from 'react-icons/pi'
 
 import { Button } from '@/components/ui/button'
+
 import { Checkbox } from '@/components/ui/checkbox'
-// import {
-//   DropdownMenu,
-//   DropdownMenuContent,
-//   DropdownMenuItem,
-//   DropdownMenuLabel,
-//   DropdownMenuSeparator,
-//   DropdownMenuTrigger,
-// } from '@/components/ui/dropdown-menu'
+
 import { AnouncementData } from './anouncement-data'
 
 export const columns: ColumnDef<AnouncementData>[] = [
@@ -41,9 +39,20 @@ export const columns: ColumnDef<AnouncementData>[] = [
   },
   {
     accessorKey: 'title',
-    header: 'Title',
+    header: ({ column }) => {
+      return (
+        <Button
+          className='m-[0px] p-[0px] hover:bg-[none] hover:text-[#FFFFFF] flex items-center gap-[10px]'
+          variant='ghost'
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          <p>Title</p>
+          <PiCaretUpDownBold size={20} />
+        </Button>
+      )
+    },
     cell: ({ row }) => (
-      <div className='capitalize'>{row.getValue('title')}</div>
+      <div className='capitalize text-[#1D2433]'>{row.getValue('title')}</div>
     ),
   },
   {
@@ -51,17 +60,19 @@ export const columns: ColumnDef<AnouncementData>[] = [
     header: ({ column }) => {
       return (
         <Button
-          className='m-[0px] p-[0px] hover:bg-[none] hover:text-[#FFFFFF]'
+          className='m-[0px] p-[0px] hover:bg-[none] hover:text-[#FFFFFF] flex items-center gap-[10px]'
           variant='ghost'
           onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
         >
-          Recipients
-          <ArrowUpDown className='ml-2 h-4 w-4' />
+          <p>Recipients</p>
+          <PiCaretUpDownBold size={20} />
         </Button>
       )
     },
     cell: ({ row }) => (
-      <div className='lowercase'>{row.getValue('recipients')}</div>
+      <div className='lowercase text-[#1D2433]'>
+        {row.getValue('recipients')}
+      </div>
     ),
   },
   {
@@ -70,10 +81,10 @@ export const columns: ColumnDef<AnouncementData>[] = [
     header: () => <div className='text-right'> </div>,
     enableHiding: false,
     cell: ({ row }) => {
-      const announcementAddress = row.getValue('announcementAddress')
+      const announcementAddress: [] = row.getValue('announcementAddress')
 
       return (
-        <div className='flex'>
+        <div className='flex text-[#1D2433]'>
           {announcementAddress.map((val: string) => (
             <div className=''>{val}, </div>
           ))}
@@ -83,11 +94,26 @@ export const columns: ColumnDef<AnouncementData>[] = [
   },
   {
     accessorKey: 'dateSent',
-    header: () => <div className='text-left'>Date Sent</div>,
+    header: ({ column }) => {
+      return (
+        <Button
+          className='m-[0px] p-[0px] hover:bg-[none] hover:text-[#FFFFFF] flex items-center gap-[10px]'
+          variant='ghost'
+          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
+        >
+          <p>Date Sent</p>
+          <PiCaretUpDownBold size={20} />
+        </Button>
+      )
+    },
     cell: ({ row }) => {
       const amount = row.getValue('dateSent')
 
-      return <div className='text-left font-medium'>{amount as string} </div>
+      return (
+        <div className='text-left text-[#676E7E] font-[400]'>
+          {amount as string}{' '}
+        </div>
+      )
     },
   },
   {
@@ -119,14 +145,22 @@ export const columns: ColumnDef<AnouncementData>[] = [
       return (
         <div className='text-left font-medium'>
           {status === 'Sent' ? (
-            <div className='text-[#D42620]'>Delete</div>
+            <div className='text-[#D42620] flex items-center gap-[4px]'>
+              <RiDeleteBinLine />
+              <p>Delete</p>
+            </div>
           ) : (
-            <div className='flex items-center gap-[4px]'>
-              <div className='text-[#0D6EFD]'>Edit</div>
-              <div className='text-[#D42620]'>Delete</div>
+            <div className='flex items-center gap-[12px] '>
+              <div className='text-[#0D6EFD] flex items-center gap-[4px]'>
+                <RiEdit2Line size={15} />
+                <p> Edit</p>
+              </div>
+              <div className='text-[#D42620] flex items-center gap-[4px]'>
+                <RiDeleteBinLine size={15} />
+                <p>Delete</p>
+              </div>
             </div>
           )}
-          {/* {amount as string}  */}
         </div>
       )
     },
