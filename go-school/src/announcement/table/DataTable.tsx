@@ -89,7 +89,7 @@ export function AnnouncementTable() {
       <div
         className={`${
           announcement ? 'blur-[1.2px] filter backdrop-brightness-[75%]' : ''
-        } relative w-[1000px] m-[auto] px-[24px] pt-[24px] pb-[0px] flex flex-col gap-[32px]`}
+        } relative w-[1200px] max-w-[1500px] m-[auto] px-[24px] pt-[24px] pb-[0px] flex flex-col gap-[32px]`}
       >
         <div className='flex justify-between items-center'>
           <p>All Announcements </p>
@@ -106,12 +106,12 @@ export function AnnouncementTable() {
             />
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button className='bg-[#F7F9FC] border-[#D0D5DD] border-[1px] text-[#000000] hover:bg-[none] rounded-[4px] flex items-center gap-[4px]'>
+                <Button className='bg-[#F7F9FC] border-[#D0D5DD] border-[1px] text-[#000000] rounded-[4px] flex items-center gap-[4px]'>
                   <PiSlidersHorizontalBold />
                   <p>Filter</p>
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align='end'>
+              <DropdownMenuContent className='bg-[#fff]' align='end'>
                 {table
                   .getAllColumns()
                   .filter((column) => column.getCanHide())
@@ -119,7 +119,7 @@ export function AnnouncementTable() {
                     return (
                       <DropdownMenuCheckboxItem
                         key={column.id}
-                        className='capitalize'
+                        className='capitalize hover:bg-[#F0F0F0]'
                         checked={column.getIsVisible()}
                         onCheckedChange={(value: any) =>
                           column.toggleVisibility(!!value)
