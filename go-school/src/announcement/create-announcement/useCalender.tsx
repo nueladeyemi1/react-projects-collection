@@ -54,7 +54,7 @@ export function CalendarForm() {
         control={form.control}
         name='schedule'
         render={({ field }) => (
-          <FormItem className='flex flex-col w-[235px]'>
+          <FormItem className='flex flex-col w-full'>
             <FormLabel>Schedule Date</FormLabel>
             <Popover>
               <PopoverTrigger asChild>
@@ -62,7 +62,7 @@ export function CalendarForm() {
                   <Button
                     variant={'outline'}
                     className={cn(
-                      'w-[235px] pl-3 text-left font-normal',
+                      'w-full pl-3 text-left font-normal',
                       !field.value && 'text-muted-foreground'
                     )}
                   >

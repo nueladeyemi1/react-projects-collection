@@ -44,7 +44,7 @@ const CreateAnnouncement = () => {
   return (
     <div
       style={{ transform: 'translate(-50%, -5%)' }}
-      className='bg-[#FFFFFF] rounded w-[552px] max-w-[690px] absolute top-[5%] left-[50%] z-10'
+      className='bg-[#FFFFFF] rounded w-[600px] max-w-[690px] absolute top-[5%] left-[50%] z-10'
     >
       <div className='relative'>
         {/* <div className="bg-[url('/gridlines.svg')]"></div> */}
@@ -106,42 +106,78 @@ const CreateAnnouncement = () => {
 
         <div>
           <div className='flex gap-6'>
-            <Select>
-              <SelectTrigger className='w-[301px] rounded border-[#98A2B3] border-[1px]'>
-                <SelectValue placeholder='Everyone' />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup className='bg-[#FFFFFF] py-3 px-[10px]'>
-                  {/* <SelectLabel>Fruits</SelectLabel> */}
-                  {/* <SelectItem value='everyone'>
+            <div className='w-full flex flex-col gap-2'>
+              <Label htmlFor='content'>Select Recipients</Label>
+              <Select>
+                <SelectTrigger className=' rounded border-[#98A2B3] border-[1px]'>
+                  <SelectValue placeholder='Everyone' />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup className='bg-[#FFFFFF] py-3 px-[10px]'>
+                    {/* <SelectLabel>Fruits</SelectLabel> */}
+                    {/* <SelectItem value='everyone'>
                   <div className='flex items-center gap-2'>
                     <AiOutlineGlobal /> <p>Everyone</p>
                   </div>
                 </SelectItem> */}
 
-                  {addressData.map((content) => {
-                    const { id, text } = content
-                    return (
-                      <SelectItem
-                        className='cursor-pointer bg-[#F0F2F5]'
-                        key={id}
-                        value={text}
-                      >
-                        <div className='flex items-center gap-2'>
-                          <AiOutlineGlobal /> <p>{text}</p>
-                        </div>
-                      </SelectItem>
-                    )
-                  })}
-                  {/* <SelectItem value='banana'>Banana</SelectItem>
+                    {addressData.map((content) => {
+                      const { id, text } = content
+                      return (
+                        <SelectItem
+                          className='cursor-pointer bg-[#F0F2F5]'
+                          key={id}
+                          value={text}
+                        >
+                          <div className='flex items-center gap-2'>
+                            <AiOutlineGlobal /> <p>{text}</p>
+                          </div>
+                        </SelectItem>
+                      )
+                    })}
+                    {/* <SelectItem value='banana'>Banana</SelectItem>
                 <SelectItem value='blueberry'>Blueberry</SelectItem>
                 <SelectItem value='grapes'>Grapes</SelectItem>
-                <SelectItem value='pineapple'>Pineapple</SelectItem> */}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <SelectItem value='pineapple'>Pineapple</SelectItem> */}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+
+            <div className='w-full flex flex-col gap-2'>
+              <Label htmlFor='content'>Select Recipients</Label>
+              <Select>
+                <SelectTrigger className=' rounded border-[#98A2B3] border-[1px]'>
+                  <SelectValue placeholder='Everyone' />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup className='bg-[#FFFFFF] py-3 px-[10px]'>
+                    {addressData.map((content) => {
+                      const { id, text } = content
+                      return (
+                        <SelectItem
+                          className='cursor-pointer bg-[#F0F2F5]'
+                          key={id}
+                          value={text}
+                        >
+                          <div className='flex items-center gap-2'>
+                            <AiOutlineGlobal /> <p>{text}</p>
+                          </div>
+                        </SelectItem>
+                      )
+                    })}
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+        </div>
+
+        <div className='flex items-center gap-6'>
+          <div className='w-full flex flex-col gap-2'>
+            <Label htmlFor='content'>Select Recipients</Label>
             <Select>
-              <SelectTrigger className='w-[301px] rounded border-[#98A2B3] border-[1px]'>
+              <SelectTrigger className='rounded border-[#98A2B3] border-[1px]'>
                 <SelectValue placeholder='Everyone' />
               </SelectTrigger>
               <SelectContent>
@@ -163,6 +199,25 @@ const CreateAnnouncement = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
+          </div>
+          <div className='w-full flex flex-col gap-[18px]'>
+            <Label>Publish time</Label>
+            <RadioGroup className='flex gap-4' defaultValue='later'>
+              {/* <div className='flex'> */}
+              <div className='flex items-center space-x-2'>
+                <RadioGroupItem
+                  className='border-[red] border-[4px]'
+                  value='now'
+                  id='r1'
+                />
+                <Label htmlFor='r1'>Send Now</Label>
+              </div>
+              <div className='flex items-center space-x-2'>
+                <RadioGroupItem value='later' id='r2' />
+                <Label htmlFor='r2'>Schedule for later</Label>
+              </div>
+              {/* </div> */}
+            </RadioGroup>
           </div>
         </div>
 
