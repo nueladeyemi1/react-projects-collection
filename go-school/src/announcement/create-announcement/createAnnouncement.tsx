@@ -37,6 +37,11 @@ import BasicTimePicker from './useTime'
 type Checked = DropdownMenuCheckboxItemProps['checked']
 
 const CreateAnnouncement = () => {
+  const [disabled, setdisabled] = React.useState<boolean>(true)
+  const [sendAnnouncementTo, setSendAnnouncementTo] = React.useState<string>(
+    'Everyone'
+  )
+  const [publishTime, setPublishTime] = React.useState<string>('now')
   const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
   const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
   const [showPanel, setShowPanel] = React.useState<Checked>(false)
@@ -88,7 +93,7 @@ const CreateAnnouncement = () => {
         </div>
 
         <div>
-          <div className='grid w-full max-w-sm items-center gap-1.5'>
+          <div className='grid w-[150px] items-center gap-1.5'>
             <Label htmlFor='picture'>Attachments (0)</Label>
             <label className='text-[#0D6EFD] flex items-center gap-[18px] cursor-pointer disabled:bg-[#E7F0FF] disabled:text-[#98A2B3] font-[400] text-[14px] leading-[22px]'>
               <GrAttachment />
@@ -107,8 +112,13 @@ const CreateAnnouncement = () => {
         <div>
           <div className='flex gap-6'>
             <div className='w-full flex flex-col gap-2'>
-              <Label htmlFor='content'>Select Recipients</Label>
-              <Select>
+              <Label htmlFor='content'>Send Announcement to</Label>
+              <Select
+                onValueChange={(e) => {
+                  const target = e
+                  setSendAnnouncementTo(target)
+                }}
+              >
                 <SelectTrigger className=' rounded border-[#98A2B3] border-[1px]'>
                   <SelectValue placeholder='Everyone' />
                 </SelectTrigger>
@@ -122,7 +132,7 @@ const CreateAnnouncement = () => {
                 </SelectItem> */}
 
                     {addressData.map((content) => {
-                      const { id, text } = content
+                      const { id, text, icon } = content
                       return (
                         <SelectItem
                           className='cursor-pointer bg-[#F0F2F5]'
@@ -130,7 +140,7 @@ const CreateAnnouncement = () => {
                           value={text}
                         >
                           <div className='flex items-center gap-2'>
-                            <AiOutlineGlobal /> <p>{text}</p>
+                            {icon} <p>{text}</p>
                           </div>
                         </SelectItem>
                       )
@@ -144,10 +154,84 @@ const CreateAnnouncement = () => {
               </Select>
             </div>
 
+            {sendAnnouncementTo === 'Everyone' ? (
+              <div className='w-full'></div>
+            ) : (
+              <div className='w-full flex flex-col gap-2'>
+                <Label htmlFor='content'>Select Recipients</Label>
+                <Select>
+                  <SelectTrigger className=' rounded border-[#98A2B3] border-[1px]'>
+                    <SelectValue placeholder='Everyone' />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup className='bg-[#FFFFFF] py-3 px-[10px]'>
+                      {addressData.map((content) => {
+                        const { id, text } = content
+                        return (
+                          <SelectItem
+                            className='cursor-pointer bg-[#F0F2F5]'
+                            key={id}
+                            value={text}
+                          >
+                            <div className='flex items-center gap-2'>
+                              <AiOutlineGlobal /> <p>{text}</p>
+                            </div>
+                          </SelectItem>
+                        )
+                      })}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {sendAnnouncementTo === 'Everyone' ? (
+          <div className='flex flex-col gap-[18px]'>
+            <Label>Publish time</Label>
+            <RadioGroup
+              onValueChange={(e) => setPublishTime(e)}
+              className='flex gap-4'
+              defaultValue={publishTime}
+            >
+              {/* <div className='flex'> */}
+              <div className='flex items-center space-x-2'>
+                <RadioGroupItem
+                  // className='border-[red] border-[4px]'
+                  value='now'
+                  id='r1'
+                />
+                <Label htmlFor='r1'>Send Now</Label>
+              </div>
+              <div className='flex items-center space-x-2'>
+                <RadioGroupItem value='later' id='r2' />
+                <Label htmlFor='r2'>Schedule for later</Label>
+              </div>
+              {/* </div> */}
+            </RadioGroup>
+          </div>
+        ) : (
+          ''
+        )}
+
+        {publishTime === 'now' ? (
+          ''
+        ) : (
+          <div className='flex items-center gap-6'>
+            <CalendarForm />
+            <BasicTimePicker />
+          </div>
+        )}
+
+        {sendAnnouncementTo === 'Everyone' ? (
+          ''
+        ) : (
+          <div className='flex items-center gap-6'>
             <div className='w-full flex flex-col gap-2'>
               <Label htmlFor='content'>Select Recipients</Label>
               <Select>
-                <SelectTrigger className=' rounded border-[#98A2B3] border-[1px]'>
+                <SelectTrigger className='rounded border-[#98A2B3] border-[1px]'>
                   <SelectValue placeholder='Everyone' />
                 </SelectTrigger>
                 <SelectContent>
@@ -170,80 +254,31 @@ const CreateAnnouncement = () => {
                 </SelectContent>
               </Select>
             </div>
-          </div>
-        </div>
-
-        <div className='flex items-center gap-6'>
-          <div className='w-full flex flex-col gap-2'>
-            <Label htmlFor='content'>Select Recipients</Label>
-            <Select>
-              <SelectTrigger className='rounded border-[#98A2B3] border-[1px]'>
-                <SelectValue placeholder='Everyone' />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectGroup className='bg-[#FFFFFF] py-3 px-[10px]'>
-                  {addressData.map((content) => {
-                    const { id, text } = content
-                    return (
-                      <SelectItem
-                        className='cursor-pointer bg-[#F0F2F5]'
-                        key={id}
-                        value={text}
-                      >
-                        <div className='flex items-center gap-2'>
-                          <AiOutlineGlobal /> <p>{text}</p>
-                        </div>
-                      </SelectItem>
-                    )
-                  })}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
-          </div>
-          <div className='w-full flex flex-col gap-[18px]'>
-            <Label>Publish time</Label>
-            <RadioGroup className='flex gap-4' defaultValue='later'>
-              {/* <div className='flex'> */}
-              <div className='flex items-center space-x-2'>
-                <RadioGroupItem
-                  className='border-[red] border-[4px]'
-                  value='now'
-                  id='r1'
-                />
-                <Label htmlFor='r1'>Send Now</Label>
-              </div>
-              <div className='flex items-center space-x-2'>
-                <RadioGroupItem value='later' id='r2' />
-                <Label htmlFor='r2'>Schedule for later</Label>
-              </div>
-              {/* </div> */}
-            </RadioGroup>
-          </div>
-        </div>
-
-        <div className='flex flex-col gap-[18px]'>
-          <Label>Publish time</Label>
-          <RadioGroup className='flex gap-4' defaultValue='later'>
-            {/* <div className='flex'> */}
-            <div className='flex items-center space-x-2'>
-              <RadioGroupItem
-                className='border-[red] border-[4px]'
-                value='now'
-                id='r1'
-              />
-              <Label htmlFor='r1'>Send Now</Label>
+            <div className='w-full flex flex-col gap-[18px]'>
+              <Label>Publish time</Label>
+              <RadioGroup
+                onValueChange={(e) => setPublishTime(e)}
+                className='flex gap-4'
+                defaultValue={publishTime}
+              >
+                {/* <div className='flex'> */}
+                <div className='flex items-center space-x-2'>
+                  <RadioGroupItem
+                    // className='border-[red] border-[4px]'
+                    value='now'
+                    id='r1'
+                  />
+                  <Label htmlFor='r1'>Send Now</Label>
+                </div>
+                <div className='flex items-center space-x-2'>
+                  <RadioGroupItem value='later' id='r2' />
+                  <Label htmlFor='r2'>Schedule for later</Label>
+                </div>
+                {/* </div> */}
+              </RadioGroup>
             </div>
-            <div className='flex items-center space-x-2'>
-              <RadioGroupItem value='later' id='r2' />
-              <Label htmlFor='r2'>Schedule for later</Label>
-            </div>
-            {/* </div> */}
-          </RadioGroup>
-        </div>
-        <div className='flex items-center gap-6'>
-          <CalendarForm />
-          <BasicTimePicker />
-        </div>
+          </div>
+        )}
       </div>
       <div className='px-[32px] mt-8'>
         <Button className='bg-[#0D6EFD] hover:bg-[rgba(13,109,253,0.87)] disabled:bg-[#CFE2FF] rounded text-[#FFFFFF] w-[100%] '>
