@@ -2,11 +2,12 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 import { PiMegaphone } from 'react-icons/pi'
 import { RxCross2 } from 'react-icons/rx'
 import { GrAttachment } from 'react-icons/gr'
 import { AiOutlineGlobal } from 'react-icons/ai'
+import { FaMinusCircle, FaRegFile } from 'react-icons/fa'
 
 import {
   Select,
@@ -38,6 +39,11 @@ type Checked = DropdownMenuCheckboxItemProps['checked']
 
 const CreateAnnouncement = () => {
   const [disabled, setdisabled] = React.useState<boolean>(true)
+  const [files, setFiles] = React.useState<FileList | null>(null)
+  const [status, setStatus] = React.useState<
+    'initial' | 'uploading' | 'success' | 'fail'
+  >('initial')
+
   const [sendAnnouncementTo, setSendAnnouncementTo] = React.useState<string>(
     'Everyone'
   )
@@ -45,6 +51,13 @@ const CreateAnnouncement = () => {
   const [showStatusBar, setShowStatusBar] = React.useState<Checked>(true)
   const [showActivityBar, setShowActivityBar] = React.useState<Checked>(false)
   const [showPanel, setShowPanel] = React.useState<Checked>(false)
+
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setStatus('initial')
+      setFiles(e.target.files)
+    }
+  }
 
   return (
     <div
@@ -93,13 +106,36 @@ const CreateAnnouncement = () => {
         </div>
 
         <div>
-          <div className='grid w-[150px] items-center gap-1.5'>
-            <Label htmlFor='picture'>Attachments (0)</Label>
-            <label className='text-[#0D6EFD] flex items-center gap-[18px] cursor-pointer disabled:bg-[#E7F0FF] disabled:text-[#98A2B3] font-[400] text-[14px] leading-[22px]'>
+          <div className='grid w-full items-center gap-1.5'>
+            <Label htmlFor='picture'>Attachments ({files?.length || 0})</Label>
+            <div className='grid grid-cols-2 gap-2 justify-center'>
+              {files &&
+                [...files].map((file, index) => {
+                  return (
+                    <div
+                      onClick={(e) => {
+                        //  setFiles([...files].filter(file=> file.name !== filename))
+                        // [...files].filter(file=> file.name !== e.target.name)
+                      }}
+                      key={index}
+                      className='flex items-center gap-[10px] border-[#F0F2F5] border-[1px] pl-[16px] relative rounded'
+                    >
+                      <FaMinusCircle
+                        size={16.25}
+                        color='#D42620'
+                        className='absolute z-10 top-[-8px] right-[2px] cursor-pointer'
+                      />
+                      <FaRegFile size={32} />
+                      <p>{file?.name}</p>
+                    </div>
+                  )
+                })}
+            </div>
+            <label className='text-[#0D6EFD] w-[150px] flex items-center gap-[18px] cursor-pointer disabled:bg-[#E7F0FF] disabled:text-[#98A2B3] font-[400] text-[14px] leading-[22px]'>
               <GrAttachment />
               Add Attachments
               <input
-                //   onChange={handleFileChange}
+                onChange={handleFileChange}
                 type='file'
                 // accept='image/png, image/jpeg'
                 className='hidden'
