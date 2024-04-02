@@ -6,7 +6,7 @@ import { PiChalkboardLight } from 'react-icons/pi'
 
 export interface AddressData {
   id: number
-  icon: JSX.Element
+  icon?: JSX.Element
   text: string
 }
 
@@ -35,5 +35,35 @@ export const addressData: AddressData[] = [
     id: 5,
     icon: <PiChalkboardLight size={25} />,
     text: 'Class',
+  },
+]
+
+// export interface AddressData {
+//   id: number
+//   icon: JSX.Element
+//   text: string
+// }
+
+export const addressData1: AddressData[] = [
+  {
+    id: 1,
+    text: 'Class 1A',
+  },
+  {
+    id: 2,
+
+    text: 'Class 2A',
+  },
+]
+
+export const addressData2: AddressData[] = [
+  {
+    id: 1,
+    text: 'Parents',
+  },
+  {
+    id: 2,
+
+    text: 'Teachers',
   },
 ]

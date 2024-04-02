@@ -43,6 +43,8 @@ import { columns } from './columns'
 import { data } from './anouncement-data'
 import CreateAnnouncement from '../create-announcement/createAnnouncement'
 
+export const AnnouncementContext = React.createContext(false)
+
 export function AnnouncementTable() {
   const [pagination, setPagination] = React.useState({
     pageIndex: 0, //initial page index
@@ -84,12 +86,14 @@ export function AnnouncementTable() {
     },
   })
 
+  // blur-[1.2px] filter backdrop-brightness-[75%]
+
   return (
-    <>
+    <AnnouncementContext.Provider value={announcement}>
       <div
         className={`${
-          announcement ? 'blur-[1.2px] filter backdrop-brightness-[75%]' : ''
-        } relative w-[1200px] max-w-[1500px] m-[auto] px-[24px] pt-[24px] pb-[0px] flex flex-col gap-[32px]`}
+          announcement ? '' : ''
+        } relative w-[1100px] h-[60vh] px-[24px] pt-[24px] pb-[0px] flex flex-col gap-[32px]`}
       >
         <div className='flex justify-between items-center'>
           <p>All Announcements </p>
@@ -267,7 +271,7 @@ export function AnnouncementTable() {
           </div>
         </div>
       </div>
-      {announcement && <CreateAnnouncement />}
-    </>
+      {announcement && <CreateAnnouncement setAnnouncement={setAnnouncement} />}
+    </AnnouncementContext.Provider>
   )
 }

@@ -31,13 +31,13 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { addressData } from './address-data'
+import { addressData, addressData1, addressData2 } from './address-data'
 import { CalendarForm } from './useCalender'
 import BasicTimePicker from './useTime'
 
 type Checked = DropdownMenuCheckboxItemProps['checked']
 
-const CreateAnnouncement = () => {
+const CreateAnnouncement = ({ setAnnouncement }) => {
   const [disabled, setdisabled] = React.useState<boolean>(true)
   const [files, setFiles] = React.useState<FileList | null>(null)
   const [status, setStatus] = React.useState<
@@ -62,7 +62,7 @@ const CreateAnnouncement = () => {
   return (
     <div
       style={{ transform: 'translate(-50%, -5%)' }}
-      className='bg-[#FFFFFF] rounded w-[600px] max-w-[690px] absolute top-[5%] left-[50%] z-10'
+      className='bg-[#FFFFFF] rounded w-[600px] max-w-[690px] absolute top-[5%] left-[50%] z-50'
     >
       <div className='relative'>
         {/* <div className="bg-[url('/gridlines.svg')]"></div> */}
@@ -83,7 +83,12 @@ const CreateAnnouncement = () => {
             Create a new announcement for this class
           </p>
         </div>
-        <RxCross2 style={{ cursor: 'pointer' }} color='#344054' size={16} />
+        <RxCross2
+          onClick={() => setAnnouncement(false)}
+          style={{ cursor: 'pointer' }}
+          color='#344054'
+          size={16}
+        />
       </div>
       <div className='flex flex-col gap-6 justify-between px-[32px] mt-8'>
         <div className='grid w-[100%] max-w-[100%] items-center gap-1.5'>
@@ -118,14 +123,14 @@ const CreateAnnouncement = () => {
                         // [...files].filter(file=> file.name !== e.target.name)
                       }}
                       key={index}
-                      className='flex items-center gap-[10px] border-[#F0F2F5] border-[1px] pl-[16px] relative rounded'
+                      className='flex items-center gap-[10px] border-[#F0F2F5] border-[1px] p-[12px] relative rounded'
                     >
                       <FaMinusCircle
                         size={16.25}
                         color='#D42620'
                         className='absolute z-10 top-[-8px] right-[2px] cursor-pointer'
                       />
-                      <FaRegFile size={32} />
+                      <FaRegFile size={24} />
                       <p>{file?.name}</p>
                     </div>
                   )
@@ -194,14 +199,14 @@ const CreateAnnouncement = () => {
               <div className='w-full'></div>
             ) : (
               <div className='w-full flex flex-col gap-2'>
-                <Label htmlFor='content'>Select Recipients</Label>
+                <Label htmlFor='content'>Select Class</Label>
                 <Select>
                   <SelectTrigger className=' rounded border-[#98A2B3] border-[1px]'>
-                    <SelectValue placeholder='Everyone' />
+                    <SelectValue placeholder='Class 1A' />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup className='bg-[#FFFFFF] py-3 px-[10px]'>
-                      {addressData.map((content) => {
+                      {addressData1.map((content) => {
                         const { id, text } = content
                         return (
                           <SelectItem
@@ -210,7 +215,7 @@ const CreateAnnouncement = () => {
                             value={text}
                           >
                             <div className='flex items-center gap-2'>
-                              <AiOutlineGlobal /> <p>{text}</p>
+                              <p>{text}</p>
                             </div>
                           </SelectItem>
                         )
@@ -268,11 +273,11 @@ const CreateAnnouncement = () => {
               <Label htmlFor='content'>Select Recipients</Label>
               <Select>
                 <SelectTrigger className='rounded border-[#98A2B3] border-[1px]'>
-                  <SelectValue placeholder='Everyone' />
+                  <SelectValue placeholder='Teachers' />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup className='bg-[#FFFFFF] py-3 px-[10px]'>
-                    {addressData.map((content) => {
+                    {addressData2.map((content) => {
                       const { id, text } = content
                       return (
                         <SelectItem
@@ -281,7 +286,7 @@ const CreateAnnouncement = () => {
                           value={text}
                         >
                           <div className='flex items-center gap-2'>
-                            <AiOutlineGlobal /> <p>{text}</p>
+                            <p>{text}</p>
                           </div>
                         </SelectItem>
                       )

@@ -1,3 +1,5 @@
+import DesktopSidebar, { sidebarItems } from "@/announcement/test/sidebar";
+import TopBar, { menuItems } from "@/announcement/test/topbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -14,9 +16,27 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+       <TopBar isUser={true}/>
+       <div style={{gridTemplateColumns: 'repeat(2, 1fr)'}} className="px-[40px] grid gap-5 mt-24">
+
+
+
+
+
+        <DesktopSidebar
+        navlinks={sidebarItems}
+      />
+
+      
+          {children}
+
+
+      </div>
+        </body>
     </html>
   );
 }
