@@ -28,7 +28,7 @@ export default function DesktopSidebar({ navlinks }: any) {
   const [expanded, setExpanded] = useState<boolean>(true)
 
   return (
-    <nav className='h-[80vh] w-fit relative flex flex-col justify-start items-start bg-white transition-all shadow-sm pt-3 rounded-sm'>
+    <nav className=' w-fit relative flex flex-col justify-start items-start bg-white transition-all shadow-sm pt-3 rounded-sm'>
       <div className='p-4 pb-2 flex justify-between items-center absolute translate-x-[-50%] translate-y-[-50%] left-[102%] top-[50%]'>
         <button
           onClick={() => setExpanded((curr) => !curr)}
@@ -62,7 +62,7 @@ export default function DesktopSidebar({ navlinks }: any) {
         </ul>
       </SidebarContext.Provider>
 
-      <div className='switch mt-auto mb-8'>
+      <div className='switch mt-auto'>
         <Switch expanded={expanded} />
       </div>
     </nav>

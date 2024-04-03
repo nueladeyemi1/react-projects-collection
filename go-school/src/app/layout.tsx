@@ -17,11 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
+
+  // const [bg, setBg] = React.useState()
   return (
     <html lang="en">
       <body className={inter.className}>
        <TopBar isUser={true}/>
-       <div style={{gridTemplateColumns: 'repeat(2, 1fr)'}} className="px-[40px] grid gap-5 mt-24">
+       <div style={{gridTemplateColumns: 'repeat(2, 1fr)'}} className="px-[40px] grid gap-5 mt-[120px]">
 
 
 

@@ -43,6 +43,8 @@ import { columns } from './columns'
 import { data } from './anouncement-data'
 import CreateAnnouncement from '../create-announcement/createAnnouncement'
 
+import { DialogDemo } from '../test/modal'
+
 export const AnnouncementContext = React.createContext(false)
 
 export function AnnouncementTable() {
@@ -93,7 +95,7 @@ export function AnnouncementTable() {
       <div
         className={`${
           announcement ? '' : ''
-        } relative w-[1100px] h-[60vh] px-[24px] pt-[24px] pb-[0px] flex flex-col gap-[32px]`}
+        } relative w-[1100px] bg-white px-[24px] pt-[24px] pb-[0px] flex flex-col gap-[32px]`}
       >
         <div className='flex justify-between items-center'>
           <p>All Announcements </p>
@@ -136,20 +138,22 @@ export function AnnouncementTable() {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Button
+            <DialogDemo />
+
+            {/* <Button
               className='bg-[#0D6EFD] text-[#FFFFFF] hover:bg-[none] rounded-[4px]'
               onClick={() => {
                 setAnnouncement(!announcement)
               }}
             >
               New Announcement
-            </Button>
+            </Button> */}
           </div>
 
           {/* Table Rendering  */}
         </div>
         <div>
-          <Table>
+          <Table className='h-[204px]'>
             <TableHeader style={{ color: '#fff ' }}>
               {table.getHeaderGroups().map((headerGroup) => (
                 <TableRow key={headerGroup.id}>
