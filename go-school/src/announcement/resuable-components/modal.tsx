@@ -49,7 +49,7 @@ import {
   addressData1,
   addressData2,
 } from '../create-announcement/address-data'
-import { CalendarForm } from '../create-announcement//useCalender'
+import { CalendarForm } from '../create-announcement/useCalender'
 import BasicTimePicker from '../create-announcement/useTime'
 
 type Checked = DropdownMenuCheckboxItemProps['checked']

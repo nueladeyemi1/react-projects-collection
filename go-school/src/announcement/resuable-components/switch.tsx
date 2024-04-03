@@ -12,6 +12,7 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover'
 import Image from 'next/image'
+import { PiCaretUpDown } from 'react-icons/pi'
 
 type Props = { expanded: boolean }
 
@@ -92,7 +93,8 @@ export function SwitchBox({ expanded }: { expanded: boolean }) {
                 Admin Account
               </span>
             </div>
-            <CaretDown size={20} />
+            <PiCaretUpDown size={24} />
+            {/* <CaretDown size={20} /> */}
           </div>
         </div>
       </PopoverTrigger>
