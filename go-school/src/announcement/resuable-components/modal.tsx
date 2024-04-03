@@ -7,19 +7,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogClose,
 } from '@/components/ui/dialog'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 
-// import { Button } from '@/components/ui/button'
-// import { Input } from '@/components/ui/input'
-// import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import React, { ChangeEvent } from 'react'
 import { PiMegaphone } from 'react-icons/pi'
-import { RxCross2 } from 'react-icons/rx'
 import { GrAttachment } from 'react-icons/gr'
-import { AiOutlineGlobal } from 'react-icons/ai'
 import { FaMinusCircle, FaRegFile } from 'react-icons/fa'
 
 import {
@@ -34,16 +30,8 @@ import {
 
 import { DropdownMenuCheckboxItemProps } from '@radix-ui/react-dropdown-menu'
 
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
+// import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
 import {
   addressData,
   addressData1,
@@ -51,6 +39,8 @@ import {
 } from '../create-announcement/address-data'
 import { CalendarForm } from '../create-announcement/useCalender'
 import BasicTimePicker from '../create-announcement/useTime'
+// import { RadioGroupIndicator } from '@radix-ui/react-radio-group'
+import * as RadioGroup from '@radix-ui/react-radio-group'
 
 type Checked = DropdownMenuCheckboxItemProps['checked']
 
@@ -81,10 +71,7 @@ export function DialogDemo() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          className='bg-[#0D6EFD] text-[#FFFFFF] hover:bg-[none] rounded-[4px]'
-          // variant='outline'
-        >
+        <Button className='bg-[#0D6EFD] text-[#FFFFFF] hover:bg-[none] rounded-[4px]'>
           New Announcement
         </Button>
       </DialogTrigger>
@@ -99,6 +86,7 @@ export function DialogDemo() {
             <div className='absolute bg-[#E7F0FF] p-[20px] top-8 left-8 rounded'>
               <PiMegaphone color='#0D6EFD' size={32} />
             </div>
+            {/* <DialogClose className='bg-[red]' /> */}
           </div>
           <div className='px-[32px] flex flex-col gap-1'>
             <DialogTitle>Create New Announcement</DialogTitle>
@@ -107,28 +95,6 @@ export function DialogDemo() {
             </DialogDescription>
           </div>
         </DialogHeader>
-        {/* <div className='grid gap-4 py-4'>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='name' className='text-right'>
-              Name
-            </Label>
-            <Input
-              id='name'
-              defaultValue='Pedro Duarte'
-              className='col-span-3'
-            />
-          </div>
-          <div className='grid grid-cols-4 items-center gap-4'>
-            <Label htmlFor='username' className='text-right'>
-              Username
-            </Label>
-            <Input
-              id='username'
-              defaultValue='@peduarte'
-              className='col-span-3'
-            />
-          </div>
-        </div> */}
 
         <div className='flex flex-col gap-6 justify-between px-[32px] '>
           <div className='grid w-[100%] max-w-[100%] items-center gap-1.5'>
@@ -184,7 +150,6 @@ export function DialogDemo() {
                 <input
                   onChange={handleFileChange}
                   type='file'
-                  // accept='image/png, image/jpeg'
                   className='hidden'
                   multiple
                 />
@@ -207,13 +172,6 @@ export function DialogDemo() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup className='bg-[#FFFFFF] py-3 px-[10px]'>
-                      {/* <SelectLabel>Fruits</SelectLabel> */}
-                      {/* <SelectItem value='everyone'>
-                  <div className='flex items-center gap-2'>
-                    <AiOutlineGlobal /> <p>Everyone</p>
-                  </div>
-                </SelectItem> */}
-
                       {addressData.map((content) => {
                         const { id, text, icon } = content
                         return (
@@ -228,10 +186,6 @@ export function DialogDemo() {
                           </SelectItem>
                         )
                       })}
-                      {/* <SelectItem value='banana'>Banana</SelectItem>
-                <SelectItem value='blueberry'>Blueberry</SelectItem>
-                <SelectItem value='grapes'>Grapes</SelectItem>
-            <SelectItem value='pineapple'>Pineapple</SelectItem> */}
                     </SelectGroup>
                   </SelectContent>
                 </Select>
@@ -273,38 +227,36 @@ export function DialogDemo() {
           {sendAnnouncementTo === 'Everyone' ? (
             <div className='flex flex-col gap-[18px]'>
               <Label>Publish time</Label>
-              <RadioGroup
+              <RadioGroup.Root
                 onValueChange={(e) => setPublishTime(e)}
                 className='flex gap-4'
                 defaultValue={publishTime}
+                aria-label='View density'
               >
-                {/* <div className='flex'> */}
                 <div className='flex items-center space-x-2'>
-                  <RadioGroupItem
-                    // className='border-[red] border-[4px]'
+                  <RadioGroup.Item
+                    className='focus:bg-[#0D6EFD] focus:border-none border-[#344054] border-[1.5px] w-[25px] h-[25px] rounded-full outline-none cursor-default'
                     value='now'
                     id='r1'
-                  />
+                  >
+                    <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-[50%] after:bg-white" />
+                  </RadioGroup.Item>
                   <Label htmlFor='r1'>Send Now</Label>
                 </div>
                 <div className='flex items-center space-x-2'>
-                  <RadioGroupItem value='later' id='r2' />
+                  <RadioGroup.Item
+                    className='focus:bg-[#0D6EFD] focus:border-none border-[#344054] border-[1.5px] w-[25px] h-[25px] rounded-full outline-none cursor-default'
+                    value='later'
+                    id='r2'
+                  >
+                    <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-[50%] after:bg-white" />
+                  </RadioGroup.Item>
                   <Label htmlFor='r2'>Schedule for later</Label>
                 </div>
-                {/* </div> */}
-              </RadioGroup>
+              </RadioGroup.Root>
             </div>
           ) : (
             ''
-          )}
-
-          {publishTime === 'now' ? (
-            ''
-          ) : (
-            <div className='flex items-center gap-6'>
-              <CalendarForm />
-              <BasicTimePicker />
-            </div>
           )}
 
           {sendAnnouncementTo === 'Everyone' ? (
@@ -339,27 +291,62 @@ export function DialogDemo() {
               </div>
               <div className='w-full flex flex-col gap-[18px]'>
                 <Label>Publish time</Label>
-                <RadioGroup
+                <RadioGroup.Root
+                  onValueChange={(e) => setPublishTime(e)}
+                  className='flex gap-4'
+                  defaultValue={publishTime}
+                  aria-label='View density'
+                >
+                  <div className='flex items-center space-x-2'>
+                    <RadioGroup.Item
+                      className='focus:bg-[#0D6EFD] focus:border-none border-[#344054] border-[1.5px] w-[25px] h-[25px] rounded-full outline-none cursor-default'
+                      value='now'
+                      id='r1'
+                    >
+                      <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-[50%] after:bg-white" />
+                    </RadioGroup.Item>
+                    <Label htmlFor='r1'>Send Now</Label>
+                  </div>
+                  <div className='flex items-center space-x-2'>
+                    <RadioGroup.Item
+                      className='focus:bg-[#0D6EFD] focus:border-none border-[#344054] border-[1.5px] w-[25px] h-[25px] rounded-full outline-none cursor-default'
+                      value='later'
+                      id='r2'
+                    >
+                      <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-[50%] after:bg-white" />
+                    </RadioGroup.Item>
+                    <Label htmlFor='r2'>Schedule for later</Label>
+                  </div>
+                </RadioGroup.Root>
+
+                {/* <RadioGroup.Root
                   onValueChange={(e) => setPublishTime(e)}
                   className='flex gap-4'
                   defaultValue={publishTime}
                 >
-                  {/* <div className='flex'> */}
+                
                   <div className='flex items-center space-x-2'>
-                    <RadioGroupItem
-                      // className='border-[red] border-[4px]'
-                      value='now'
-                      id='r1'
-                    />
+                  
                     <Label htmlFor='r1'>Send Now</Label>
+                  
                   </div>
                   <div className='flex items-center space-x-2'>
-                    <RadioGroupItem value='later' id='r2' />
-                    <Label htmlFor='r2'>Schedule for later</Label>
+                    <RadioGroup.Item value='later' id='r2'>
+                      <Label htmlFor='r2'>Schedule for later</Label>
+                    </RadioGroup.Item>
                   </div>
-                  {/* </div> */}
-                </RadioGroup>
+                  
+                </RadioGroup.Root> */}
               </div>
+            </div>
+          )}
+
+          {publishTime === 'now' ? (
+            ''
+          ) : (
+            <div className='flex items-center gap-6'>
+              <CalendarForm />
+              <BasicTimePicker />
             </div>
           )}
         </div>

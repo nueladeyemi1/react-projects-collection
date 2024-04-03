@@ -46,6 +46,7 @@ import CreateAnnouncement from '../create-announcement/createAnnouncement'
 import { DialogDemo } from '../resuable-components/modal'
 import Link from 'next/link'
 import { CaretRight } from 'phosphor-react'
+import { usePathname } from 'next/navigation'
 
 export const AnnouncementContext = React.createContext(false)
 
@@ -54,6 +55,8 @@ export function AnnouncementTable() {
     pageIndex: 0, //initial page index
     pageSize: 8, //default page size
   })
+
+  const pathname = usePathname()
 
   const [announcement, setAnnouncement] = React.useState<boolean>(false)
 
@@ -96,17 +99,31 @@ export function AnnouncementTable() {
     <AnnouncementContext.Provider value={announcement}>
       <div className='w-[1100px] max-w-[85vw]'>
         <div className='flex items-center gap-2 mt-0 mb-4'>
-          <Link className='tracking-[-0.5px] text-sm' href='/home'>
+          <Link
+            className={`${
+              pathname === '/home' ? 'text-[#1D2433]' : 'text-[#98A2B3]'
+            } 'tracking-[-0.5px] text-sm'`}
+            href='/home'
+          >
             Home
           </Link>
           <CaretRight size={14} />
-          <Link className='tracking-[-0.5px] text-sm' href='/home'>
+          <Link
+            className={`${
+              pathname === '/class-management'
+                ? 'text-[#1D2433]'
+                : 'text-[#98A2B3]'
+            } 'tracking-[-0.5px] text-sm'`}
+            href='/class-management'
+          >
             Class Management
           </Link>
           <CaretRight size={14} />
           <Link
-            className='tracking-[-0.5px] text-sm text-[#1D2433]'
-            href='/home'
+            className={`${
+              pathname === '/announcement' ? 'text-[#1D2433]' : 'text-[#98A2B3]'
+            } 'tracking-[-0.5px] text-sm'`}
+            href='/announcement'
           >
             Announcement
           </Link>

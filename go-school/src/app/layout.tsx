@@ -1,4 +1,4 @@
-import DesktopSidebar, { sidebarItems } from "@/announcement/resuable-components/sidebar";
+import DesktopSidebar, { SidebarContext, sidebarItems } from "@/announcement/resuable-components/sidebar";
 import TopBar, { menuItems } from "@/announcement/resuable-components/topbar";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -17,11 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
+
+
   return (
     <html lang="en">
       <body className={inter.className}>
        <TopBar isUser={true}/>
-       <div style={{gridTemplateColumns: 'repeat(2, 1fr)'}} className="px-[40px] grid gap-5 mt-[120px]">
+       <div style={{gridTemplateColumns: 'repeat(2, 1fr)'}} className="px-[40px] grid gap-5 mt-[120px] mb-8">
         <DesktopSidebar
         navlinks={sidebarItems}
       />

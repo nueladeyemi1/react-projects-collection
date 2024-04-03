@@ -21,14 +21,14 @@ import {
 } from 'phosphor-react'
 import { PiUsersFourLight } from 'react-icons/pi'
 
-const SidebarContext = createContext(false)
+export const SidebarContext = createContext(false)
 
 export default function DesktopSidebar({ navlinks }: any) {
   const isUser = 'yes'
   const [expanded, setExpanded] = useState<boolean>(true)
 
   return (
-    <nav className=' w-fit h-[85vh] relative flex flex-col justify-start rounded items-start bg-white transition-all shadow-sm pt-3'>
+    <nav className=' w-fit h-[90vh] relative flex flex-col justify-start rounded items-start bg-white transition-all shadow-sm pt-3'>
       <div className='p-4 pb-2 flex justify-between items-center absolute translate-x-[-50%] translate-y-[-50%] left-[102%] top-[50%]'>
         <button
           onClick={() => setExpanded((curr) => !curr)}
@@ -74,27 +74,32 @@ export function SidebarItem({ icon, text, active, alert, path }: any) {
   const pathName = usePathname()
 
   // const userId = getUserId();
+  const userId = 256472489
 
   return (
     <Link
-      href=''
-      // href={userId ? path : `/gopal?mode=auth`}
+      //EDIT THIS FOR PROPER ROUTING
+      href={userId ? path : `/gopal?mode=auth`}
       className={`
         relative flex items-center py-2 px-3 my-1
         font-medium rounded-md cursor-pointer
         transition-colors group
         ${
           pathName === path
-            ? 'bg-primary100 text-primary600'
-            : 'hover:bg-primary100 text-gray-600'
+            ? 'bg-[#F3F7FF] text-[#0D6EFD]'
+            : 'hover:bg-[#F3F7FF] text-[#647995]'
         }
     `}
     >
-      <div className={`${text === 'Announcements' ? 'opacity-0' : ''}`}>
+      <div
+        className={`${
+          text === 'Announcements' ? 'opacity-0' : ''
+        } text-inherit`}
+      >
         {icon}
       </div>
       <span
-        className={`overflow-hidden text-nowrap text-[#647995] text-sm transition-all ${
+        className={`overflow-hidden text-nowrap text-inherit text-sm transition-all ${
           expanded ? 'w-40 ml-3' : 'w-0'
         }`}
       >
@@ -130,41 +135,51 @@ export const sidebarItems = [
   {
     text: 'Dashboard',
     icon: <House className='' size={IconSize} />,
+    path: '/dashboard',
   },
   {
     text: 'Class Management',
     icon: <Chalkboard className='text-slate-800' size={IconSize} />,
+    path: '/class-management',
   },
   {
     text: 'Announcements',
     icon: <UsersThree className='text-slate-800' size={IconSize} />,
+    path: '/announcement',
   },
   {
     text: 'Staff Management',
     icon: <UsersThree className='text-slate-800' size={IconSize} />,
+    path: '/staff-management',
   },
   {
     text: 'Student Management',
     icon: <Student className='text-slate-800' size={IconSize} />,
+    path: '/student-management',
   },
   {
     text: 'Parent Management',
     icon: <PiUsersFourLight className='text-slate-800' size={IconSize} />,
+    path: '/parent-management',
   },
   {
     text: 'Academic & Result',
     icon: <AppWindow className='text-slate-800' size={IconSize} />,
+    path: '/academic-result',
   },
   {
     text: 'School Management',
     icon: <Buildings className='text-slate-800' size={IconSize} />,
+    path: '/school-management',
   },
   {
     text: 'Finance Management',
     icon: <Wallet className='text-slate-800' size={IconSize} />,
+    path: '/finance-management',
   },
   {
     text: 'Account Management',
     icon: <Briefcase className='text-slate-800' size={IconSize} />,
+    path: '/account-management',
   },
 ]
