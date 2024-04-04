@@ -23,11 +23,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
        <TopBar isUser={true}/>
-       <div style={{gridTemplateColumns: 'repeat(2, 1fr)'}} className="px-[40px] grid gap-5 mt-[120px] mb-8">
+       <div  className="px-[40px] flex justify-between gap-10 mt-[120px] mb-8">
         <DesktopSidebar
         navlinks={sidebarItems}
       />
+      <div className="max-w-[1800px] w-full">
+
           {children}
+      </div>
       </div>
         </body>
     </html>

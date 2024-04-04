@@ -97,7 +97,7 @@ export function AnnouncementTable() {
 
   return (
     <AnnouncementContext.Provider value={announcement}>
-      <div className='w-[1100px] max-w-[85vw]'>
+      <div className='max-w-[85vw]'>
         <div className='flex items-center gap-2 mt-0 mb-4'>
           <Link
             className={`${
