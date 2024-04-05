@@ -14,7 +14,7 @@ function Select({ value, className, content, label }: SelectProps) {
       <select className={className}>
         {content.map((text: string) => {
           return (
-            <option className='' value={value}>
+            <option key={text} className='' value={value}>
               {text}
             </option>
           )

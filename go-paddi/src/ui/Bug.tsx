@@ -75,7 +75,12 @@ function Bug() {
             </div>
             <label className='bg-[#0D6EFD] disabled:bg-[#E7F0FF] px-[24px] py-[8px] rounded-[4px] text-[#FFFFFF] disabled:text-[#98A2B3] font-[400] text-[14px] leading-[22px]'>
               Browse Files{' '}
-              <input id='dragdrop-file' type='file' className='hidden' />
+              <input
+                id='dragdrop-file'
+                type='file'
+                accept='image/*'
+                className='hidden'
+              />
             </label>
           </div>
         </div>

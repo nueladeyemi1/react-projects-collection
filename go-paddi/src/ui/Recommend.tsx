@@ -1,12 +1,62 @@
-import { useState } from 'react'
+import { useState, ChangeEvent, DragEvent } from 'react'
 import TextArea from '../components/TextArea'
 import Button from '../components/Button'
 import Input from '../components/Input'
 import Select from '../components/Select'
+import { MdOutlineFileDownload, MdOutlineDelete } from 'react-icons/md'
+import { PiFilePng } from 'react-icons/pi'
+import { PiFileJpg } from 'react-icons/pi'
 
 function Recommend() {
   const [disable, setDisable] = useState<boolean>(true)
-  // const [active, setActive] = useState<boolean>(false)
+
+  const [files, setFiles] = useState<FileList | null>(null)
+  const [status, setStatus] = useState<
+    'initial' | 'uploading' | 'success' | 'fail'
+  >('initial')
+
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setStatus('initial')
+      setFiles(e.target.files)
+    }
+  }
+
+  const handleDragOver = (event: DragEvent<HTMLInputElement>) => {
+    event.preventDefault()
+    console.log(event)
+  }
+
+  const handleDrop = (event: DragEvent<HTMLInputElement>) => {
+    event.preventDefault()
+    console.log(event)
+  }
+
+  const handleUpload = async () => {
+    if (files) {
+      setStatus('uploading')
+
+      const formData = new FormData()
+      ;[...files].forEach((file) => {
+        formData.append('files', file)
+      })
+
+      try {
+        const result = await fetch('https://x.org/post', {
+          method: 'POST',
+          body: formData,
+        })
+
+        const data = await result.json()
+
+        console.log(data)
+        setStatus('success')
+      } catch (error) {
+        console.error(error)
+        setStatus('fail')
+      }
+    }
+  }
 
   return (
     <>
@@ -55,9 +105,17 @@ function Recommend() {
           >
             Upload Media
           </label>
-          <div className='border-[#D0D5DD] border-[1.5px] border-dashed rounded-[4px] w-[318px] h-[350px] flex flex-col gap-[16px] items-center justify-center'>
+          <div
+            draggable='true'
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
+            className='border-[#D0D5DD] border-[1.5px] border-dashed rounded-[4px] w-[318px] h-[350px] flex flex-col gap-[16px] items-center justify-center'
+          >
             <img src='./icon/fileUploadStates.svg' />
-            <div className='flex flex-col items-center justify-center'>
+            <div
+              draggable='true'
+              className='flex flex-col items-center justify-center'
+            >
               <p className=' font-[500] text-[14px] leading-[22px] text-[#676E7E]'>
                 Drag and drop files
               </p>
@@ -65,7 +123,7 @@ function Recommend() {
                 JPG, PNG (max. 800x400px)
               </p>
             </div>
-            <div className='flex items-center justify-center'>
+            <div draggable='true' className='flex items-center justify-center'>
               <hr className='h-[1px] w-[130px] bg-[#676E7E] text-[#676E7E] mr-[8px]' />
               <p className='font-[500] text-[12px] leading-[22px] text-[#676E7E]'>
                 or
@@ -73,9 +131,58 @@ function Recommend() {
               <hr className='h-[1px] w-[130px] bg-[#676E7E] text-[#676E7E] ml-[8px]' />
             </div>
             <label className='bg-[#0D6EFD] cursor-pointer disabled:bg-[#E7F0FF] px-[24px] py-[8px] rounded-[4px] text-[#FFFFFF] disabled:text-[#98A2B3] font-[400] text-[14px] leading-[22px]'>
-              Browse Files <Input type='file' className='hidden' />
+              Browse Files{' '}
+              <input
+                onChange={handleFileChange}
+                type='file'
+                accept='image/png, image/jpeg'
+                className='hidden'
+                multiple
+              />
             </label>
           </div>
+          {files &&
+            [...files].map((file) => (
+              <div
+                className='flex flex-col gap-[8px] border-[1px] border-[#E4E7EC] px-[14px] py-[18px] rounded-[4px]'
+                key={file.name}
+              >
+                <div>
+                  <div className='flex items-center justify-between'>
+                    <div className='flex gap-[8px] items-center justify-center'>
+                      {file.type.split('/')[1] === 'png' ? (
+                        <PiFilePng size={42} />
+                      ) : (
+                        <PiFileJpg size={32} />
+                      )}
+
+                      <div>
+                        <p className='text-[#1D2433] font-[500] text-[16px] leading-[24px]'>
+                          {file.name}
+                        </p>
+                        <p className='text-[#676E7E] font-[500] text-[16px] leading-[24px]'>
+                          {Math.floor(file.size / 1000)}/
+                          {Math.floor(file.size / 1000)}
+                          KB
+                        </p>
+                      </div>
+                    </div>
+                    <div className='flex items-center justify-start gap-[8px]'>
+                      <MdOutlineFileDownload
+                        className='cursor-pointer'
+                        size={20}
+                      />
+                      <MdOutlineDelete
+                        // onClick={}
+                        className='cursor-pointer'
+                        size={20}
+                      />
+                    </div>
+                  </div>
+                </div>
+                <p className='bg-[#0D6EFD] h-[12px] rounded-[32px]'></p>
+              </div>
+            ))}
         </div>
       </div>
     </>

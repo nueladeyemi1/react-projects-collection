@@ -56,7 +56,7 @@ function Settings() {
             <p
               className={
                 activeTab === 'feedback'
-                  ? 'bg-[#0D6EFD] h-[6px] rounded-[4px]'
+                  ? 'bg-[#0D6EFD] h-[6px] rounded-[4px]  ease-in transition-all'
                   : ''
               }
             ></p>
@@ -75,7 +75,7 @@ function Settings() {
             <p
               className={
                 activeTab === 'recommend'
-                  ? 'bg-[#0D6EFD] h-[6px] rounded-[4px]'
+                  ? 'bg-[#0D6EFD] h-[6px] rounded-[4px] ease-in transition-all'
                   : ''
               }
             ></p>
@@ -93,7 +93,9 @@ function Settings() {
             />
             <p
               className={
-                activeTab === 'bug' ? 'bg-[#0D6EFD] h-[6px] rounded-[4px]' : ''
+                activeTab === 'bug'
+                  ? 'bg-[#0D6EFD] h-[6px] rounded-[4px]  ease-in transition-all'
+                  : ''
               }
             ></p>
           </div>
