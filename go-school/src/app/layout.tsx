@@ -1,5 +1,6 @@
 import DesktopSidebar, { SidebarContext, sidebarItems } from "@/announcement/resuable-components/sidebar";
 import TopBar, { menuItems } from "@/announcement/resuable-components/topbar";
+// import PrivateRoute from "@/auth/protected";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -22,16 +23,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        {/* <PrivateRoute> */}
+
        <TopBar isUser={true}/>
        <div  className="px-[40px] flex justify-between gap-10 mt-[120px] mb-8">
         <DesktopSidebar
         navlinks={sidebarItems}
-      />
+        />
       <div className="max-w-[1800px] w-full">
 
           {children}
       </div>
       </div>
+        {/* </PrivateRoute> */}
         </body>
     </html>
   );
