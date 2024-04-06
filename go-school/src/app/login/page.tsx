@@ -10,6 +10,7 @@ import { Label } from '@/components/ui/label'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Button } from '@/components/ui/button'
 import { Eye, EyeSlash } from '@phosphor-icons/react'
+import '../globals.css'
 
 const Signin = () => {
   const [email, setEmail] = useState('')
@@ -53,7 +54,7 @@ const Signin = () => {
   return (
     <div>
       <div className='flex'>
-        <div className='w-1/2'>
+        <div className='w-1/2 h-[100vh]'>
           <div className='flex items-center justify-between mt-[37px] '>
             <div className='pl-[55px]'>
               <img
@@ -155,14 +156,18 @@ const Signin = () => {
             </Button>
           </div>
           <div className='font-medium text-[#676E7E] text-base mb-[30px] ml-[50px] absolute bottom-0'>
-            <div>{'\u00A9'}2024  GoSchool. All rights reserved</div>
+            <div>
+              {'\u00A9'}
+              {new Date(Date.now()).getFullYear()}  GoSchool. All rights
+              reserved
+            </div>
           </div>
         </div>
-        <div className='w-1/2'>
+        <div className='w-1/2 h-[100vh]'>
           <img
             alt=''
             //   src={signin as string}
-            src='../../assets/images/signin.png'
+            src='./assets/images/signin.png'
             className='w-auto h-auto'
           />
         </div>

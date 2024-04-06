@@ -1,13 +1,16 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 // import Layout from '../Layout'
 
 const PrivateRoute: React.FC<any> = (props: any) => {
-  const userStr = sessionStorage.getItem('user')
+  useEffect(() => {
+    const userStr = sessionStorage.getItem('user')
 
-  if (!userStr) {
-    window.location.href = '/login'
-  }
+    if (!userStr) {
+      window.location.href = '/login'
+    }
+  }, [])
+
   return <>{props.children}</>
 }
 
