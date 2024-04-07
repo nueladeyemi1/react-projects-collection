@@ -48,7 +48,7 @@ const Signin = () => {
     setShowPassword(!showPassword)
   }
   const onSignUpClick = () => {
-    window.location.href = '/Siginup'
+    window.location.href = '/signup'
   }
 
   return (
