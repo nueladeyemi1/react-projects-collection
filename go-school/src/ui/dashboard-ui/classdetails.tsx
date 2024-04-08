@@ -100,7 +100,7 @@ Props): ReactElement {
         </div>
         <div
           className='bg-white p-4 rounded  h-40 ml-5'
-          style={{ width: '550px' }}
+          //   style={{ width: '550px' }}
         >
           <div className='font-poppins font-weight: 400 text-sm leading-5 text-[#667185]  pl-2'>
             {classDescription}

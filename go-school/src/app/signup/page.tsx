@@ -11,10 +11,10 @@ import '../globals.css'
 
 const Signup: React.FC = () => {
   const onMultiSignUpClick = () => {
-    window.location.href = '/MultiSiginup'
+    window.location.href = '/multisignup'
   }
   const onFileUploadClick = () => {
-    window.location.href = '/FileUpload'
+    window.location.href = '/fileupload'
   }
   return (
     <div>

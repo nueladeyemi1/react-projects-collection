@@ -26,7 +26,7 @@ export default function RootLayout({
         {/* <PrivateRoute> */}
 
        <TopBar isUser={true}/>
-       <div  className="px-[40px] flex justify-between gap-10 mt-[120px] mb-8">
+       <div  className="px-[40px] flex justify-between gap-8 mt-[120px] mb-8">
         <DesktopSidebar
         navlinks={sidebarItems}
         />
