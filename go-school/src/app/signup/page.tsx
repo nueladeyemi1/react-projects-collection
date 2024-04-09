@@ -7,7 +7,27 @@ import logo from '@/assets/images/logo.png'
 import { Input } from '@/components/ui/input'
 import { Checkbox } from '@/components/ui/checkbox'
 import { Button } from '@/components/ui/button'
+import { EmblaOptionsType } from 'embla-carousel'
 import '../globals.css'
+import EmblaCarousel from '@/ui/signup-actions-ui/EmblaCarousel'
+import '../../ui/signup-actions-ui/embla.css'
+
+export const OPTIONS: EmblaOptionsType = { loop: true }
+
+export const SLIDES = [
+  {
+    id: 1,
+    src: './assets/images/Asignin.png',
+  },
+  {
+    id: 2,
+    src: './assets/images/signin.png',
+  },
+  {
+    id: 3,
+    src: './assets/images/multisignup.png',
+  },
+]
 
 const Signup: React.FC = () => {
   const onMultiSignUpClick = () => {
@@ -173,14 +193,15 @@ const Signup: React.FC = () => {
           </div>
         </div>
         <div className='w-1/2'>
-          <div>
+          <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+          {/* <div>
             <img
               alt=''
               // src={signup}
               src='./assets/images/signin.png'
               className='w-auto h-auto'
             />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

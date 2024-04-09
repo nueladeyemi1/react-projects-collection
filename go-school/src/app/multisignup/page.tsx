@@ -18,6 +18,8 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import '../globals.css'
+import EmblaCarousel from '@/ui/signup-actions-ui/EmblaCarousel'
+import { OPTIONS, SLIDES } from '../signup/page'
 
 const Multisignup: FC = () => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null)
@@ -52,14 +54,14 @@ const Multisignup: FC = () => {
             <div className='ml-[68px]'>
               <img
                 alt=''
-                src=''
                 //   src={logo}
+                src='../../assets/images/logo.png'
                 className='w-10 ml'
               />
             </div>
             <div className='font-poppins font-medium text-base text-gray-500 pr-[55px]'>
-              Are you new to GoSchool?
-              <span className=' text-[#0D6EFD] ml-1'>Sign Up</span>
+              Made an error?
+              <span className=' text-[#0D6EFD] ml-1'>Go back</span>
             </div>
           </div>
           <div className='ml-[72px] flex mt-[25px] '>
@@ -271,12 +273,14 @@ const Multisignup: FC = () => {
         </div>
         <div className='w-1/2'>
           <div>
-            <img
+            <EmblaCarousel slides={SLIDES} options={OPTIONS} />
+
+            {/* <img
               alt=''
               //  src={multisignup}
               src=''
               className='w-[770px] h-screen'
-            />
+            /> */}
           </div>
         </div>
       </div>

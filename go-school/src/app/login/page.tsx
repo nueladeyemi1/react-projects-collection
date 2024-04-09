@@ -54,7 +54,7 @@ const Signin = () => {
   return (
     <div>
       <div className='flex'>
-        <div className='w-1/2 h-[100vh]'>
+        <div className='w-1/2 h-[100vh] bg-[#FFFFFF]'>
           <div className='flex items-center justify-between mt-[37px] '>
             <div className='pl-[55px]'>
               <img
@@ -92,7 +92,7 @@ const Signin = () => {
               <Input
                 type='email'
                 placeholder='Your@email.com'
-                className='w-[640px] h-12 mt-1 rounded-none border-zinc-300 outline-none'
+                className='w-[640px] bg-[#FFFFFF] h-12 mt-1 rounded-none border-zinc-300 outline-none'
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -147,7 +147,7 @@ const Signin = () => {
             </div>
             <Button
               variant='secondary'
-              className='mt-[30px] w-[640px]'
+              className='mt-[30px] w-[640px] hover:bg-[rgba(231,240,255,0.75)] bg-[#E7F0FF]'
               onClick={handleSignIn}
             >
               <span className='font-poppins text-sm font-medium text-gray-400 '>
