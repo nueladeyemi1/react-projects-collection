@@ -32,11 +32,23 @@
     overflow: hidden;
     opacity: 0;
     transition: all 0.5s 0.2s;
+
+    @include response(tab-port) {
+      width: 90%;
+      margin: 0 auto;
+      // overflow-y: scroll;
+    }
   }
 
   &-left {
     width: 33.33%;
     display: table-cell;
+
+    @include response(tab-port) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &-right {
@@ -44,11 +56,28 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+
+    @include response(tab-port) {
+      display: block;
+      width: 100%;
+      padding: 0 1rem;
+      margin: 0 auto;
+
+      .heading-secondary {
+        font-size: 2rem;
+        margin-bottom: 0.5rem !important;
+      }
+
+      .heading-tertiary {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem !important;
+      }
+    }
   }
 
   &-img {
     display: block;
-    width: 100%;
+    width: 25%;
   }
 
   &-text {
@@ -66,6 +95,11 @@
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+
+    @include response(tab-port) {
+      columns: 1;
+      margin-bottom: 1.5rem;
+    }
   }
 
   &:target {

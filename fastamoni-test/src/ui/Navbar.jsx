@@ -5,7 +5,7 @@ import { IoSearchOutline } from 'react-icons/io5'
 
 const Navbar = () => {
   return (
-    <section className='flex items-center justify-between bg-[#322b2be6] text-[#ffffff] border-b-[1px] border-b-[#ffffff]'>
+    <section className='flex items-center justify-between bg-[#4F4646] text-[#ffffff] border-b-[1px] border-b-[#ffffff]'>
       <h2 className='border-r-[1px] border-r-[#ffffff]'>CreativeLogo</h2>
       <div className='flex items-center gap-[16px]'>
         <Link to='/'>Home</Link>
@@ -19,7 +19,7 @@ const Navbar = () => {
         <Link to='/blog'>Blog</Link>
         <Link to='/content'>Content</Link>
       </div>
-      <div className='flex items-center gap-[16px]'>
+      <div className='flex items-center gap-[16px] '>
         <FaInstagram />
         <FaLinkedin />
         <FaTwitter />
