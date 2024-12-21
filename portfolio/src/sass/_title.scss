@@ -1,0 +1,112 @@
+// $background-color: #f3f4f6;
+// $sliding-title-color: #2563eb;
+// $static-title-color: #1f2937;
+// $transition-duration: 0.5s;
+
+// .engineer-title-slider {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   height: 10rem;
+//   //   background-color: $background-color;
+//   font-size: 1.875rem;
+//   font-weight: bold;
+
+//   .engineer-title-container {
+//     display: flex;
+//     align-items: center;
+
+//     .sliding-title-wrapper {
+//       position: relative;
+//       width: 14rem;
+//       height: 2.5rem;
+//       overflow: hidden;
+//       margin-right: 0.5rem;
+//     }
+
+//     .sliding-title {
+//       position: absolute;
+//       width: 100%;
+//       text-align: right;
+//       color: $sliding-title-color;
+//       opacity: 0;
+//       transform: translateY(100%);
+//       transition: opacity $transition-duration ease,
+//         transform $transition-duration ease;
+//     }
+
+//     .sliding-title.active {
+//       opacity: 1;
+//       transform: translateY(0);
+//     }
+
+//     .sliding-title:not(.active) {
+//       &:nth-child(1) {
+//         transform: translateY(-100%);
+//       }
+//       &:nth-child(2) {
+//         transform: translateY(100%);
+//       }
+//     }
+
+//     .static-title {
+//       color: $static-title-color;
+//       line-height: 1;
+//     }
+//   }
+// }
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //   height: 10rem; // Equivalent to Tailwind's h-40
+  //   background-color: #ee0e0e; // Equivalent to bg-gray-100
+  font-size: 1.875rem; // Equivalent to text-3xl
+  font-weight: bold;
+
+  .slider-content {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+
+    .title-slider {
+      position: relative;
+      width: 8rem; // Equivalent to w-56
+      height: 2.5rem; // Equivalent to h-10
+      overflow: hidden;
+      margin-right: 0.5rem; // Equivalent to mr-2
+
+      &-1 {
+        // background-color: #2563eb;
+        position: relative;
+        width: 10rem; // Equivalent to w-56
+        height: 2.5rem; // Equivalent to h-10
+        overflow: hidden;
+        margin-right: 0.5rem; // Equivalent to mr-2
+
+        .title {
+          position: absolute;
+          width: 100%;
+          text-align: left;
+          color: #2563eb; // Equivalent to text-blue-600
+        }
+      }
+
+      .title {
+        position: absolute;
+        width: 100%;
+        text-align: left;
+        color: #2563eb; // Equivalent to text-blue-600
+      }
+    }
+
+    .engineer-text {
+      display: flex;
+      align-items: center;
+      color: #1f2937; // Equivalent to text-gray-800
+      line-height: 0; // Equivalent to leading-none
+      text-align: left;
+    }
+  }
+}

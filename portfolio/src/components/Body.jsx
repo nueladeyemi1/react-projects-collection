@@ -7,6 +7,8 @@ import {
   BiMailSend,
 } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import EngineerTitleSlider from './Title'
+import EngineerFramerSlider from './FramerTitle'
 
 const Body = () => {
   const [state, setState] = useState(0)
@@ -32,14 +34,14 @@ const Body = () => {
       <div className='body-details'>
         <img src='/emmanuel.jpg' alt='Emmanuel' className='body-img' />
         <h3 className='body-name'>Emmanuel Adeyemi</h3>
-        <h1 className='body-role'>
-          <span
-            className={transit ? 'body-role-active' : 'body-role-notactive'}
-          >
+        {/* <EngineerTitleSlider /> */}
+        <EngineerFramerSlider />
+        {/* <h1 className='body-role'>
+          <div className={transit ? 'body-role-active' : 'body-role-notactive'}>
             {roles[state]}{' '}
-          </span>
-          <span>Engineer</span>
-        </h1>
+          </div>
+          <div className='body-role-static'>Engineer</div>
+        </h1> */}
       </div>
 
       <p className='body-description'>

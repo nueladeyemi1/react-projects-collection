@@ -4,6 +4,7 @@ import { RxCross2 } from 'react-icons/rx'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
+  const [activeSection, setActiveSection] = useState('home')
   const [activeMobile, setActiveMobile] = useState(false)
 
   function handleNav() {
@@ -21,6 +22,26 @@ const Navbar = () => {
           activeMobile ? 'navbar-navlinks' : 'active navbar-navlinks'
         }`}
       >
+        <div className=''>
+          {[
+            { section: 'home' },
+            { section: 'about' },
+            { section: 'projects' },
+            { section: 'contact' },
+          ].map(({ section }) => (
+            <button
+              key={section}
+              onClick={() => setActiveSection(section)}
+              // className={`flex flex-col items-center ${
+              //   activeSection === section ? 'text-blue-600' : 'text-gray-500'
+              // }`}
+            >
+              {/* <Icon /> */}
+              <span className='text-xs mt-1 capitalize'>{section}</span>
+            </button>
+          ))}
+        </div>
+
         <Link className='navbar-link'>Projects</Link>
         <Link className='navbar-link'>CAD models</Link>
         <Link className='navbar-link'>Contact me</Link>

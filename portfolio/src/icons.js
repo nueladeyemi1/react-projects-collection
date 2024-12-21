@@ -1,6 +1,6 @@
 import { RiGithubFill, RiJavascriptFill, RiReactjsFill } from 'react-icons/ri'
 import { BiLogoPython, BiLogoTailwindCss } from 'react-icons/bi'
-import { FaNode, FaSass } from 'react-icons/fa'
+import { FaNode } from 'react-icons/fa'
 import { TbApi } from 'react-icons/tb'
 
 export const icons = [
@@ -15,6 +15,11 @@ export const icons = [
     icon: RiReactjsFill,
   },
   {
+    id: 7,
+    name: 'Node',
+    icon: FaNode,
+  },
+  {
     id: 3,
     name: 'Python',
     icon: BiLogoPython,
@@ -24,20 +29,15 @@ export const icons = [
     name: 'Git',
     icon: RiGithubFill,
   },
-  {
-    id: 5,
-    name: 'Sass',
-    icon: FaSass,
-  },
+  // {
+  //   id: 5,
+  //   name: 'Sass',
+  //   icon: FaSass,
+  // },
   {
     id: 6,
     name: 'TailwindCSS',
     icon: BiLogoTailwindCss,
-  },
-  {
-    id: 7,
-    name: 'Node',
-    icon: FaNode,
   },
 
   {
